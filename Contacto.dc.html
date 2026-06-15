@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;}html,body{margin:0;padding:0;}body{font-family:Manrope,sans-serif;background:#fff;}input::placeholder,textarea::placeholder{color:#9AA7BE;}</style>
+</helmet>
+
+<div style="background:#fff;">
+<dc-import name="Nav" active="contacto" hint-size="100%,74px"></dc-import>
+
+<!-- HERO + FORM -->
+<section style="background:radial-gradient(900px 520px at 85% -10%, #14336B 0%, rgba(20,51,107,0) 60%), linear-gradient(160deg,#0A1B3D,#061027);">
+  <div style="max-width:1200px;margin:0 auto;padding:78px 24px 90px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,520px);gap:56px;align-items:start;">
+    <div>
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B9BF0;">Contacto</span>
+      <h1 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(32px,4vw,50px);line-height:1.08;letter-spacing:-0.02em;color:#fff;margin:14px 0 18px;">Solicitá tu demo<br>personalizada</h1>
+      <p style="font-size:clamp(16px,1.3vw,18px);line-height:1.65;color:#B7C3DA;margin:0 0 38px;max-width:430px;">Contanos sobre tu club y te mostramos cómo Club One se adapta a tu operación. Sin compromiso.</p>
+      <div style="display:flex;flex-direction:column;gap:22px;">
+        <div style="display:flex;gap:15px;align-items:center;"><div style="width:46px;height:46px;border-radius:12px;background:rgba(91,155,240,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B9BF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"></rect><path d="M3 6l9 7 9-7"></path></svg></div><div><div style="font-size:13px;color:#8595B2;">Email</div><div style="font-size:16px;font-weight:700;color:#fff;">hola@clubone.com</div></div></div>
+        <div style="display:flex;gap:15px;align-items:center;"><div style="width:46px;height:46px;border-radius:12px;background:rgba(91,155,240,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B9BF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L20 13l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z"></path></svg></div><div><div style="font-size:13px;color:#8595B2;">Teléfono</div><div style="font-size:16px;font-weight:700;color:#fff;">+54 11 5000 1234</div></div></div>
+        <div style="display:flex;gap:15px;align-items:center;"><div style="width:46px;height:46px;border-radius:12px;background:rgba(91,155,240,0.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B9BF0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3.9 0 7 3 7 6.8 0 4.4-7 12.2-7 12.2S5 13.2 5 8.8C5 5 8.1 2 12 2z"></path><circle cx="12" cy="9" r="2.5"></circle></svg></div><div><div style="font-size:13px;color:#8595B2;">Oficina</div><div style="font-size:16px;font-weight:700;color:#fff;">Buenos Aires, Argentina</div></div></div>
+      </div>
+    </div>
+
+    <div style="background:#fff;border-radius:18px;padding:32px;box-shadow:0 40px 90px rgba(0,0,0,0.4);">
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="text-align:center;padding:30px 10px;">
+          <div style="width:72px;height:72px;border-radius:50%;background:#E6F6EE;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#1F9D6B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"></path></svg></div>
+          <h3 style="font-family:Sora,sans-serif;font-weight:800;font-size:24px;color:#0F1B33;margin:0 0 10px;">¡Gracias, {{ nombreCorto }}!</h3>
+          <p style="font-size:16px;line-height:1.6;color:#5B6B85;margin:0 0 24px;">Recibimos tu solicitud. Un especialista de Club One te contactará dentro de las próximas 24 horas.</p>
+          <button onClick="{{ reset }}" style="font-size:15px;font-weight:700;color:#2E7BE8;background:#EAF1FC;border:none;padding:13px 24px;border-radius:10px;cursor:pointer;">Enviar otra solicitud</button>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:22px;color:#0F1B33;margin:0 0 4px;">Pedí tu demo</h2>
+          <p style="font-size:14px;color:#8090A8;margin:0 0 22px;">Completá tus datos y nos comunicamos con vos.</p>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div>
+              <label style="display:block;font-size:14px;font-weight:600;color:#3A4A66;margin-bottom:7px;">Nombre y apellido *</label>
+              <input value="{{ form.nombre }}" onChange="{{ onNombre }}" placeholder="Tu nombre" style="{{ stNombre }}" style-focus="border-color:#2E7BE8;box-shadow:0 0 0 3px rgba(46,123,232,0.12);">
+              <sc-if value="{{ errNombre }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:#E0414C;margin-top:6px;">Ingresá tu nombre.</div></sc-if>
+            </div>
+            <div>
+              <label style="display:block;font-size:14px;font-weight:600;color:#3A4A66;margin-bottom:7px;">Club</label>
+              <input value="{{ form.club }}" onChange="{{ onClub }}" placeholder="Nombre del club" style="width:100%;padding:13px 15px;border:1px solid #E1E6EF;border-radius:10px;font-size:15px;font-family:Manrope,sans-serif;color:#0F1B33;background:#fff;outline:none;" style-focus="border-color:#2E7BE8;box-shadow:0 0 0 3px rgba(46,123,232,0.12);">
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+              <div>
+                <label style="display:block;font-size:14px;font-weight:600;color:#3A4A66;margin-bottom:7px;">Email *</label>
+                <input value="{{ form.email }}" onChange="{{ onEmail }}" placeholder="tu@email.com" style="{{ stEmail }}" style-focus="border-color:#2E7BE8;box-shadow:0 0 0 3px rgba(46,123,232,0.12);">
+                <sc-if value="{{ errEmail }}" hint-placeholder-val="{{ false }}"><div style="font-size:13px;color:#E0414C;margin-top:6px;">Ingresá un email válido.</div></sc-if>
+              </div>
+              <div>
+                <label style="display:block;font-size:14px;font-weight:600;color:#3A4A66;margin-bottom:7px;">Teléfono</label>
+                <input value="{{ form.telefono }}" onChange="{{ onTelefono }}" placeholder="+54 11 ..." style="width:100%;padding:13px 15px;border:1px solid #E1E6EF;border-radius:10px;font-size:15px;font-family:Manrope,sans-serif;color:#0F1B33;background:#fff;outline:none;" style-focus="border-color:#2E7BE8;box-shadow:0 0 0 3px rgba(46,123,232,0.12);">
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-size:14px;font-weight:600;color:#3A4A66;margin-bottom:7px;">Cantidad de socios</label>
+              <select value="{{ form.socios }}" onChange="{{ onSocios }}" style="width:100%;padding:13px 15px;border:1px solid #E1E6EF;border-radius:10px;font-size:15px;font-family:Manrope,sans-serif;color:#0F1B33;background:#fff;outline:none;cursor:pointer;" style-focus="border-color:#2E7BE8;box-shadow:0 0 0 3px rgba(46,123,232,0.12);">
+                <option value="">Seleccioná una opción</option>
+                <option value="0-300">Menos de 300</option>
+                <option value="300-800">300 a 800</option>
+                <option value="800-1500">800 a 1.500</option>
+                <option value="1500+">Más de 1.500</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-size:14px;font-weight:600;color:#3A4A66;margin-bottom:7px;">¿En qué te podemos ayudar?</label>
+              <textarea value="{{ form.mensaje }}" onChange="{{ onMensaje }}" rows="3" placeholder="Contanos sobre tu club..." style="width:100%;padding:13px 15px;border:1px solid #E1E6EF;border-radius:10px;font-size:15px;font-family:Manrope,sans-serif;color:#0F1B33;background:#fff;outline:none;resize:vertical;" style-focus="border-color:#2E7BE8;box-shadow:0 0 0 3px rgba(46,123,232,0.12);"></textarea>
+            </div>
+            <button onClick="{{ onSubmit }}" style="width:100%;font-size:16px;font-weight:700;color:#fff;background:#2E7BE8;border:none;padding:15px;border-radius:11px;cursor:pointer;box-shadow:0 10px 24px rgba(46,123,232,0.3);margin-top:4px;" style-hover="background:#1E63C8;">Solicitar demo</button>
+            <p style="font-size:12px;color:#9AA7BE;text-align:center;margin:2px 0 0;">Al enviar aceptás nuestra política de privacidad.</p>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#fff;padding:90px 0;">
+  <div style="max-width:840px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;margin-bottom:48px;">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2E7BE8;">Preguntas frecuentes</span>
+      <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,40px);line-height:1.1;letter-spacing:-0.02em;color:#0F1B33;margin:14px 0 0;">Antes de empezar</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;">
+      <div style="border:1px solid #EAEEF4;border-radius:14px;padding:24px 26px;"><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#0F1B33;margin:0 0 9px;">¿Cuánto tarda la implementación?</h3><p style="font-size:15px;line-height:1.65;color:#5B6B85;margin:0;">La mayoría de los clubes está operando entre 4 y 8 semanas, según el tamaño y la migración de datos. Te acompañamos en todo el proceso.</p></div>
+      <div style="border:1px solid #EAEEF4;border-radius:14px;padding:24px 26px;"><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#0F1B33;margin:0 0 9px;">¿Puedo migrar los datos de mi sistema actual?</h3><p style="font-size:15px;line-height:1.65;color:#5B6B85;margin:0;">Sí. Importamos tus socios, cuentas e historial desde planillas u otros sistemas para que arranques sin perder información.</p></div>
+      <div style="border:1px solid #EAEEF4;border-radius:14px;padding:24px 26px;"><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#0F1B33;margin:0 0 9px;">¿Sirve solo para golf?</h3><p style="font-size:15px;line-height:1.65;color:#5B6B85;margin:0;">Club One está pensado para clubes de golf, pero gestiona también otros deportes y actividades sociales dentro del mismo club.</p></div>
+      <div style="border:1px solid #EAEEF4;border-radius:14px;padding:24px 26px;"><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#0F1B33;margin:0 0 9px;">¿Cómo es el soporte?</h3><p style="font-size:15px;line-height:1.65;color:#5B6B85;margin:0;">Tenés un equipo de soporte dedicado y materiales de capacitación para tu personal. Acompañamiento real, en tu idioma.</p></div>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    form: { nombre: '', club: '', email: '', telefono: '', socios: '', mensaje: '' },
+    errors: { nombre: false, email: false },
+    submitted: false
+  };
+  set(field, value) {
+    this.setState(s => ({ form: { ...s.form, [field]: value } }));
+  }
+  submit() {
+    const f = this.state.form;
+    const errNombre = !f.nombre.trim();
+    const errEmail = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(f.email.trim());
+    if (errNombre || errEmail) {
+      this.setState({ errors: { nombre: errNombre, email: errEmail } });
+      return;
+    }
+    this.setState({ errors: { nombre: false, email: false }, submitted: true });
+    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  reset() {
+    this.setState({
+      form: { nombre: '', club: '', email: '', telefono: '', socios: '', mensaje: '' },
+      errors: { nombre: false, email: false }, submitted: false
+    });
+  }
+  renderVals() {
+    const baseInput = "width:100%;padding:13px 15px;border:1px solid #E1E6EF;border-radius:10px;font-size:15px;font-family:Manrope,sans-serif;color:#0F1B33;background:#fff;outline:none;";
+    const errInput = "width:100%;padding:13px 15px;border:1px solid #E0414C;border-radius:10px;font-size:15px;font-family:Manrope,sans-serif;color:#0F1B33;background:#fff;outline:none;";
+    const e = this.state.errors;
+    return {
+      form: this.state.form,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      errNombre: e.nombre,
+      errEmail: e.email,
+      stNombre: e.nombre ? errInput : baseInput,
+      stEmail: e.email ? errInput : baseInput,
+      nombreCorto: (this.state.form.nombre.trim().split(' ')[0]) || '',
+      onNombre: ev => this.set('nombre', ev.target.value),
+      onClub: ev => this.set('club', ev.target.value),
+      onEmail: ev => this.set('email', ev.target.value),
+      onTelefono: ev => this.set('telefono', ev.target.value),
+      onSocios: ev => this.set('socios', ev.target.value),
+      onMensaje: ev => this.set('mensaje', ev.target.value),
+      onSubmit: () => this.submit(),
+      reset: () => this.reset()
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:Manrope,sans-serif;background:#fff;}
+  @keyframes co-float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+  @keyframes co-rise{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+</style>
+</helmet>
+
+<div style="background:#fff;">
+<dc-import name="Nav" active="inicio" hint-size="100%,74px"></dc-import>
+
+<!-- ============ HERO ============ -->
+<section style="position:relative;background:radial-gradient(1100px 620px at 78% -8%, #14336B 0%, rgba(20,51,107,0) 60%), linear-gradient(160deg,#0A1B3D 0%,#091933 55%,#061027 100%);overflow:hidden;">
+  <div style="position:absolute;top:-120px;right:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(46,123,232,0.22),rgba(46,123,232,0) 70%);pointer-events:none;"></div>
+  <div style="max-width:1200px;margin:0 auto;padding:86px 24px 96px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,500px);gap:48px;align-items:center;position:relative;z-index:2;">
+    <div>
+      <div style="display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:999px;background:rgba(91,155,240,0.14);border:1px solid rgba(91,155,240,0.28);margin-bottom:26px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:#5B9BF0;"></span>
+        <span style="font-size:13px;font-weight:600;letter-spacing:0.04em;color:#9FC2F5;">SISTEMA INTEGRAL DE GESTIÓN PARA CLUBES</span>
+      </div>
+      <h1 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(38px,4.6vw,62px);line-height:1.04;letter-spacing:-0.02em;color:#fff;margin:0 0 22px;">Todo tu club,<br>en <span style="color:#5B9BF0;">una sola plataforma.</span></h1>
+      <p style="font-size:clamp(16px,1.3vw,19px);line-height:1.65;color:#B7C3DA;margin:0 0 34px;max-width:480px;">Gestión eficiente, comunicación inteligente y una mejor experiencia para socios, colaboradores y visitantes de tu club de golf.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;margin-bottom:40px;">
+        <a href="Contacto.dc.html" style="text-decoration:none;font-size:16px;font-weight:700;color:#fff;background:#2E7BE8;padding:15px 28px;border-radius:11px;box-shadow:0 12px 28px rgba(46,123,232,0.40);" style-hover="background:#1E63C8;">Solicitar demo</a>
+        <a href="Producto.dc.html" style="text-decoration:none;font-size:16px;font-weight:700;color:#fff;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.20);padding:15px 28px;border-radius:11px;" style-hover="background:rgba(255,255,255,0.12);">Ver el producto</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
+        <div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:26px;color:#fff;">+120</div><div style="font-size:13px;color:#8595B2;">clubes activos</div></div>
+        <div style="width:1px;height:34px;background:rgba(255,255,255,0.12);"></div>
+        <div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:26px;color:#fff;">98%</div><div style="font-size:13px;color:#8595B2;">retención anual</div></div>
+        <div style="width:1px;height:34px;background:rgba(255,255,255,0.12);"></div>
+        <div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:26px;color:#fff;">24/7</div><div style="font-size:13px;color:#8595B2;">soporte</div></div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD MOCK -->
+    <div style="position:relative;min-width:0;width:100%;">
+      <div style="filter:drop-shadow(0 42px 70px rgba(0,0,0,0.55));">
+      <div style="background:linear-gradient(180deg,#1b1f27,#0c0e13);border-radius:20px;padding:13px 13px 14px;">
+        <div style="display:flex;justify-content:center;margin-bottom:9px;"><div style="width:5px;height:5px;border-radius:50%;background:#2c303a;box-shadow:inset 0 0 0 1px #090b0f;"></div></div>
+        <div style="border-radius:8px;overflow:hidden;background:#fff;display:flex;min-height:404px;">
+        <!-- sidebar -->
+        <div style="width:172px;background:#0C2249;padding:18px 0;flex-shrink:0;">
+          <div style="display:flex;align-items:center;gap:7px;padding:0 18px 18px;">
+            <svg width="22" height="22" viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="22" fill="none" stroke="#fff" stroke-width="11" stroke-dasharray="122.8 15.4" stroke-dashoffset="7.7"></circle><path d="M23 27 L39 16 L39 49 L47 49 L47 55 L21 55 L21 49 L31 49 L31 25 Z" fill="#2E7BE8"></path></svg>
+            <span style="font-family:Sora,sans-serif;font-weight:800;font-size:12px;letter-spacing:0.06em;color:#fff;">CLUB <span style="color:#5B9BF0;">ONE</span></span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;margin:0 10px 3px;padding:9px 12px;border-radius:8px;background:#2E7BE8;"><span style="width:7px;height:7px;border-radius:2px;background:#fff;"></span><span style="font-size:12px;font-weight:600;color:#fff;">Dashboard</span></div>
+          <div style="display:flex;flex-direction:column;gap:1px;padding:4px 10px;">
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Socios</div>
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Reservas</div>
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Deportes</div>
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Finanzas</div>
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Comunicación</div>
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Reportes</div>
+            <div style="padding:9px 12px;font-size:12px;color:#92A6CC;">Configuración</div>
+          </div>
+        </div>
+        <!-- main -->
+        <div style="flex:1;background:#F5F7FB;min-width:0;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 18px;background:#fff;border-bottom:1px solid #EaEeF4;">
+            <span style="font-family:Sora,sans-serif;font-weight:700;font-size:15px;color:#0F1B33;">Dashboard</span>
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div style="width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#2E7BE8,#1B4C9E);"></div>
+              <div style="line-height:1.1;"><div style="font-size:11px;color:#8090A8;">Bienvenido,</div><div style="font-size:12px;font-weight:700;color:#0F1B33;">Administrador</div></div>
+            </div>
+          </div>
+          <div style="padding:16px;">
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px;">
+              <div style="background:#fff;border:1px solid #EAEEF4;border-radius:11px;padding:12px;"><div style="font-size:10px;color:#8090A8;margin-bottom:6px;">Socios activos</div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:19px;color:#0F1B33;">1.254</div><div style="font-size:10px;font-weight:700;color:#1F9D6B;">+8%</div></div>
+              <div style="background:#fff;border:1px solid #EAEEF4;border-radius:11px;padding:12px;"><div style="font-size:10px;color:#8090A8;margin-bottom:6px;">Reservas hoy</div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:19px;color:#0F1B33;">32</div><div style="font-size:10px;font-weight:700;color:#1F9D6B;">+12%</div></div>
+              <div style="background:#fff;border:1px solid #EAEEF4;border-radius:11px;padding:12px;"><div style="font-size:10px;color:#8090A8;margin-bottom:6px;">Actividades</div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:19px;color:#0F1B33;">18</div><div style="font-size:10px;font-weight:700;color:#1F9D6B;">+5%</div></div>
+              <div style="background:#fff;border:1px solid #EAEEF4;border-radius:11px;padding:12px;"><div style="font-size:10px;color:#8090A8;margin-bottom:6px;">Ingresos del mes</div><div style="font-family:Sora,sans-serif;font-weight:800;font-size:16px;color:#0F1B33;">$2.450.000</div><div style="font-size:10px;font-weight:700;color:#1F9D6B;">+15%</div></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1.5fr 1fr;gap:10px;">
+              <div style="background:#fff;border:1px solid #EAEEF4;border-radius:11px;padding:14px;">
+                <div style="font-size:12px;font-weight:700;color:#0F1B33;margin-bottom:10px;">Resumen general</div>
+                <svg width="100%" height="118" viewBox="0 0 320 118" preserveAspectRatio="none">
+                  <defs><linearGradient id="cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2E7BE8" stop-opacity="0.28"></stop><stop offset="100%" stop-color="#2E7BE8" stop-opacity="0"></stop></linearGradient></defs>
+                  <line x1="0" y1="30" x2="320" y2="30" stroke="#EEF1F6"></line>
+                  <line x1="0" y1="60" x2="320" y2="60" stroke="#EEF1F6"></line>
+                  <line x1="0" y1="90" x2="320" y2="90" stroke="#EEF1F6"></line>
+                  <path d="M0 92 C 26 80, 40 70, 60 74 C 84 79, 96 50, 120 52 C 142 54, 156 78, 180 70 C 204 62, 214 38, 240 40 C 266 42, 280 24, 320 18 L320 118 L0 118 Z" fill="url(#cg)"></path>
+                  <path d="M0 92 C 26 80, 40 70, 60 74 C 84 79, 96 50, 120 52 C 142 54, 156 78, 180 70 C 204 62, 214 38, 240 40 C 266 42, 280 24, 320 18" fill="none" stroke="#2E7BE8" stroke-width="2.5"></path>
+                </svg>
+                <div style="display:flex;justify-content:space-between;margin-top:6px;font-size:9px;color:#9AA7BE;"><span>01</span><span>05</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span></div>
+              </div>
+              <div style="background:#fff;border:1px solid #EAEEF4;border-radius:11px;padding:14px;">
+                <div style="font-size:12px;font-weight:700;color:#0F1B33;margin-bottom:11px;">Próximas actividades</div>
+                <div style="display:flex;flex-direction:column;gap:11px;">
+                  <div style="display:flex;align-items:center;gap:9px;"><div style="width:26px;height:26px;border-radius:7px;background:#EAF1FC;flex-shrink:0;"></div><div style="line-height:1.2;"><div style="font-size:11px;font-weight:700;color:#0F1B33;">Torneo de Verano</div><div style="font-size:10px;color:#8090A8;">18 de Mayo</div></div></div>
+                  <div style="display:flex;align-items:center;gap:9px;"><div style="width:26px;height:26px;border-radius:7px;background:#EAF1FC;flex-shrink:0;"></div><div style="line-height:1.2;"><div style="font-size:11px;font-weight:700;color:#0F1B33;">Clinic de Golf</div><div style="font-size:10px;color:#8090A8;">20 de Mayo</div></div></div>
+                  <div style="display:flex;align-items:center;gap:9px;"><div style="width:26px;height:26px;border-radius:7px;background:#EAF1FC;flex-shrink:0;"></div><div style="line-height:1.2;"><div style="font-size:11px;font-weight:700;color:#0F1B33;">Yoga al Atardecer</div><div style="font-size:10px;color:#8090A8;">22 de Mayo</div></div></div>
+                  <div style="display:flex;align-items:center;gap:9px;"><div style="width:26px;height:26px;border-radius:7px;background:#EAF1FC;flex-shrink:0;"></div><div style="line-height:1.2;"><div style="font-size:11px;font-weight:700;color:#0F1B33;">Cena de Camaradería</div><div style="font-size:10px;color:#8090A8;">25 de Mayo</div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+        <!-- laptop base -->
+        <div style="position:relative;height:15px;margin:6px -34px 0;background:linear-gradient(180deg,#e6e9ee,#c2c7d1 50%,#9ea4b0);border-radius:0 0 14px 14px;box-shadow:inset 0 2px 3px rgba(255,255,255,0.6),0 2px 5px rgba(0,0,0,0.25);">
+          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:96px;height:8px;background:linear-gradient(180deg,#a7adb8,#c6cbd4);border-radius:0 0 9px 9px;"></div>
+        </div>
+      </div>
+      </div>
+      <!-- phone -->
+      <div style="position:absolute;left:-20px;bottom:-26px;width:146px;border-radius:22px;background:#0C2249;padding:6px;box-shadow:0 26px 50px rgba(0,0,0,0.5);animation:co-float 6s ease-in-out infinite;">
+        <div style="background:#F5F7FB;border-radius:16px;overflow:hidden;">
+          <div style="background:#0C2249;padding:13px 13px 16px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;"><div><div style="font-size:11px;font-weight:700;color:#fff;">Hola, Juan</div><div style="font-size:8px;color:#9FB4D8;">Bienvenido a tu club</div></div><div style="width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#2E7BE8,#1B4C9E);"></div></div>
+          </div>
+          <div style="padding:11px;">
+            <div style="font-size:9px;font-weight:700;color:#0F1B33;margin-bottom:8px;">Accesos rápidos</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:11px;">
+              <div style="height:26px;border-radius:7px;background:#EAF1FC;"></div><div style="height:26px;border-radius:7px;background:#EAF1FC;"></div><div style="height:26px;border-radius:7px;background:#EAF1FC;"></div><div style="height:26px;border-radius:7px;background:#EAF1FC;"></div>
+            </div>
+            <div style="background:#fff;border:1px solid #EAEEF4;border-radius:9px;padding:9px;margin-bottom:9px;"><div style="font-size:8px;color:#8090A8;">Próxima reserva</div><div style="font-size:10px;font-weight:700;color:#0F1B33;margin:2px 0;">Green Fee · Hoyo 1</div><div style="font-size:8px;color:#2E7BE8;font-weight:700;">Sáb 18 May · 10:00 hs</div></div>
+            <div style="font-size:9px;font-weight:700;color:#0F1B33;margin-bottom:6px;">Novedades</div>
+            <div style="height:42px;border-radius:8px;background:linear-gradient(120deg,#1F8A5B,#2E7BE8);"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRUST BAR ============ -->
+<section style="background:#fff;border-bottom:1px solid #EEF1F6;">
+  <div style="max-width:1200px;margin:0 auto;padding:30px 24px;display:flex;align-items:center;justify-content:center;gap:18px 54px;flex-wrap:wrap;">
+    <span style="font-size:13px;font-weight:600;letter-spacing:0.04em;color:#8090A8;text-transform:uppercase;">Clubes que confían en Club One</span>
+    <div style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#B6C0D2;letter-spacing:0.02em;">Golf&nbsp;Hills</div>
+    <div style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#B6C0D2;letter-spacing:0.02em;">Las&nbsp;Lomas&nbsp;G.C.</div>
+    <div style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#B6C0D2;letter-spacing:0.02em;">Pinares&nbsp;Club</div>
+    <div style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#B6C0D2;letter-spacing:0.02em;">Río&nbsp;Verde</div>
+    <div style="font-family:Sora,sans-serif;font-weight:700;font-size:18px;color:#B6C0D2;letter-spacing:0.02em;">Costa&nbsp;Azul</div>
+  </div>
+</section>
+
+<!-- ============ BENEFICIOS ============ -->
+<section style="background:#F6F8FB;padding:96px 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;max-width:680px;margin:0 auto 56px;">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2E7BE8;">Por qué Club One</span>
+      <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-0.02em;color:#0F1B33;margin:14px 0 16px;">Un sistema. Todas las áreas.<br>Mejores resultados.</h2>
+      <p style="font-size:17px;line-height:1.6;color:#5B6B85;margin:0;">Reemplazá planillas, sistemas dispersos y procesos manuales por una plataforma diseñada para la realidad de un club de golf.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;">
+      <div style="background:#fff;border:1px solid #EAEEF4;border-radius:16px;padding:30px;box-shadow:0 1px 2px rgba(16,27,51,0.04);">
+        <div style="width:50px;height:50px;border-radius:13px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2.5"></rect><line x1="9" y1="18" x2="15" y2="18"></line></svg></div>
+        <h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0 0 9px;">100% Web y Mobile</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Accedé desde cualquier dispositivo. Tu equipo gestiona y tus socios reservan desde la app.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #EAEEF4;border-radius:16px;padding:30px;box-shadow:0 1px 2px rgba(16,27,51,0.04);">
+        <div style="width:50px;height:50px;border-radius:13px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8-8 11-4.5-3-8-6-8-11V5z"></path><path d="M9 12l2 2 4-4"></path></svg></div>
+        <h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0 0 9px;">Seguro y confiable</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Tus datos protegidos con respaldos automáticos, permisos por rol y disponibilidad garantizada.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #EAEEF4;border-radius:16px;padding:30px;box-shadow:0 1px 2px rgba(16,27,51,0.04);">
+        <div style="width:50px;height:50px;border-radius:13px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M8 12l2.5 2.5L16 9"></path></svg></div>
+        <h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0 0 9px;">Intuitivo y moderno</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Una experiencia clara que tu equipo adopta en días, no en meses. Sin curva de aprendizaje.</p>
+      </div>
+      <div style="background:#fff;border:1px solid #EAEEF4;border-radius:16px;padding:30px;box-shadow:0 1px 2px rgba(16,27,51,0.04);">
+        <div style="width:50px;height:50px;border-radius:13px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:20px;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l5-5 4 3 6-7"></path><path d="M17 8h4v4"></path></svg></div>
+        <h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0 0 9px;">Escalable y flexible</h3>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Crece con tu club. Sumá sedes, deportes y módulos sin cambiar de sistema.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODULOS ============ -->
+<section style="background:#fff;padding:96px 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px;">
+      <div style="max-width:560px;">
+        <span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2E7BE8;">Módulos</span>
+        <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-0.02em;color:#0F1B33;margin:14px 0 0;">Una herramienta para cada área del club</h2>
+      </div>
+      <a href="Producto.dc.html" style="text-decoration:none;font-size:16px;font-weight:700;color:#2E7BE8;white-space:nowrap;">Ver todos los módulos →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:20px;">
+      <div style="border:1px solid #EAEEF4;border-radius:16px;padding:28px;background:#fff;" style-hover="border-color:#2E7BE8;box-shadow:0 16px 40px rgba(46,123,232,0.10);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;"><div style="width:46px;height:46px;border-radius:12px;background:#0A1B3D;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"></path><path d="M16 7.5a3 3 0 010 5.5M21 20c0-2.6-1.4-4.3-3.5-5"></path></svg></div><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0;">Socios y CRM</h3></div>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Ficha completa de cada socio, categorías, estados de cuenta e historial en un solo lugar.</p>
+      </div>
+      <div style="border:1px solid #EAEEF4;border-radius:16px;padding:28px;background:#fff;" style-hover="border-color:#2E7BE8;box-shadow:0 16px 40px rgba(46,123,232,0.10);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;"><div style="width:46px;height:46px;border-radius:12px;background:#0A1B3D;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path d="M3 9h18M8 2.5v4M16 2.5v4"></path></svg></div><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0;">Reservas y actividades</h3></div>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Tee times, canchas y espacios reservables online, con reglas, cupos y confirmaciones automáticas.</p>
+      </div>
+      <div style="border:1px solid #EAEEF4;border-radius:16px;padding:28px;background:#fff;" style-hover="border-color:#2E7BE8;box-shadow:0 16px 40px rgba(46,123,232,0.10);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;"><div style="width:46px;height:46px;border-radius:12px;background:#0A1B3D;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11M4 9l-1.5-1.5M20 15l1.5 1.5"></path><rect x="3" y="7" width="4" height="10" rx="1.4" transform="rotate(45 5 12)"></rect></svg></div><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0;">Deportes y academias</h3></div>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Clases, clinics, profesores y categorías. Inscripciones y asistencia gestionadas sin fricción.</p>
+      </div>
+      <div style="border:1px solid #EAEEF4;border-radius:16px;padding:28px;background:#fff;" style-hover="border-color:#2E7BE8;box-shadow:0 16px 40px rgba(46,123,232,0.10);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;"><div style="width:46px;height:46px;border-radius:12px;background:#0A1B3D;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2.5h8l4 4v15H6z"></path><path d="M14 2.5v4h4M9 13h6M9 17h6"></path></svg></div><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0;">Finanzas y cobranzas</h3></div>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Facturación, cuotas y pagos online integrados. Conciliación y reportes en tiempo real.</p>
+      </div>
+      <div style="border:1px solid #EAEEF4;border-radius:16px;padding:28px;background:#fff;" style-hover="border-color:#2E7BE8;box-shadow:0 16px 40px rgba(46,123,232,0.10);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;"><div style="width:46px;height:46px;border-radius:12px;background:#0A1B3D;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8 8 0 01-11.5 7.2L3 20.5l1.8-6.5A8 8 0 1121 11.5z"></path></svg></div><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0;">Comunicación</h3></div>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Notificaciones, novedades y campañas segmentadas. Mantené a tus socios siempre informados.</p>
+      </div>
+      <div style="border:1px solid #EAEEF4;border-radius:16px;padding:28px;background:#fff;" style-hover="border-color:#2E7BE8;box-shadow:0 16px 40px rgba(46,123,232,0.10);">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px;"><div style="width:46px;height:46px;border-radius:12px;background:#0A1B3D;display:flex;align-items:center;justify-content:center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"></path></svg></div><h3 style="font-family:Sora,sans-serif;font-weight:700;font-size:19px;color:#0F1B33;margin:0;">Operaciones y reportes</h3></div>
+        <p style="font-size:15px;line-height:1.6;color:#5B6B85;margin:0;">Accesos, control de ingresos, indicadores y tableros para decidir con datos, no con intuición.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATAFORMA / MOBILE ============ -->
+<section style="background:#0A1B3D;padding:96px 0;overflow:hidden;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#5B9BF0;">La experiencia del socio</span>
+      <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.12;letter-spacing:-0.02em;color:#fff;margin:14px 0 18px;">La app que tus socios quieren usar</h2>
+      <p style="font-size:17px;line-height:1.65;color:#B7C3DA;margin:0 0 28px;max-width:460px;">Reservas de green fee, estado de cuenta, novedades y actividades del club, en el bolsillo de cada socio.</p>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;gap:13px;align-items:flex-start;"><div style="width:24px;height:24px;border-radius:50%;background:#2E7BE8;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"></path></svg></div><span style="font-size:16px;color:#D6DFEE;">Reserva de tee times en tiempo real, sin llamadas.</span></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;"><div style="width:24px;height:24px;border-radius:50%;background:#2E7BE8;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"></path></svg></div><span style="font-size:16px;color:#D6DFEE;">Estado de cuenta y pagos desde el celular.</span></div>
+        <div style="display:flex;gap:13px;align-items:flex-start;"><div style="width:24px;height:24px;border-radius:50%;background:#2E7BE8;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4L19 7"></path></svg></div><span style="font-size:16px;color:#D6DFEE;">Inscripción a torneos, clases y eventos en un toque.</span></div>
+      </div>
+      <a href="Producto.dc.html" style="display:inline-block;margin-top:30px;text-decoration:none;font-size:16px;font-weight:700;color:#fff;background:#2E7BE8;padding:14px 26px;border-radius:11px;box-shadow:0 12px 28px rgba(46,123,232,0.35);" style-hover="background:#1E63C8;">Conocer la app</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:18px;">
+      <div style="width:215px;border-radius:30px;background:#0C2249;padding:9px;box-shadow:0 40px 80px rgba(0,0,0,0.5);">
+        <div style="background:#F5F7FB;border-radius:23px;overflow:hidden;">
+          <div style="background:linear-gradient(160deg,#0C2249,#143A78);padding:20px 16px 22px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;"><div><div style="font-size:16px;font-weight:800;color:#fff;font-family:Sora,sans-serif;">Hola, Juan</div><div style="font-size:11px;color:#9FB4D8;">Bienvenido a tu club</div></div><div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#2E7BE8,#1B4C9E);"></div></div>
+          </div>
+          <div style="padding:16px;">
+            <div style="font-size:12px;font-weight:700;color:#0F1B33;margin-bottom:11px;">Accesos rápidos</div>
+            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:16px;">
+              <div style="text-align:center;"><div style="height:42px;border-radius:11px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:5px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2"><rect x="3" y="4.5" width="18" height="16" rx="2.5"></rect><path d="M3 9h18"></path></svg></div><div style="font-size:8px;color:#5B6B85;">Reservas</div></div>
+              <div style="text-align:center;"><div style="height:42px;border-radius:11px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:5px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path></svg></div><div style="font-size:8px;color:#5B6B85;">Actividades</div></div>
+              <div style="text-align:center;"><div style="height:42px;border-radius:11px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:5px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 10h18"></path></svg></div><div style="font-size:8px;color:#5B6B85;">Cuenta</div></div>
+              <div style="text-align:center;"><div style="height:42px;border-radius:11px;background:#EAF1FC;display:flex;align-items:center;justify-content:center;margin-bottom:5px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2E7BE8" stroke-width="2"><path d="M4 4h16v12H7l-3 3z"></path></svg></div><div style="font-size:8px;color:#5B6B85;">Noticias</div></div>
+            </div>
+            <div style="background:#fff;border:1px solid #EAEEF4;border-radius:13px;padding:13px;margin-bottom:13px;"><div style="font-size:10px;color:#8090A8;margin-bottom:3px;">Próxima reserva</div><div style="font-size:14px;font-weight:800;color:#0F1B33;font-family:Sora,sans-serif;margin-bottom:3px;">Green Fee · Hoyo 1</div><div style="display:flex;align-items:center;gap:6px;"><span style="font-size:11px;font-weight:700;color:#2E7BE8;">Sábado 18 de Mayo</span><span style="font-size:11px;color:#8090A8;">10:00 – 11:30 hs</span></div></div>
+            <div style="font-size:12px;font-weight:700;color:#0F1B33;margin-bottom:9px;">Novedades</div>
+            <div style="border-radius:13px;overflow:hidden;border:1px solid #EAEEF4;"><div style="height:74px;background:linear-gradient(120deg,#1F8A5B,#2E7BE8);"></div><div style="padding:10px 12px;"><div style="font-size:12px;font-weight:800;color:#0F1B33;font-family:Sora,sans-serif;">Torneo de Verano</div><div style="font-size:10px;color:#8090A8;">Inscripciones abiertas · 100 cupos</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUNDADORES ============ -->
+<section style="background:#fff;padding:96px 0;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 24px;">
+    <div style="text-align:center;max-width:640px;margin:0 auto 52px;">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2E7BE8;">Fundadores</span>
+      <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.4vw,42px);line-height:1.1;letter-spacing:-0.02em;color:#0F1B33;margin:14px 0 14px;">Quiénes están detrás de Club One</h2>
+      <p style="font-size:17px;line-height:1.6;color:#5B6B85;margin:0;">Dos fundadores que unieron tecnología y un profundo conocimiento del mundo de los clubes de golf.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px;max-width:940px;margin:0 auto 36px;">
+      <div style="background:#F6F8FB;border:1px solid #EAEEF4;border-radius:18px;padding:30px;">
+        <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px;">
+          <img src="assets/gabriel.jpeg" alt="Gabriel Cano" style="width:90px;height:90px;border-radius:16px;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-family:Sora,sans-serif;font-weight:800;font-size:21px;color:#0F1B33;">Gabriel Cano</div>
+            <div style="font-size:14px;font-weight:700;color:#2E7BE8;margin-top:4px;">Co-fundador</div>
+          </div>
+        </div>
+        <p style="font-size:15px;line-height:1.7;color:#5B6B85;margin:0;">Su recorrido está en la gestión deportiva y el golf management: organización de torneos, operación de clubes y la experiencia del jugador.</p>
+      </div>
+      <div style="background:#F6F8FB;border:1px solid #EAEEF4;border-radius:18px;padding:30px;">
+        <div style="display:flex;align-items:center;gap:18px;margin-bottom:20px;">
+          <img src="assets/sebastian.jpeg" alt="Sebastián Pérez" style="width:90px;height:90px;border-radius:16px;object-fit:cover;flex-shrink:0;">
+          <div>
+            <div style="font-family:Sora,sans-serif;font-weight:800;font-size:21px;color:#0F1B33;">Sebastián Pérez</div>
+            <div style="font-size:14px;font-weight:700;color:#2E7BE8;margin-top:4px;">Co-fundador</div>
+          </div>
+        </div>
+        <p style="font-size:15px;line-height:1.7;color:#5B6B85;margin:0;">Su background está en tecnología, social media y ad technology. Lidera el desarrollo del producto y la estrategia digital de Club One.</p>
+      </div>
+    </div>
+    <div style="text-align:center;">
+      <a href="Nosotros.dc.html" style="text-decoration:none;font-size:16px;font-weight:700;color:#2E7BE8;">Conocé más sobre nosotros →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section style="background:#F6F8FB;padding:96px 0;">
+  <div style="max-width:920px;margin:0 auto;padding:0 24px;text-align:center;">
+    <svg width="44" height="44" viewBox="0 0 24 24" fill="#2E7BE8" opacity="0.2" style="margin-bottom:18px;"><path d="M7 7h4v4c0 3-2 5-5 5V13H7zM15 7h4v4c0 3-2 5-5 5V13h2z"></path></svg>
+    <p style="font-family:Sora,sans-serif;font-weight:600;font-size:clamp(22px,2.6vw,30px);line-height:1.4;letter-spacing:-0.01em;color:#0F1B33;margin:0 0 28px;">"Pasamos de cinco sistemas distintos a uno solo. Hoy el club funciona con la mitad de trabajo administrativo y nuestros socios reservan su green fee desde la app."</p>
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;">
+      <div style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#2E7BE8,#1B4C9E);"></div>
+      <div style="text-align:left;"><div style="font-weight:700;font-size:16px;color:#0F1B33;">Mariana Quiroga</div><div style="font-size:14px;color:#5B6B85;">Gerente · Las Lomas Golf Club</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section style="background:linear-gradient(120deg,#2E7BE8,#1B4C9E);padding:80px 0;">
+  <div style="max-width:1000px;margin:0 auto;padding:0 24px;text-align:center;">
+    <h2 style="font-family:Sora,sans-serif;font-weight:800;font-size:clamp(28px,3.6vw,44px);line-height:1.1;letter-spacing:-0.02em;color:#fff;margin:0 0 16px;">Llevá la gestión de tu club al siguiente nivel</h2>
+    <p style="font-size:18px;line-height:1.6;color:#DCE8FB;margin:0 0 32px;">Solicitá una demo personalizada y descubrí cómo Club One se adapta a tu club.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a href="Contacto.dc.html" style="text-decoration:none;font-size:16px;font-weight:700;color:#0A1B3D;background:#fff;padding:15px 30px;border-radius:11px;box-shadow:0 12px 28px rgba(0,0,0,0.18);">Solicitar demo</a>
+      <a href="Producto.dc.html" style="text-decoration:none;font-size:16px;font-weight:700;color:#fff;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.4);padding:15px 30px;border-radius:11px;">Ver el producto</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,420px"></dc-import>
+</div>
+</x-dc>
+</body>
+</html>
