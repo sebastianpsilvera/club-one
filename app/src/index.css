@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------
+   Club One design tokens — see /CLAUDE.md. Do not add colors or type
+   sizes here without updating that file first.
+--------------------------------------------------------------------- */
+@theme {
+  /* Brand palette */
+  --color-navy: #0a1a33;
+  --color-navy-deep: #060f1e;
+  --color-green: #35c46a;
+  --color-green-dark: #1e9e52;
+  --color-green-hover: #4ad87e;
+  --color-bg-light: #f6f9fc;
+  /* Named ink-muted-* (not muted-*) to avoid colliding with the shadcn
+     --color-muted / --color-muted-foreground semantic pair below. */
+  --color-ink-muted: #5c6f8a;
+  --color-ink-muted-light: #8fa6c4;
+  --color-label: #5c7295;
+  --color-border: #e3eaf2;
+  --color-border-muted: #d6dfe9;
+
+  /* Fluid type scale (clamp endpoints match the shipped static site) */
+  --font-size-display: clamp(2.5rem, 4.6vw, 4rem);
+  --font-size-h1: clamp(2.375rem, 4.4vw, 3.625rem);
+  --font-size-h2: clamp(1.875rem, 3.2vw, 2.75rem);
+  --font-size-h2-lg: clamp(2rem, 3.6vw, 3.125rem);
+  --font-size-h2-sm: clamp(1.75rem, 2.9vw, 2.5rem);
+  --font-size-h3: clamp(1.625rem, 2.9vw, 2.375rem);
+  --font-size-cta: clamp(2rem, 3.6vw, 3rem);
+  --font-size-body-lg: 1.0625rem;
+  --font-size-body: 0.9375rem;
+  --font-size-eyebrow: 0.71875rem;
+
+  --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'DM Mono', ui-monospace, monospace;
+
+  --container-max: 1180px;
+}
+
+/* ---------------------------------------------------------------------
+   shadcn/ui variables, mapped onto the Club One palette above.
+   No shadcn default slate/zinc colors are used.
+--------------------------------------------------------------------- */
+:root {
+  --radius: 0.625rem;
+
+  --background: #ffffff;
+  --foreground: var(--color-navy);
+
+  --card: #ffffff;
+  --card-foreground: var(--color-navy);
+
+  --popover: #ffffff;
+  --popover-foreground: var(--color-navy);
+
+  --primary: var(--color-navy);
+  --primary-foreground: #ffffff;
+
+  --secondary: var(--color-bg-light);
+  --secondary-foreground: var(--color-navy);
+
+  --muted: var(--color-bg-light);
+  --muted-foreground: var(--color-muted);
+
+  --accent: var(--color-green);
+  --accent-foreground: var(--color-navy);
+
+  --destructive: #d64545;
+  --destructive-foreground: #ffffff;
+
+  --border: var(--color-border);
+  --input: var(--color-border);
+  --ring: var(--color-green);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes flip-card {
+  0% {
+    transform: rotateY(0deg);
+  }
+  2.3% {
+    transform: rotateY(180deg);
+  }
+  8.5% {
+    transform: rotateY(180deg);
+  }
+  10.8% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow-x: clip;
+  }
+  img,
+  svg,
+  video {
+    max-width: 100%;
+  }
+  ::selection {
+    background: rgba(53, 196, 106, 0.28);
+  }
+}
