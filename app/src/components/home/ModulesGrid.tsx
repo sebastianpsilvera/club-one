@@ -86,14 +86,14 @@ export function ModulesGrid() {
           </div>
           <NavLink
             to="/producto"
-            className="border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] whitespace-nowrap text-green-dark no-underline"
+            className="rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] whitespace-nowrap text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Ver el producto ↗
           </NavLink>
         </Reveal>
         <div className="grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
           {MODULES.map((m, i) => (
-            <Reveal key={m.title} fadeOnly>
+            <Reveal key={m.title} fadeOnly delay={(i % 3) * 0.06}>
               <FlipCard {...m} delay={i * 4} />
             </Reveal>
           ))}

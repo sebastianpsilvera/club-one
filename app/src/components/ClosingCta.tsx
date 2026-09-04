@@ -25,10 +25,10 @@ export function ClosingCta({ heading, body, links }: ClosingCtaProps) {
               key={l.to}
               to={l.to}
               className={cn(
-                'rounded-[11px] px-8 py-[15px] text-[15px] no-underline',
+                'rounded-[11px] px-8 py-[15px] text-[15px] no-underline transition-[background-color,border-color,transform] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60',
                 l.variant === 'solid'
-                  ? 'bg-green font-bold text-navy'
-                  : 'border border-white/24 font-semibold text-white',
+                  ? 'bg-green font-bold text-navy hover:bg-green-hover'
+                  : 'border border-white/24 font-semibold text-white hover:border-white hover:bg-white/8',
               )}
             >
               {l.label}

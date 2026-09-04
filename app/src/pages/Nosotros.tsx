@@ -132,7 +132,7 @@ export function Nosotros() {
                   {s.link && (
                     <NavLink
                       to="#turismo"
-                      className="story-link mt-[22px] inline-flex items-center gap-[9px] border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline"
+                      className="story-link mt-[22px] inline-flex items-center gap-[9px] rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
                     >
                       Ver la operación de turismo <ArrowRight className="size-[13px]" />
                     </NavLink>
@@ -191,8 +191,8 @@ export function Nosotros() {
 
       <section className="border-b border-border bg-secondary">
         <div className="mx-auto grid max-w-(--container-max) grid-cols-4 gap-8 px-8 py-13 max-[720px]:grid-cols-2 max-[720px]:px-5">
-          {STATS.map((s) => (
-            <Reveal key={s.label} className="border-l border-border-ink-muted pl-6">
+          {STATS.map((s, i) => (
+            <Reveal key={s.label} className="border-l border-border-ink-muted pl-6" delay={(i % 4) * 0.06}>
               <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
               <div className="mt-2 font-mono text-[11px] tracking-[0.12em] text-label uppercase">{s.label}</div>
             </Reveal>
@@ -222,8 +222,8 @@ export function Nosotros() {
               </p>
             </Reveal>
             <div className="flex flex-col gap-[18px]">
-              {WHY.map((w) => (
-                <Reveal key={w.title} className="border-t border-border pt-4">
+              {WHY.map((w, i) => (
+                <Reveal key={w.title} className="border-t border-border pt-4" delay={i * 0.05}>
                   <span className="text-[15.5px] font-semibold text-navy">{w.title}</span>{' '}
                   <span className="text-[15px] text-ink-muted">— {w.desc}</span>
                 </Reveal>
@@ -245,7 +245,7 @@ export function Nosotros() {
           </Reveal>
           <div className="grid grid-cols-4 gap-[18px] max-[1080px]:grid-cols-2 max-[600px]:grid-cols-1">
             {TEAM.map((m, i) => (
-              <Reveal key={i} fadeOnly>
+              <Reveal key={i} fadeOnly delay={(i % 4) * 0.06}>
                 <div
                   className={`overflow-hidden rounded-[14px] border bg-white ${m.placeholder === 'empty' ? 'border-dashed border-[#D2DCE8]' : 'border-border'}`}
                 >
@@ -275,8 +275,8 @@ export function Nosotros() {
             </h2>
           </Reveal>
           <div className="grid grid-cols-3 gap-x-8 gap-y-10 max-[720px]:grid-cols-1">
-            {HOW.map((h) => (
-              <Reveal key={h.n} className="border-t border-border-ink-muted pt-6">
+            {HOW.map((h, i) => (
+              <Reveal key={h.n} className="border-t border-border-ink-muted pt-6" delay={(i % 3) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{h.n}</div>
                 <h3 className="mb-[9px] text-lg font-semibold text-navy">{h.title}</h3>
                 <p className="text-[15px] leading-[1.6] text-ink-muted">{h.desc}</p>

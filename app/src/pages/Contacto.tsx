@@ -109,7 +109,7 @@ export function Contacto() {
                   </p>
                   <NavLink
                     to="/"
-                    className="border-b border-[#B9E4CB] pb-[3px] font-mono text-[13px] tracking-[0.08em] text-green-dark no-underline"
+                    className="rounded-sm border-b border-[#B9E4CB] pb-[3px] font-mono text-[13px] tracking-[0.08em] text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
                   >
                     Volver al inicio ↗
                   </NavLink>

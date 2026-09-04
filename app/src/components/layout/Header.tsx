@@ -33,7 +33,7 @@ export function Header() {
               end={l.to === '/'}
               className={({ isActive }) =>
                 cn(
-                  'rounded-lg px-[13px] py-2 text-[14.5px] font-medium text-ink-muted no-underline transition-colors',
+                  'rounded-lg px-[13px] py-2 text-[14.5px] font-medium text-ink-muted no-underline transition-colors duration-150 hover:bg-secondary/60 hover:text-navy focus-visible:bg-secondary/60 focus-visible:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
                   isActive && 'bg-secondary font-bold text-navy',
                 )
               }
@@ -44,7 +44,10 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-5 max-[1080px]:hidden">
-          <NavLink to="/contacto" className="text-[14.5px] font-semibold text-navy no-underline">
+          <NavLink
+            to="/contacto"
+            className="rounded-md text-[14.5px] font-semibold text-navy no-underline transition-colors duration-150 hover:text-green-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+          >
             Acceder
           </NavLink>
           <Button asChild className="rounded-[10px] bg-navy px-[22px] py-[11px] text-[14.5px] hover:bg-[#16294A]">
@@ -57,7 +60,7 @@ export function Header() {
           aria-label="Menú"
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="hidden size-11 items-center justify-center rounded-[10px] border border-border bg-white max-[1080px]:flex max-[1080px]:border-white/24 max-[1080px]:bg-white/8"
+          className="hidden size-11 items-center justify-center rounded-[10px] border border-border bg-white transition-transform duration-150 active:scale-[0.94] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50 max-[1080px]:flex max-[1080px]:border-white/24 max-[1080px]:bg-white/8"
         >
           <Menu className="size-5 text-navy max-[1080px]:text-white" />
         </button>
@@ -80,7 +83,7 @@ export function Header() {
                   end={l.to === '/'}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    'py-3.5 text-base font-semibold text-[#E7EFF9] no-underline',
+                    'rounded-md py-3.5 text-base font-semibold text-[#E7EFF9] no-underline transition-colors duration-150 active:text-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
                     i < NAV_LINKS.length - 1 && 'border-b border-white/10',
                   )}
                 >
@@ -90,7 +93,7 @@ export function Header() {
               <NavLink
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="mt-3 rounded-[11px] bg-green py-3.5 text-center text-[15.5px] font-semibold text-navy no-underline"
+                className="mt-3 rounded-[11px] bg-green py-3.5 text-center text-[15.5px] font-semibold text-navy no-underline transition-transform duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 Solicitar demo
               </NavLink>

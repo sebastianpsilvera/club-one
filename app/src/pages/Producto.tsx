@@ -126,7 +126,10 @@ export function Producto() {
             </p>
           </Reveal>
           <Reveal className="flex justify-center">
-            <NavLink to="/contacto" className="rounded-[11px] bg-green px-8 py-[15px] text-[15px] font-bold text-navy no-underline">
+            <NavLink
+              to="/contacto"
+              className="rounded-[11px] bg-green px-8 py-[15px] text-[15px] font-bold text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            >
               Solicitar demo
             </NavLink>
           </Reveal>
@@ -155,8 +158,8 @@ export function Producto() {
             </DeviceFrame>
           </Reveal>
           <div className="grid grid-cols-4 gap-8 max-[720px]:grid-cols-1">
-            {TEE_FEATURES.map((f) => (
-              <Reveal key={f.title}>
+            {TEE_FEATURES.map((f, i) => (
+              <Reveal key={f.title} delay={(i % 4) * 0.06}>
                 <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/12">
                   <f.icon className="size-[18px] stroke-green-dark stroke-[1.8]" />
                 </div>
@@ -203,8 +206,8 @@ export function Producto() {
               </p>
             </Reveal>
             <div className="flex flex-col gap-[18px]">
-              {TORNEOS_FEATURES.map((f) => (
-                <Reveal key={f.title} className="border-t border-border pt-4">
+              {TORNEOS_FEATURES.map((f, i) => (
+                <Reveal key={f.title} className="border-t border-border pt-4" delay={i * 0.05}>
                   <span className="text-[15.5px] font-semibold text-navy">{f.title}</span>{' '}
                   <span className="text-[15px] text-ink-muted">— {f.desc}</span>
                 </Reveal>
@@ -230,8 +233,8 @@ export function Producto() {
               </p>
             </Reveal>
             <div className="flex flex-col gap-[18px]">
-              {FINANZAS_FEATURES.map((f) => (
-                <Reveal key={f.title} className="border-t border-ink-muted-light/22 pt-4">
+              {FINANZAS_FEATURES.map((f, i) => (
+                <Reveal key={f.title} className="border-t border-ink-muted-light/22 pt-4" delay={i * 0.05}>
                   <span className="text-[15.5px] font-semibold text-white">{f.title}</span>{' '}
                   <span className="text-[15px] text-ink-muted-light">— {f.desc}</span>
                 </Reveal>
@@ -271,8 +274,8 @@ export function Producto() {
             </p>
           </Reveal>
           <div className="grid grid-cols-4 gap-x-8 gap-y-10 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
-            {OPERATIVA_COLS.map((col) => (
-              <Reveal key={col.title} className="border-t border-border-ink-muted pt-6">
+            {OPERATIVA_COLS.map((col, i) => (
+              <Reveal key={col.title} className="border-t border-border-ink-muted pt-6" delay={(i % 4) * 0.06}>
                 <h3 className="mb-4 text-[17px] font-semibold text-navy">{col.title}</h3>
                 <div className="flex flex-col gap-3">
                   {col.items.map(([b, rest]) => (
@@ -302,8 +305,8 @@ export function Producto() {
             </p>
           </Reveal>
           <div className="mb-18 grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
-            {TECH_CARDS.map((c) => (
-              <Reveal key={c.title} fadeOnly>
+            {TECH_CARDS.map((c, i) => (
+              <Reveal key={c.title} fadeOnly delay={(i % 3) * 0.06}>
                 <div className="rounded-[14px] border border-border bg-white p-6">
                   <h3 className="mb-2 text-base font-semibold text-navy">{c.title}</h3>
                   <p className="text-[14.5px] leading-[1.6] text-ink-muted">{c.desc}</p>
@@ -315,8 +318,8 @@ export function Producto() {
             Puesta en marcha
           </Reveal>
           <div className="grid grid-cols-4 gap-8 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
-            {STEPS.map((s) => (
-              <Reveal key={s.n} className="border-t border-border-ink-muted pt-[22px]">
+            {STEPS.map((s, i) => (
+              <Reveal key={s.n} className="border-t border-border-ink-muted pt-[22px]" delay={(i % 4) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{s.n}</div>
                 <h3 className="mb-2 text-[17px] font-semibold text-navy">{s.title}</h3>
                 <p className="text-[14.5px] leading-[1.6] text-ink-muted">{s.desc}</p>

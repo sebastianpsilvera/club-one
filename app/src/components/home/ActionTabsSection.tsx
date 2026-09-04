@@ -77,10 +77,10 @@ export function ActionTabsSection() {
               type="button"
               onClick={() => pickTab(t.key)}
               className={cn(
-                'rounded-full border px-5 py-2.5 text-[13.5px] font-semibold transition-all duration-300',
+                'rounded-full border px-5 py-2.5 text-[13.5px] font-semibold transition-[color,background-color,border-color,transform] duration-300 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
                 tab === t.key
                   ? 'border-green bg-green text-navy'
-                  : 'border-ink-muted-light/25 bg-white/6 text-ink-muted-light',
+                  : 'border-ink-muted-light/25 bg-white/6 text-ink-muted-light hover:border-ink-muted-light/45 hover:text-white',
               )}
             >
               {t.label}
@@ -133,7 +133,7 @@ export function ActionTabsSection() {
         <Reveal className="mt-[34px] flex justify-center">
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-semibold whitespace-nowrap text-navy no-underline"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
           >
             Ver el producto <span>→</span>
           </NavLink>

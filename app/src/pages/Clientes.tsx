@@ -51,8 +51,8 @@ export function Clientes() {
       <section className="bg-secondary px-8 py-24 max-[720px]:px-5">
         <div className="mx-auto max-w-(--container-max)">
           <div className="grid grid-cols-3 gap-[18px] max-[720px]:grid-cols-1">
-            {CATEGORIES.map((c) => (
-              <Reveal key={c.label} className="relative aspect-4/3 overflow-hidden rounded-[14px] bg-secondary">
+            {CATEGORIES.map((c, i) => (
+              <Reveal key={c.label} className="relative aspect-4/3 overflow-hidden rounded-[14px] bg-secondary" delay={(i % 3) * 0.06}>
                 <img src={c.image} alt={c.alt} loading="lazy" className="block size-full object-cover" />
                 <div className="absolute inset-x-0 bottom-0 bg-[linear-gradient(180deg,rgba(10,26,51,0)_0%,rgba(10,26,51,0.72)_100%)] px-5 py-[18px]">
                   <span className="font-mono text-[11px] tracking-[0.14em] text-white uppercase">{c.label}</span>
@@ -77,8 +77,8 @@ export function Clientes() {
             </h2>
           </Reveal>
           <div className="grid grid-cols-3 gap-[18px] max-[720px]:grid-cols-1">
-            {TESTIMONIALS.map((t) => (
-              <Reveal key={t.name} fadeOnly>
+            {TESTIMONIALS.map((t, i) => (
+              <Reveal key={t.name} fadeOnly delay={(i % 3) * 0.06}>
                 <div className="flex h-full flex-col rounded-[14px] border border-border bg-white p-[30px]">
                   <div className="mb-5 text-[44px] leading-[0.6] font-bold text-green">&ldquo;</div>
                   <p className="mb-6 flex-1 text-[18.5px] leading-[1.5] text-navy text-pretty">{t.quote}</p>
@@ -104,8 +104,8 @@ export function Clientes() {
             </h2>
           </Reveal>
           <div className="grid grid-cols-3 gap-x-8 gap-y-10 max-[720px]:grid-cols-1">
-            {SEGMENTS.map((s) => (
-              <Reveal key={s.n} className="border-t border-border-ink-muted pt-6">
+            {SEGMENTS.map((s, i) => (
+              <Reveal key={s.n} className="border-t border-border-ink-muted pt-6" delay={(i % 3) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{s.n}</div>
                 <h3 className="mb-[9px] text-lg font-semibold text-navy">{s.title}</h3>
                 <p className="text-[15px] leading-[1.6] text-ink-muted">{s.desc}</p>

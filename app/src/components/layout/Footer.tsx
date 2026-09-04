@@ -18,7 +18,10 @@ const OFFICES = [
 
 function FootLink({ to, children }: { to: string; children: React.ReactNode }) {
   return (
-    <NavLink to={to} className="text-[14.5px] text-[#C9D6E6] no-underline transition-colors hover:text-green">
+    <NavLink
+      to={to}
+      className="rounded-sm text-[14.5px] text-[#C9D6E6] no-underline transition-colors duration-150 hover:text-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+    >
       {children}
     </NavLink>
   )

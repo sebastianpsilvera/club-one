@@ -47,7 +47,7 @@ export function TeamSection() {
         </Reveal>
         <div className="mb-10 grid grid-cols-4 gap-[18px] max-[1080px]:grid-cols-2 max-[600px]:grid-cols-1">
           {TEAM.map((m, i) => (
-            <Reveal key={i} fadeOnly>
+            <Reveal key={i} fadeOnly delay={(i % 4) * 0.06}>
               <TeamCard {...m} />
             </Reveal>
           ))}
@@ -55,7 +55,7 @@ export function TeamSection() {
         <Reveal>
           <NavLink
             to="/nosotros"
-            className="border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline"
+            className="rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Conocé más sobre nosotros ↗
           </NavLink>

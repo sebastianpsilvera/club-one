@@ -51,8 +51,8 @@ export function AppSection() {
             </p>
           </Reveal>
           <div className="mb-[34px] flex flex-col gap-4">
-            {FEATURES.map((f) => (
-              <Reveal key={f.title} className="flex items-start gap-3.5">
+            {FEATURES.map((f, i) => (
+              <Reveal key={f.title} className="flex items-start gap-3.5" delay={i * 0.05}>
                 <Check className="mt-0.5 size-5 shrink-0 stroke-green stroke-[2.2]" />
                 <div>
                   <span className="text-base font-semibold text-[#F2F7FC]">{f.title}</span>
@@ -67,7 +67,7 @@ export function AppSection() {
           <Reveal>
             <NavLink
               to="/producto"
-              className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3.5 text-[15px] font-semibold whitespace-nowrap text-navy no-underline"
+              className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3.5 text-[15px] font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             >
               Ver el producto <span className="text-green">→</span>
             </NavLink>

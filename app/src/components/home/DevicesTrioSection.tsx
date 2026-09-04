@@ -31,7 +31,7 @@ export function DevicesTrioSection() {
           </p>
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-semibold whitespace-nowrap text-white no-underline"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-semibold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Ver el producto <span className="text-green">→</span>
           </NavLink>
