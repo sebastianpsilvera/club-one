@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { NavLink } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
@@ -6,7 +5,6 @@ import { DeviceFrame } from '@/components/DeviceFrame'
 import { LaptopScreen } from '@/components/BrowserChrome'
 import { CyclingImage } from '@/components/CyclingImage'
 import { useParallax } from '@/hooks/useParallax'
-import { useHeroVideo } from '@/hooks/useHeroVideo'
 import { Reveal } from '@/components/Reveal'
 
 const HERO_SHOTS = [
@@ -16,27 +14,24 @@ const HERO_SHOTS = [
 ]
 
 export function Hero() {
-  const videoRef = useRef<HTMLIFrameElement>(null)
   const orbA = useParallax(76)
   const orbB = useParallax(56)
-  useHeroVideo(videoRef)
 
   return (
     <section className="relative overflow-hidden bg-navy">
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <img
-          src="/assets/golf-course.webp"
-          alt=""
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/assets/golf-course.webp"
           className="absolute inset-0 size-full object-cover object-[center_62%]"
-        />
+        >
+          <source src="/assets/hero-video.webm" type="video/webm" />
+          <source src="/assets/hero-video.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-linear-to-r from-[rgba(6,15,30,0.72)] via-[rgba(6,15,30,0.52)] to-[rgba(6,15,30,0.42)]" />
-        <iframe
-          ref={videoRef}
-          src="https://www.youtube-nocookie.com/embed/Cb1QX5iFKWo?autoplay=1&mute=1&loop=1&playlist=Cb1QX5iFKWo&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&disablekb=1&iv_load_policy=3&fs=0&enablejsapi=1&vq=hd1080"
-          title="Club One"
-          allow="autoplay; encrypted-media; picture-in-picture"
-          className="absolute top-1/2 left-1/2 aspect-video min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 border-0 max-[1080px]:top-1/2 max-[1080px]:left-1/2 max-[1080px]:-translate-x-1/2 max-[1080px]:-translate-y-1/2"
-        />
       </div>
       <div className="absolute inset-0 z-1 bg-[linear-gradient(90deg,rgba(10,26,51,0.58)_0%,rgba(10,26,51,0.24)_42%,rgba(10,26,51,0.04)_66%,rgba(10,26,51,0)_100%)] max-[860px]:bg-[linear-gradient(180deg,rgba(10,26,51,0.66)_0%,rgba(10,26,51,0.40)_42%,rgba(10,26,51,0.78)_100%)]" />
       <div className="absolute inset-0 z-1 bg-[rgba(10,26,51,0.15)] max-[860px]:bg-[rgba(10,26,51,0.04)]" />
