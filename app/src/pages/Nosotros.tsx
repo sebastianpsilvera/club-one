@@ -81,7 +81,7 @@ function Counter({ value, prefix = '', suffix = '' }: { value: number; prefix?: 
   }, [inView, value, shouldReduceMotion])
 
   return (
-    <div ref={ref} className="text-[clamp(30px,3vw,40px)] font-semibold tracking-[-0.03em] text-navy">
+    <div ref={ref} className="text-[clamp(30px,3vw,40px)] font-bold tracking-[-0.03em] text-navy">
       {prefix}
       {display.toLocaleString('es-AR')}
       {suffix}
@@ -110,7 +110,7 @@ export function Nosotros() {
             <div className="mb-[22px] font-mono text-eyebrow font-medium tracking-[0.22em] text-label uppercase">
               Nuestra historia
             </div>
-            <h2 className="text-h2-lg leading-[1.05] font-semibold tracking-[-0.035em] text-navy text-balance">
+            <h2 className="text-h2-lg leading-[1.05] font-bold tracking-[-0.035em] text-navy text-balance">
               Somos una consolidadora de tickets mayorista.
             </h2>
           </Reveal>
@@ -125,7 +125,7 @@ export function Nosotros() {
                 </Reveal>
                 <Reveal className={s.reverse ? 'order-1' : ''}>
                   <div className="mb-[18px] font-mono text-eyebrow tracking-[0.2em] text-green-dark uppercase">{s.n}</div>
-                  <h3 className="mb-4 text-h3 leading-[1.08] font-semibold tracking-[-0.03em] text-navy text-balance">
+                  <h3 className="mb-4 text-h3 leading-[1.08] font-bold tracking-[-0.03em] text-navy text-balance">
                     {s.title}
                   </h3>
                   <p className="max-w-[460px] text-[17px] leading-[1.65] text-ink-muted text-pretty">{s.body}</p>
@@ -151,7 +151,7 @@ export function Nosotros() {
               <div className="mb-[22px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
                 Turismo · Agente IATA
               </div>
-              <h2 className="mb-[22px] text-[clamp(30px,3.4vw,46px)] leading-[1.05] font-semibold tracking-[-0.035em] text-white text-balance">
+              <h2 className="mb-[22px] text-[clamp(30px,3.4vw,46px)] leading-[1.05] font-bold tracking-[-0.035em] text-white text-balance">
                 Consolidadora de tickets y turismo.
               </h2>
               <p className="mb-5 max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
@@ -172,7 +172,7 @@ export function Nosotros() {
                 ].map(([label, value]) => (
                   <div key={label} className="bg-navy p-[22px]">
                     <div className="mb-[9px] font-mono text-[10.5px] tracking-[0.16em] text-label uppercase">{label}</div>
-                    <div className="text-base font-semibold text-white">{value}</div>
+                    <div className="text-base font-medium text-white">{value}</div>
                   </div>
                 ))}
               </div>
@@ -206,7 +206,7 @@ export function Nosotros() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Nuestra historia
             </div>
-            <h2 className="text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Nacimos adentro del club, <span className="text-green-dark">no en una oficina.</span>
             </h2>
           </Reveal>
@@ -224,7 +224,7 @@ export function Nosotros() {
             <div className="flex flex-col gap-[18px]">
               {WHY.map((w, i) => (
                 <Reveal key={w.title} className="border-t border-border pt-4" delay={i * 0.05}>
-                  <span className="text-[15.5px] font-semibold text-navy">{w.title}</span>{' '}
+                  <span className="text-[15.5px] font-medium text-navy">{w.title}</span>{' '}
                   <span className="text-[15px] text-ink-muted">— {w.desc}</span>
                 </Reveal>
               ))}
@@ -239,7 +239,7 @@ export function Nosotros() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Equipo
             </div>
-            <h2 className="text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               El equipo detrás de Club One.
             </h2>
           </Reveal>
@@ -270,7 +270,7 @@ export function Nosotros() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Cómo trabajamos
             </div>
-            <h2 className="text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Un socio tecnológico, no un proveedor más.
             </h2>
           </Reveal>
@@ -278,7 +278,7 @@ export function Nosotros() {
             {HOW.map((h, i) => (
               <Reveal key={h.n} className="border-t border-border-ink-muted pt-6" delay={(i % 3) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{h.n}</div>
-                <h3 className="mb-[9px] text-lg font-semibold text-navy">{h.title}</h3>
+                <h3 className="mb-[9px] text-lg font-bold text-navy">{h.title}</h3>
                 <p className="text-[15px] leading-[1.6] text-ink-muted">{h.desc}</p>
               </Reveal>
             ))}

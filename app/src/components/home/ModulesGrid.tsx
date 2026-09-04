@@ -56,13 +56,13 @@ function FlipCard({ icon, title, desc, image, delay }: { icon: ReactNode; title:
           <div className="mb-[18px] flex size-[42px] items-center justify-center rounded-xl bg-navy [&>svg]:size-5 [&>svg]:stroke-green [&>svg]:stroke-[1.8]">
             {icon}
           </div>
-          <h3 className="mb-[7px] text-[17.5px] font-semibold tracking-[-0.01em] text-navy">{title}</h3>
+          <h3 className="mb-[7px] text-[17.5px] font-bold tracking-[-0.01em] text-navy">{title}</h3>
           <p className="text-[14.5px] leading-[1.55] text-ink-muted">{desc}</p>
         </div>
         <div className="absolute inset-0 overflow-hidden rounded-[14px] border border-border bg-navy [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <img src={image} alt={title} loading="lazy" className="absolute inset-0 size-full object-cover" />
           <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(6,15,30,0.86)_0%,rgba(6,15,30,0.28)_52%,rgba(6,15,30,0.08)_100%)]" />
-          <div className="absolute right-6 bottom-[22px] left-6 text-[16.5px] font-semibold tracking-[-0.01em] text-white">
+          <div className="absolute right-6 bottom-[22px] left-6 text-[16.5px] font-bold tracking-[-0.01em] text-white">
             {title}
           </div>
         </div>
@@ -77,7 +77,7 @@ export function ModulesGrid() {
       <div className="mx-auto max-w-(--container-max)">
         <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-[620px]">
-            <h2 className="mb-4 text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Todos los módulos que tu club necesita, en un solo sistema.
             </h2>
             <p className="text-[17px] leading-[1.65] text-ink-muted">

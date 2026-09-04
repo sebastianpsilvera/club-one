@@ -72,7 +72,7 @@ export function Clientes() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Lo que dicen
             </div>
-            <h2 className="text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               La experiencia de gestionar con Club One.
             </h2>
           </Reveal>
@@ -83,7 +83,7 @@ export function Clientes() {
                   <div className="mb-5 text-[44px] leading-[0.6] font-bold text-green">&ldquo;</div>
                   <p className="mb-6 flex-1 text-[18.5px] leading-[1.5] text-navy text-pretty">{t.quote}</p>
                   <div className="border-t border-border pt-4">
-                    <div className="text-[14.5px] font-semibold text-navy">{t.name}</div>
+                    <div className="text-[14.5px] font-medium text-navy">{t.name}</div>
                     <div className="mt-1 font-mono text-[10.5px] tracking-[0.12em] text-label uppercase">{t.role}</div>
                   </div>
                 </div>
@@ -99,7 +99,7 @@ export function Clientes() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Para quién
             </div>
-            <h2 className="text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Pensado para cada tipo de club.
             </h2>
           </Reveal>
@@ -107,7 +107,7 @@ export function Clientes() {
             {SEGMENTS.map((s, i) => (
               <Reveal key={s.n} className="border-t border-border-ink-muted pt-6" delay={(i % 3) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{s.n}</div>
-                <h3 className="mb-[9px] text-lg font-semibold text-navy">{s.title}</h3>
+                <h3 className="mb-[9px] text-lg font-bold text-navy">{s.title}</h3>
                 <p className="text-[15px] leading-[1.6] text-ink-muted">{s.desc}</p>
               </Reveal>
             ))}

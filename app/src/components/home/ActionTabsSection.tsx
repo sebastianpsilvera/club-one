@@ -61,7 +61,7 @@ export function ActionTabsSection() {
     <section className="bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
       <div className="mx-auto max-w-(--container-max)">
         <Reveal className="mx-auto mb-11 max-w-[640px] text-center">
-          <h2 className="mb-4 text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-white">
+          <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-white">
             Descubrí Club One <span className="text-green">en acción.</span>
           </h2>
           <p className="text-[17px] leading-[1.65] text-ink-muted-light">
@@ -77,7 +77,7 @@ export function ActionTabsSection() {
               type="button"
               onClick={() => pickTab(t.key)}
               className={cn(
-                'rounded-full border px-5 py-2.5 text-[13.5px] font-semibold transition-[color,background-color,border-color,transform] duration-300 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
+                'rounded-full border px-5 py-2.5 text-[13.5px] font-medium transition-[color,background-color,border-color,transform] duration-300 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
                 tab === t.key
                   ? 'border-green bg-green text-navy'
                   : 'border-ink-muted-light/25 bg-white/6 text-ink-muted-light hover:border-ink-muted-light/45 hover:text-white',
@@ -133,7 +133,7 @@ export function ActionTabsSection() {
         <Reveal className="mt-[34px] flex justify-center">
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
           >
             Ver el producto <span>→</span>
           </NavLink>

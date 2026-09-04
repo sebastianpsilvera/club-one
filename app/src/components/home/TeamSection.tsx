@@ -22,7 +22,7 @@ function TeamCard({ role, desc, placeholder }: Member) {
       <div
         className={cn('mb-5 size-[74px] rounded-[14px]', placeholder === 'empty' ? 'bg-[#F0F4F9]' : 'bg-navy')}
       />
-      <div className="h-[19px] text-[19px] font-semibold tracking-[-0.01em] text-navy" />
+      <div className="h-[19px] text-[19px] font-bold tracking-[-0.01em] text-navy" />
       <div className="mt-1.5 mb-3.5 h-[11px] font-mono text-[11px] tracking-[0.14em] text-green-dark uppercase">
         {role}
       </div>
@@ -39,7 +39,7 @@ export function TeamSection() {
           <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
             05 · Equipo
           </div>
-          <h2 className="mb-4 text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">Nuestro equipo</h2>
+          <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">Nuestro equipo</h2>
           <p className="text-[17px] leading-[1.65] text-ink-muted">
             Un equipo que unió tecnología y un profundo conocimiento del mundo de los clubes de golf. Nos une la
             pasion por innovar.

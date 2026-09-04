@@ -113,7 +113,7 @@ export function Producto() {
             </div>
           </Reveal>
           <Reveal>
-            <h1 className="mb-[22px] text-h1 leading-[1.04] font-semibold tracking-[-0.035em] text-white">
+            <h1 className="mb-[22px] text-h1 leading-[1.04] font-bold tracking-[-0.035em] text-white">
               Una plataforma.
               <br />
               <span className="text-green">Todos los módulos.</span>
@@ -142,7 +142,7 @@ export function Producto() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Módulo golf · Tee time
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Reservas en <span className="text-green-dark">tiempo real.</span>
             </h2>
             <p className="text-[17px] leading-[1.65] text-ink-muted text-pretty">
@@ -163,7 +163,7 @@ export function Producto() {
                 <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/12">
                   <f.icon className="size-[18px] stroke-green-dark stroke-[1.8]" />
                 </div>
-                <h3 className="mb-2 text-[16.5px] font-semibold text-navy">{f.title}</h3>
+                <h3 className="mb-2 text-[16.5px] font-bold text-navy">{f.title}</h3>
                 <p className="text-[14.5px] leading-[1.6] text-ink-muted">{f.desc}</p>
               </Reveal>
             ))}
@@ -197,7 +197,7 @@ export function Producto() {
               <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
                 Módulo golf · Torneos
               </div>
-              <h2 className="mb-4 text-h2-sm leading-[1.08] font-semibold tracking-[-0.03em] text-navy">
+              <h2 className="mb-4 text-h2-sm leading-[1.08] font-bold tracking-[-0.03em] text-navy">
                 Gestión de torneos 360°
               </h2>
               <p className="mb-[26px] text-[17px] leading-[1.65] text-ink-muted">
@@ -208,7 +208,7 @@ export function Producto() {
             <div className="flex flex-col gap-[18px]">
               {TORNEOS_FEATURES.map((f, i) => (
                 <Reveal key={f.title} className="border-t border-border pt-4" delay={i * 0.05}>
-                  <span className="text-[15.5px] font-semibold text-navy">{f.title}</span>{' '}
+                  <span className="text-[15.5px] font-medium text-navy">{f.title}</span>{' '}
                   <span className="text-[15px] text-ink-muted">— {f.desc}</span>
                 </Reveal>
               ))}
@@ -224,7 +224,7 @@ export function Producto() {
               <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
                 Módulo administración
               </div>
-              <h2 className="mb-4 text-h2-sm leading-[1.08] font-semibold tracking-[-0.03em] text-white">
+              <h2 className="mb-4 text-h2-sm leading-[1.08] font-bold tracking-[-0.03em] text-white">
                 Finanzas <span className="text-green">bajo control.</span>
               </h2>
               <p className="mb-[26px] text-[17px] leading-[1.65] text-ink-muted-light">
@@ -235,7 +235,7 @@ export function Producto() {
             <div className="flex flex-col gap-[18px]">
               {FINANZAS_FEATURES.map((f, i) => (
                 <Reveal key={f.title} className="border-t border-ink-muted-light/22 pt-4" delay={i * 0.05}>
-                  <span className="text-[15.5px] font-semibold text-white">{f.title}</span>{' '}
+                  <span className="text-[15.5px] font-medium text-white">{f.title}</span>{' '}
                   <span className="text-[15px] text-ink-muted-light">— {f.desc}</span>
                 </Reveal>
               ))}
@@ -265,7 +265,7 @@ export function Producto() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Operativa del club
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               CRM, reservas y comunicación
             </h2>
             <p className="text-[17px] leading-[1.65] text-ink-muted">
@@ -276,11 +276,11 @@ export function Producto() {
           <div className="grid grid-cols-4 gap-x-8 gap-y-10 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {OPERATIVA_COLS.map((col, i) => (
               <Reveal key={col.title} className="border-t border-border-ink-muted pt-6" delay={(i % 4) * 0.06}>
-                <h3 className="mb-4 text-[17px] font-semibold text-navy">{col.title}</h3>
+                <h3 className="mb-4 text-[17px] font-bold text-navy">{col.title}</h3>
                 <div className="flex flex-col gap-3">
                   {col.items.map(([b, rest]) => (
                     <div key={b} className="text-[14.5px] leading-[1.55] text-ink-muted">
-                      <span className="font-semibold text-navy">{b}</span> {rest}
+                      <span className="font-medium text-navy">{b}</span> {rest}
                     </div>
                   ))}
                 </div>
@@ -296,7 +296,7 @@ export function Producto() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Tecnología
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-semibold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Compromiso con la innovación y seguridad
             </h2>
             <p className="text-[17px] leading-[1.65] text-ink-muted">
@@ -308,7 +308,7 @@ export function Producto() {
             {TECH_CARDS.map((c, i) => (
               <Reveal key={c.title} fadeOnly delay={(i % 3) * 0.06}>
                 <div className="rounded-[14px] border border-border bg-white p-6">
-                  <h3 className="mb-2 text-base font-semibold text-navy">{c.title}</h3>
+                  <h3 className="mb-2 text-base font-bold text-navy">{c.title}</h3>
                   <p className="text-[14.5px] leading-[1.6] text-ink-muted">{c.desc}</p>
                 </div>
               </Reveal>
@@ -321,7 +321,7 @@ export function Producto() {
             {STEPS.map((s, i) => (
               <Reveal key={s.n} className="border-t border-border-ink-muted pt-[22px]" delay={(i % 4) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{s.n}</div>
-                <h3 className="mb-2 text-[17px] font-semibold text-navy">{s.title}</h3>
+                <h3 className="mb-2 text-[17px] font-bold text-navy">{s.title}</h3>
                 <p className="text-[14.5px] leading-[1.6] text-ink-muted">{s.desc}</p>
               </Reveal>
             ))}

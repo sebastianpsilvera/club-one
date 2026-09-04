@@ -44,7 +44,7 @@ export function Hero() {
       <div className="relative z-2 mx-auto grid max-w-(--container-max) grid-cols-[0.92fr_1.35fr] items-center gap-14 px-8 pt-[84px] pb-[108px] max-[1080px]:grid-cols-1 max-[1080px]:gap-[52px] max-[1080px]:pt-[60px] max-[1080px]:pb-[72px] max-[720px]:gap-14 max-[720px]:pt-14 max-[720px]:pb-[72px]">
         <div>
           <Reveal>
-            <h1 className="mb-6 text-display leading-[1.02] font-semibold tracking-[-0.035em] text-white">
+            <h1 className="mb-6 text-display leading-[1.02] font-bold tracking-[-0.035em] text-white">
               El Sistema de gestion para clubes de golf,
               <br />
               <span className="text-green">#1&nbsp;en innovacion de Latinoamerica</span>

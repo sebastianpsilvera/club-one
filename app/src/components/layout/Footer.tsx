@@ -78,7 +78,7 @@ export function Footer() {
           <div className="flex flex-wrap items-start gap-14">
             {OFFICES.map((o) => (
               <div key={o.city} className="flex flex-col gap-1">
-                <span className="text-[15px] font-semibold text-[#F2F7FC]">{o.city}</span>
+                <span className="text-[15px] font-medium text-[#F2F7FC]">{o.city}</span>
                 <span className="text-[13.5px] text-ink-muted-light">{o.country}</span>
               </div>
             ))}

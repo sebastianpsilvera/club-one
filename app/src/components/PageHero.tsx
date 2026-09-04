@@ -19,7 +19,7 @@ export function PageHero({ eyebrow, heading, body, maxBody = 'max-w-[540px]' }: 
           </div>
         </Reveal>
         <Reveal>
-          <h1 className="mb-[22px] text-h1 leading-[1.04] font-semibold tracking-[-0.035em] text-navy">{heading}</h1>
+          <h1 className="mb-[22px] text-h1 leading-[1.04] font-bold tracking-[-0.035em] text-navy">{heading}</h1>
         </Reveal>
         <Reveal>
           <p className={`mx-auto text-[clamp(16px,1.3vw,18px)] leading-[1.65] text-ink-muted ${maxBody}`}>{body}</p>

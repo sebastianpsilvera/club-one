@@ -22,7 +22,7 @@ export function DevicesTrioSection() {
           <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
             Un sistema · Todos los dispositivos
           </div>
-          <h2 className="mb-[18px] text-h2-sm leading-[1.07] font-semibold tracking-[-0.03em] text-navy text-balance">
+          <h2 className="mb-[18px] text-h2-sm leading-[1.07] font-bold tracking-[-0.03em] text-navy text-balance">
             Una solucion que se adapta a cada usuario
           </h2>
           <p className="mb-7 max-w-[460px] text-[17px] leading-[1.65] text-ink-muted text-pretty">
@@ -31,7 +31,7 @@ export function DevicesTrioSection() {
           </p>
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-semibold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Ver el producto <span className="text-green">→</span>
           </NavLink>

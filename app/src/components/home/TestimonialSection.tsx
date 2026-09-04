@@ -9,7 +9,7 @@ export function TestimonialSection() {
           Pasamos de cinco sistemas distintos a uno solo. Hoy el club funciona con la mitad de trabajo administrativo
           y nuestros socios reservan su green fee desde la app.
         </p>
-        <div className="text-[15.5px] font-semibold text-navy">Mariana Quiroga</div>
+        <div className="text-[15.5px] font-medium text-navy">Mariana Quiroga</div>
         <div className="mt-1.5 font-mono text-eyebrow tracking-[0.14em] text-ink-muted-light/80 uppercase">
           Gerente · Club de golf, Buenos Aires
         </div>

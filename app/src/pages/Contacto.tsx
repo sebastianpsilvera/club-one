@@ -34,14 +34,14 @@ export function Contacto() {
         <div className="mx-auto grid max-w-(--container-max) grid-cols-[1fr_1.25fr] items-start gap-18 max-[1080px]:grid-cols-1 max-[1080px]:gap-12">
           <div>
             <Reveal>
-              <h2 className="mb-[34px] text-[clamp(26px,2.6vw,34px)] leading-[1.12] font-semibold tracking-[-0.025em] text-navy">
+              <h2 className="mb-[34px] text-[clamp(26px,2.6vw,34px)] leading-[1.12] font-bold tracking-[-0.025em] text-navy">
                 Qué podés esperar al escribirnos
               </h2>
             </Reveal>
             <div className="mb-11 flex flex-col gap-5">
               {EXPECT.map((e) => (
                 <Reveal key={e.title} className="border-t border-border-ink-muted pt-[18px]">
-                  <div className="mb-[5px] text-base font-semibold text-navy">{e.title}</div>
+                  <div className="mb-[5px] text-base font-medium text-navy">{e.title}</div>
                   <p className="text-[15px] leading-[1.6] text-ink-muted">{e.desc}</p>
                 </Reveal>
               ))}
@@ -62,26 +62,26 @@ export function Contacto() {
                 >
                   <div className="mb-[18px] grid grid-cols-2 gap-[18px] max-[600px]:grid-cols-1">
                     <div>
-                      <Label className="mb-[7px] text-[13px] font-semibold text-navy">Nombre y apellido *</Label>
+                      <Label className="mb-[7px] text-[13px] font-medium text-navy">Nombre y apellido *</Label>
                       <Input required name="nombre" placeholder="Tu nombre" className="h-auto rounded-[10px] border-[#D8E0EA] px-[15px] py-[13px] text-[15px]" />
                     </div>
                     <div>
-                      <Label className="mb-[7px] text-[13px] font-semibold text-navy">Club *</Label>
+                      <Label className="mb-[7px] text-[13px] font-medium text-navy">Club *</Label>
                       <Input required name="club" placeholder="Nombre del club" className="h-auto rounded-[10px] border-[#D8E0EA] px-[15px] py-[13px] text-[15px]" />
                     </div>
                   </div>
                   <div className="mb-[18px] grid grid-cols-2 gap-[18px] max-[600px]:grid-cols-1">
                     <div>
-                      <Label className="mb-[7px] text-[13px] font-semibold text-navy">Email *</Label>
+                      <Label className="mb-[7px] text-[13px] font-medium text-navy">Email *</Label>
                       <Input required type="email" name="email" placeholder="nombre@club.com" className="h-auto rounded-[10px] border-[#D8E0EA] px-[15px] py-[13px] text-[15px]" />
                     </div>
                     <div>
-                      <Label className="mb-[7px] text-[13px] font-semibold text-navy">Teléfono</Label>
+                      <Label className="mb-[7px] text-[13px] font-medium text-navy">Teléfono</Label>
                       <Input name="telefono" placeholder="+54 11 ..." className="h-auto rounded-[10px] border-[#D8E0EA] px-[15px] py-[13px] text-[15px]" />
                     </div>
                   </div>
                   <div className="mb-6">
-                    <Label className="mb-[7px] text-[13px] font-semibold text-navy">Mensaje</Label>
+                    <Label className="mb-[7px] text-[13px] font-medium text-navy">Mensaje</Label>
                     <Textarea
                       name="mensaje"
                       rows={4}
@@ -101,7 +101,7 @@ export function Contacto() {
                   <div className="mx-auto mb-[22px] flex size-16 items-center justify-center rounded-full bg-green/14">
                     <CheckCircle2 className="size-7 stroke-green-dark stroke-[2]" />
                   </div>
-                  <h3 className="mb-2.5 text-[22px] font-semibold tracking-[-0.02em] text-navy">
+                  <h3 className="mb-2.5 text-[22px] font-bold tracking-[-0.02em] text-navy">
                     ¡Recibimos tu consulta!
                   </h3>
                   <p className="mb-[26px] text-[15.5px] leading-[1.6] text-ink-muted">

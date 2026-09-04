@@ -46,7 +46,7 @@ export function Header() {
         <div className="flex shrink-0 items-center gap-5 max-[1080px]:hidden">
           <NavLink
             to="/contacto"
-            className="rounded-md text-[14.5px] font-semibold text-navy no-underline transition-colors duration-150 hover:text-green-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+            className="rounded-md text-[14.5px] font-medium text-navy no-underline transition-colors duration-150 hover:text-green-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Acceder
           </NavLink>
@@ -83,7 +83,7 @@ export function Header() {
                   end={l.to === '/'}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    'rounded-md py-3.5 text-base font-semibold text-[#E7EFF9] no-underline transition-colors duration-150 active:text-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
+                    'rounded-md py-3.5 text-base font-medium text-[#E7EFF9] no-underline transition-colors duration-150 active:text-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
                     i < NAV_LINKS.length - 1 && 'border-b border-white/10',
                   )}
                 >
@@ -93,7 +93,7 @@ export function Header() {
               <NavLink
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="mt-3 rounded-[11px] bg-green py-3.5 text-center text-[15.5px] font-semibold text-navy no-underline transition-transform duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                className="mt-3 rounded-[11px] bg-green py-3.5 text-center text-[15.5px] font-bold text-navy no-underline transition-transform duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 Solicitar demo
               </NavLink>
