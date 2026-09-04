@@ -22,7 +22,7 @@ check there first.
 |---|---|---|
 | `EASE.out` | `cubic-bezier(0.16, 0.84, 0.44, 1)` | Button/link hover, opacity crossfades, scroll reveals — quick, decisive settle. This is the site's default. |
 | `EASE.emphasized` | `cubic-bezier(0.2, 0.7, 0.3, 1)` | Hover lifts on cards/interactive surfaces — a touch softer, slightly springy. |
-| `EASE.inOut` | `cubic-bezier(0.45, 0, 0.25, 1)` | Symmetric in/out motion only — 3D flips, toggles that reverse themselves. |
+| `EASE.inOut` | `cubic-bezier(0.45, 0, 0.25, 1)` | Symmetric in/out motion only — toggles and transforms that reverse themselves. |
 
 These three came from the original shipped design (button hover, card hover,
 and the module flip-card timing respectively) — they are not arbitrary.
@@ -91,9 +91,11 @@ inertia, matching the original design's scrub feel). It collapses to
    before animating. A purely-decorative CSS `@keyframes` loop (the feature
    marquee) must be gated with the `motion-safe:` / `motion-reduce:`
    Tailwind variants instead — same rule, CSS mechanism. A hover-triggered
-   CSS transition (the module flip-cards, which flip on hover rather than
-   looping automatically) uses `motion-reduce:transition-none` instead —
-   same intent, since there's no keyframe loop to gate.
+   CSS transition uses `motion-reduce:transition-none` instead — same
+   intent, since there's no keyframe loop to gate. A Motion component that
+   isn't using `<Reveal>`/`useParallax` (e.g. the SVG connectors in
+   `ModulesHub`) must read `useReducedMotion()` itself and drop its
+   `initial` so the finished state renders immediately.
 2. **One hero animation per page, quiet transitions elsewhere.** Each page
    gets exactly one "showcase" moment — on Home that's the hero (video
    background, parallax orbs, cycling device mockup); everywhere else on
@@ -102,3 +104,11 @@ inertia, matching the original design's scrub feel). It collapses to
    effect, a second scroll-scrubbed 3D transform, etc.) to a page that
    already has its hero moment — if a section feels like it needs one,
    that's a sign to simplify the section instead.
+
+   The one sanctioned exception on Home is `ModulesHub`, whose radial
+   diagram is scroll-scrubbed (`scale` `0.9 → 1 → 0.9` across the same
+   `['start end', 'end start']` offsets `useParallax` uses). It stays
+   quiet by construction: it's a single scalar, it sits at exactly `1`
+   when the section is centred — i.e. whenever it's actually being read —
+   and it collapses to `[1, 1, 1]` under `useReducedMotion()`. Treat that
+   as the ceiling for a non-hero section, not a precedent to build on.

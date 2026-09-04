@@ -1,6 +1,6 @@
 import { Hero } from '@/components/home/Hero'
 import { FeatureMarquee } from '@/components/home/FeatureMarquee'
-import { ModulesGrid } from '@/components/home/ModulesGrid'
+import { ModulesHub } from '@/components/home/ModulesHub'
 import { ActionTabsSection } from '@/components/home/ActionTabsSection'
 import { DevicesTrioSection } from '@/components/home/DevicesTrioSection'
 import { AppSection } from '@/components/home/AppSection'
@@ -13,7 +13,7 @@ export function Home() {
     <div>
       <Hero />
       <FeatureMarquee />
-      <ModulesGrid />
+      <ModulesHub />
       <ActionTabsSection />
       <DevicesTrioSection />
       <AppSection />
