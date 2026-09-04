@@ -6,7 +6,15 @@ import { useParallax } from '@/hooks/useParallax'
 import { cn } from '@/lib/utils'
 import { DURATION, EASE } from '@/lib/motion'
 
-type TabKey = 'tee' | 'torneos' | 'reportes' | 'facturacion' | 'proshop'
+type TabKey =
+  | 'tee'
+  | 'torneos'
+  | 'reportes'
+  | 'facturacion'
+  | 'proshop'
+  | 'driving'
+  | 'mantenimiento'
+  | 'casilla'
 
 const TABS: { key: TabKey; label: string }[] = [
   { key: 'tee', label: 'Tee Time' },
@@ -14,6 +22,9 @@ const TABS: { key: TabKey; label: string }[] = [
   { key: 'reportes', label: 'Reportes y BI' },
   { key: 'facturacion', label: 'Facturación' },
   { key: 'proshop', label: 'Proshop' },
+  { key: 'driving', label: 'Driving Range' },
+  { key: 'mantenimiento', label: 'Mantenimiento de Campo' },
+  { key: 'casilla', label: 'Casilla de Palos y Academia' },
 ]
 
 const AUTO_ORDER: TabKey[] = ['tee', 'torneos', 'reportes']
@@ -24,13 +35,18 @@ const CAPTIONS: Record<TabKey, string> = {
   tee: 'TEE TIMES· La operación del día, en vivo',
   facturacion: 'FACTURACIÓN · Cobros, caja y medios de pago',
   proshop: 'PROSHOP · Inventario y venta rápida',
+  driving: 'DRIVING RANGE · Práctica y entrenamiento',
+  mantenimiento: 'MANTENIMIENTO DE CAMPO · Cuidado de canchas y greens',
+  casilla: 'CASILLA DE PALOS Y ACADEMIA · Alumnos, profesores y clases',
 }
 
-const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' | 'fill' }>> = {
+const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' | 'fill' | 'cover' }>> = {
   reportes: { src: '/assets/shot-reportes.webp', alt: 'Reportes e inteligencia', fit: 'contain' },
   torneos: { src: '/assets/shot-torneos.webp', alt: 'Gestión de torneos', fit: 'contain' },
   tee: { src: '/assets/shot-teesheet.webp', alt: 'Tee sheet en tiempo real', fit: 'contain' },
   facturacion: { src: '/assets/facturacion.png', alt: 'Facturación y cobros', fit: 'fill' },
+  driving: { src: '/assets/driving-range.jpg', alt: 'Driving range', fit: 'cover' },
+  casilla: { src: '/assets/shot-academia.webp', alt: 'Casilla de palos y academia de golf', fit: 'contain' },
 }
 
 export function ActionTabsSection() {
@@ -109,7 +125,7 @@ export function ActionTabsSection() {
             <span className="w-[33px]" />
           </div>
           <div className="relative aspect-[1896/938] bg-white">
-            {tab === 'proshop' && <div className="absolute inset-0 bg-secondary" />}
+            {!shot && <div className="absolute inset-0 bg-secondary" />}
             <AnimatePresence>
               {shot && (
                 <motion.img
@@ -121,7 +137,12 @@ export function ActionTabsSection() {
                   animate={{ opacity: 1 }}
                   exit={shouldReduceMotion ? undefined : { opacity: 0 }}
                   transition={{ duration: DURATION.base, ease: EASE.out }}
-                  className={cn('absolute inset-0 size-full', shot.fit === 'contain' ? 'object-contain' : 'object-fill')}
+                  className={cn(
+                    'absolute inset-0 size-full',
+                    shot.fit === 'contain' && 'object-contain',
+                    shot.fit === 'cover' && 'object-cover',
+                    shot.fit === 'fill' && 'object-fill',
+                  )}
                 />
               )}
             </AnimatePresence>
