@@ -45,14 +45,11 @@ const MODULES: { icon: ReactNode; title: string; desc: string; image: string }[]
   },
 ]
 
-function FlipCard({ icon, title, desc, image, delay }: { icon: ReactNode; title: string; desc: string; image: string; delay: number }) {
+function FlipCard({ icon, title, desc, image }: { icon: ReactNode; title: string; desc: string; image: string }) {
   return (
     <div className="min-h-[212px] [perspective:1400px]">
-      <div
-        className="relative size-full min-h-[212px] [transform-style:preserve-3d] motion-safe:animate-[flip-card_36s_cubic-bezier(0.45,0,0.25,1)_infinite]"
-        style={{ animationDelay: `${delay}s` }}
-      >
-        <div className="group absolute inset-0 rounded-[14px] border border-border bg-white p-[26px] transition-[transform,border-color,box-shadow] duration-[400ms] ease-[cubic-bezier(0.2,0.7,0.3,1)] [backface-visibility:hidden] hover:-translate-y-1 hover:border-[#C4D4CB] hover:shadow-[0_18px_40px_-22px_rgba(10,26,51,0.28)]">
+      <div className="group relative size-full min-h-[212px] [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.25,1)] hover:[transform:rotateY(180deg)] motion-reduce:transition-none">
+        <div className="absolute inset-0 rounded-[14px] border border-border bg-white p-[26px] transition-[border-color,box-shadow] duration-[400ms] ease-[cubic-bezier(0.2,0.7,0.3,1)] [backface-visibility:hidden] group-hover:border-[#C4D4CB] group-hover:shadow-[0_18px_40px_-22px_rgba(10,26,51,0.28)]">
           <div className="mb-[18px] flex size-[42px] items-center justify-center rounded-xl bg-navy [&>svg]:size-5 [&>svg]:stroke-green [&>svg]:stroke-[1.8]">
             {icon}
           </div>
@@ -94,7 +91,7 @@ export function ModulesGrid() {
         <div className="grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
           {MODULES.map((m, i) => (
             <Reveal key={m.title} fadeOnly delay={(i % 3) * 0.06}>
-              <FlipCard {...m} delay={i * 4} />
+              <FlipCard {...m} />
             </Reveal>
           ))}
         </div>
