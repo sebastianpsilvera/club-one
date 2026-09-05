@@ -63,7 +63,10 @@ export function Hero() {
               <Button
                 asChild
                 variant="outline"
-                className="rounded-[11px] border-white/28 bg-white/6 px-[30px] py-[15px] text-[15px] text-white hover:border-white hover:bg-white/12 max-[720px]:w-full"
+                // Frosted over the background video — the blur is doing real
+                // work here, both as an effect and for legibility over moving
+                // footage.
+                className="rounded-[11px] border-white/30 bg-white/10 px-[30px] py-[15px] text-[15px] text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.22)] backdrop-blur-md backdrop-saturate-150 hover:border-white hover:bg-white/18 max-[720px]:w-full"
               >
                 <NavLink to="/producto">Ver el producto</NavLink>
               </Button>

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { DURATION, EASE } from '@/lib/motion'
 
 type TabKey =
-  | 'tee'
+  | 'reservas'
   | 'torneos'
   | 'reportes'
   | 'facturacion'
@@ -18,7 +18,7 @@ type TabKey =
   | 'academia'
 
 const TABS: { key: TabKey; label: string }[] = [
-  { key: 'tee', label: 'Tee Time' },
+  { key: 'reservas', label: 'Reservas' },
   { key: 'torneos', label: 'Torneos' },
   { key: 'reportes', label: 'Reportes y BI' },
   { key: 'facturacion', label: 'Facturación' },
@@ -29,12 +29,12 @@ const TABS: { key: TabKey; label: string }[] = [
   { key: 'academia', label: 'Academia' },
 ]
 
-const AUTO_ORDER: TabKey[] = ['tee', 'torneos', 'reportes']
+const AUTO_ORDER: TabKey[] = ['reservas', 'torneos', 'reportes']
 
 const CAPTIONS: Record<TabKey, string> = {
   reportes: 'REPORTES Y BI · KPIs del club en tiempo real',
   torneos: 'TORNEOS · Configuración y gestión 360°',
-  tee: 'TEE TIMES · La operación del día, en vivo',
+  reservas: 'RESERVAS · La operación del día, en vivo',
   facturacion: 'FACTURACIÓN · Cobros, caja y medios de pago',
   proshop: 'PROSHOP · Inventario y venta rápida',
   driving: 'DRIVING RANGE · Práctica y entrenamiento',
@@ -46,7 +46,7 @@ const CAPTIONS: Record<TabKey, string> = {
 const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' | 'fill' | 'cover' }>> = {
   reportes: { src: '/assets/shot-reportes.webp', alt: 'Reportes e inteligencia', fit: 'contain' },
   torneos: { src: '/assets/shot-torneos.webp', alt: 'Gestión de torneos', fit: 'contain' },
-  tee: { src: '/assets/shot-teesheet.webp', alt: 'Tee sheet en tiempo real', fit: 'contain' },
+  reservas: { src: '/assets/shot-teesheet.webp', alt: 'Reservas y tee sheet en tiempo real', fit: 'contain' },
   facturacion: { src: '/assets/facturacion.png', alt: 'Facturación y cobros', fit: 'fill' },
   proshop: { src: '/assets/shot-proshop.webp', alt: 'Proshop: punto de venta e inventario', fit: 'contain' },
   driving: { src: '/assets/driving-range.jpg', alt: 'Driving range', fit: 'cover' },
@@ -54,7 +54,7 @@ const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' |
 }
 
 export function ActionTabsSection() {
-  const [tab, setTab] = useState<TabKey>('tee')
+  const [tab, setTab] = useState<TabKey>('reservas')
   const holdUntilRef = useRef(0)
   const shouldReduceMotion = useReducedMotion()
   const par = useParallax(24)
@@ -64,7 +64,7 @@ export function ActionTabsSection() {
       if (Date.now() < holdUntilRef.current) return
       setTab((current) => {
         const idx = AUTO_ORDER.indexOf(current as (typeof AUTO_ORDER)[number])
-        return idx === -1 ? 'tee' : AUTO_ORDER[(idx + 1) % AUTO_ORDER.length]
+        return idx === -1 ? 'reservas' : AUTO_ORDER[(idx + 1) % AUTO_ORDER.length]
       })
     }, 3000)
     return () => clearInterval(id)

@@ -12,7 +12,12 @@ export function Header() {
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <header className="sticky top-0 z-[100] border-b border-border bg-white/94 backdrop-blur-md max-[1080px]:border-white/10 max-[1080px]:bg-[rgba(8,20,40,0.94)]">
+    // The mobile header is genuinely frosted: white-on-navy has contrast to
+    // spare (~10:1 even at 80% over a light section). The desktop bar stays at
+    // 94% on purpose — its inactive nav links are ink-muted, which already sits
+    // right at the 4.5:1 AA floor, and any more transparency drops it to ~3.4:1
+    // over the dark sections. Don't lower it without darkening that text first.
+    <header className="sticky top-0 z-[100] border-b border-border bg-white/94 backdrop-blur-xl backdrop-saturate-150 max-[1080px]:border-white/10 max-[1080px]:bg-[rgba(8,20,40,0.80)]">
       <div className="mx-auto flex h-[72px] max-w-(--container-max) items-center justify-between gap-6 px-8 max-[720px]:px-5">
         <NavLink to="/" className="flex shrink-0 items-center gap-[11px] no-underline" onClick={() => setOpen(false)}>
           <img
