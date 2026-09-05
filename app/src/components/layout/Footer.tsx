@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom'
 
+/** Mirrors NAV_LINKS — keep the two in step. */
 const SITE_LINKS = [
   { to: '/', label: 'Inicio' },
   { to: '/producto', label: 'Producto' },
-  { to: '/nosotros', label: 'Nosotros' },
-  { to: '/clientes', label: 'Clientes' },
+  { to: '/nosotros#turismo', label: 'Turismo' },
   { to: '/contacto', label: 'Contacto' },
 ]
 

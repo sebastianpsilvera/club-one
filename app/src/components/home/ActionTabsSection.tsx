@@ -15,6 +15,7 @@ type TabKey =
   | 'driving'
   | 'mantenimiento'
   | 'casilla'
+  | 'academia'
 
 const TABS: { key: TabKey; label: string }[] = [
   { key: 'tee', label: 'Tee Time' },
@@ -24,7 +25,8 @@ const TABS: { key: TabKey; label: string }[] = [
   { key: 'proshop', label: 'Proshop' },
   { key: 'driving', label: 'Driving Range' },
   { key: 'mantenimiento', label: 'Mantenimiento de Campo' },
-  { key: 'casilla', label: 'Casilla de Palos y Academia' },
+  { key: 'casilla', label: 'Casilla de Palos' },
+  { key: 'academia', label: 'Academia' },
 ]
 
 const AUTO_ORDER: TabKey[] = ['tee', 'torneos', 'reportes']
@@ -37,7 +39,8 @@ const CAPTIONS: Record<TabKey, string> = {
   proshop: 'PROSHOP · Inventario y venta rápida',
   driving: 'DRIVING RANGE · Práctica y entrenamiento',
   mantenimiento: 'MANTENIMIENTO DE CAMPO · Cuidado de canchas y greens',
-  casilla: 'CASILLA DE PALOS Y ACADEMIA · Alumnos, profesores y clases',
+  casilla: 'CASILLA DE PALOS · Guardado y retiro de equipos',
+  academia: 'ACADEMIA · Alumnos, profesores y clases',
 }
 
 const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' | 'fill' | 'cover' }>> = {
@@ -47,7 +50,7 @@ const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' |
   facturacion: { src: '/assets/facturacion.png', alt: 'Facturación y cobros', fit: 'fill' },
   proshop: { src: '/assets/shot-proshop.webp', alt: 'Proshop: punto de venta e inventario', fit: 'contain' },
   driving: { src: '/assets/driving-range.jpg', alt: 'Driving range', fit: 'cover' },
-  casilla: { src: '/assets/shot-academia.webp', alt: 'Casilla de palos y academia de golf', fit: 'contain' },
+  academia: { src: '/assets/shot-academia.webp', alt: 'Academia de golf: alumnos y clases', fit: 'contain' },
 }
 
 export function ActionTabsSection() {
