@@ -24,7 +24,10 @@ export function Home() {
       <ClosingCta
         heading={
           <>
-            Veamos cómo funciona, <span className="text-green">con los datos de tu club.</span>
+            {/* Explicit rows so "con los datos de tu club." stays together on
+                the second line instead of wrapping mid-phrase. */}
+            <span className="block">Veamos cómo funciona,</span>
+            <span className="block text-green">con los datos de tu club.</span>
           </>
         }
         body="Coordinamos una demo sobre tu propia operación: tu padrón, tus categorías y tu grilla de salidas. En una reunión vas a ver exactamente cómo quedaría tu club adentro de la plataforma."

@@ -67,8 +67,12 @@ export function Footer() {
             <div className="mb-[18px] font-mono text-[10.5px] tracking-[0.18em] text-label uppercase">Contacto</div>
             <div className="flex flex-col gap-3">
               <FootLink to="/contacto">Solicitar demo</FootLink>
-              <span className="text-[14.5px] text-ink-muted-light">Soporte en español</span>
-              <span className="text-[14.5px] text-ink-muted-light">Buenos Aires · Argentina</span>
+              <a
+                href="mailto:comercial@clubonetech.com"
+                className="rounded-sm text-[14.5px] break-all text-[#C9D6E6] no-underline transition-colors duration-150 hover:text-green focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+              >
+                comercial@clubonetech.com
+              </a>
             </div>
           </div>
         </div>

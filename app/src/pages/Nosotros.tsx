@@ -47,10 +47,16 @@ const WHY = [
 ]
 
 const TEAM = [
-  { role: 'Project Manager Development', desc: '', placeholder: 'filled' as const },
-  { role: 'CMO', desc: 'Marketing, Comunicación y Estrategia Comercial.', placeholder: 'filled' as const },
-  { role: '', desc: '', placeholder: 'empty' as const },
-  { role: '', desc: '', placeholder: 'empty' as const },
+  { name: '', role: 'Project Manager Development', desc: '', photo: '', placeholder: 'filled' as const },
+  {
+    name: 'Sebastian Silvera',
+    role: 'CMO',
+    desc: 'Marketing, Comunicación y Estrategia Comercial.',
+    photo: '/assets/team-sebastian.webp',
+    placeholder: 'filled' as const,
+  },
+  { name: '', role: '', desc: '', photo: '', placeholder: 'empty' as const },
+  { name: '', role: '', desc: '', photo: '', placeholder: 'empty' as const },
 ]
 
 const HOW = [
@@ -250,9 +256,15 @@ export function Nosotros() {
                 <div
                   className={`overflow-hidden rounded-[14px] border bg-white ${m.placeholder === 'empty' ? 'border-dashed border-[#D2DCE8]' : 'border-border'}`}
                 >
-                  <div className={`h-[250px] ${m.placeholder === 'empty' ? 'bg-[#F0F4F9]' : 'bg-[linear-gradient(155deg,#0A1A33,#16294A)]'}`} />
+                  {m.photo ? (
+                    <img src={m.photo} alt={m.name} loading="lazy" className="h-[250px] w-full object-cover object-top" />
+                  ) : (
+                    <div className={`h-[250px] ${m.placeholder === 'empty' ? 'bg-[#F0F4F9]' : 'bg-[linear-gradient(155deg,#0A1A33,#16294A)]'}`} />
+                  )}
                   <div className="p-[26px]">
-                    <div className="h-[19px]" />
+                    <div className="h-[19px] text-[19px] leading-[19px] font-bold tracking-[-0.01em] text-navy">
+                      {m.name}
+                    </div>
                     <div className="mt-1.5 mb-3.5 font-mono text-[11px] tracking-[0.14em] text-green-dark uppercase">
                       {m.role}
                     </div>

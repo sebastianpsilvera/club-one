@@ -2,16 +2,22 @@ import { NavLink } from 'react-router-dom'
 import { Reveal } from '@/components/Reveal'
 import { cn } from '@/lib/utils'
 
-type Member = { role: string; desc: string; placeholder: 'filled' | 'empty' }
+type Member = { name?: string; role: string; desc: string; photo?: string; placeholder: 'filled' | 'empty' }
 
 const TEAM: Member[] = [
   { role: 'Project Manager Development', desc: '', placeholder: 'filled' },
-  { role: 'CMO', desc: 'Marketing, Comunicación y Estrategia Comercial.', placeholder: 'filled' },
+  {
+    name: 'Sebastian Silvera',
+    role: 'CMO',
+    desc: 'Marketing, Comunicación y Estrategia Comercial.',
+    photo: '/assets/team-sebastian.webp',
+    placeholder: 'filled',
+  },
   { role: '', desc: '', placeholder: 'empty' },
   { role: '', desc: '', placeholder: 'empty' },
 ]
 
-function TeamCard({ role, desc, placeholder }: Member) {
+function TeamCard({ name, role, desc, photo, placeholder }: Member) {
   return (
     <div
       className={cn(
@@ -19,10 +25,19 @@ function TeamCard({ role, desc, placeholder }: Member) {
         placeholder === 'empty' ? 'border-dashed border-[#D2DCE8]' : 'border-border',
       )}
     >
-      <div
-        className={cn('mb-5 size-[74px] rounded-[14px]', placeholder === 'empty' ? 'bg-[#F0F4F9]' : 'bg-navy')}
-      />
-      <div className="h-[19px] text-[19px] font-bold tracking-[-0.01em] text-navy" />
+      {photo ? (
+        <img
+          src={photo}
+          alt={name ?? ''}
+          loading="lazy"
+          className="mb-5 size-[74px] rounded-[14px] object-cover object-top"
+        />
+      ) : (
+        <div
+          className={cn('mb-5 size-[74px] rounded-[14px]', placeholder === 'empty' ? 'bg-[#F0F4F9]' : 'bg-navy')}
+        />
+      )}
+      <div className="h-[19px] text-[19px] leading-[19px] font-bold tracking-[-0.01em] text-navy">{name}</div>
       <div className="mt-1.5 mb-3.5 h-[11px] font-mono text-[11px] tracking-[0.14em] text-green-dark uppercase">
         {role}
       </div>

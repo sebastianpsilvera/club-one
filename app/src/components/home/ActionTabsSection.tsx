@@ -78,9 +78,14 @@ export function ActionTabsSection() {
   const shot = SHOTS[tab]
 
   return (
-    <section className="bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
-      <div className="mx-auto max-w-(--container-max)">
-        <Reveal className="mx-auto mb-11 max-w-[640px] text-center">
+    // Sized to the viewport so the whole section — heading, tabs, mockup,
+    // caption and CTA — is visible at once instead of running 1340px tall and
+    // forcing a scroll. The mockup is driven off vh, so it grows on taller
+    // screens rather than being pinned to one size. Reverts to normal flow
+    // below 1080px, where a viewport-tall section would squash the mockup.
+    <section className="flex min-h-[100svh] flex-col justify-center bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 pt-[88px] pb-10 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      <div className="mx-auto w-full max-w-(--container-max)">
+        <Reveal className="mx-auto mb-7 max-w-[640px] text-center max-[1080px]:mb-11">
           <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-white">
             Descubrí Club One <span className="text-green">en acción.</span>
           </h2>
@@ -90,7 +95,7 @@ export function ActionTabsSection() {
           </p>
         </Reveal>
 
-        <Reveal className="mb-9 flex flex-wrap justify-center gap-2.5">
+        <Reveal className="mb-6 flex flex-wrap justify-center gap-2.5 max-[1080px]:mb-9">
           {TABS.map((t) => (
             <button
               key={t.key}
@@ -111,12 +116,25 @@ export function ActionTabsSection() {
           ))}
         </Reveal>
 
-        <motion.div
-          ref={par.ref}
-          style={{ y: shouldReduceMotion ? 0 : par.y }}
-          className="overflow-hidden rounded-[14px] border border-ink-muted-light/20 bg-[#0B1526] shadow-[0_50px_110px_-40px_rgba(0,0,0,0.7)]"
-        >
-          <div className="flex h-11 items-center gap-2 border-b border-ink-muted-light/16 bg-white/5 px-4">
+        {/* The mockup absorbs whatever vertical space the heading, tabs,
+            caption and CTA leave over, so the section always adds up to one
+            viewport instead of overflowing it — and it grows on taller
+            screens. Its width follows from the screenshot's own aspect ratio,
+            so the shot is never cropped or stretched. Below 1080px this
+            reverts to the normal width-driven flow. */}
+        <div className="flex justify-center max-[1080px]:block">
+          <motion.div
+            ref={par.ref}
+            style={{ y: shouldReduceMotion ? 0 : par.y }}
+            /* 595px is everything else in the section at its measured height —
+               heading, tabs, caption, CTA, padding (incl. clearance for the
+               sticky header) and the 44px chrome bar.
+               Capping the width at the leftover height × the shot's aspect
+               makes the mockup exactly fill what's left of one viewport, so it
+               grows on tall screens and never pushes the section past the fold. */
+            className="w-full max-w-[min(1180px,calc((100svh-643px)*2.021))] overflow-hidden rounded-[14px] border border-ink-muted-light/20 bg-[#0B1526] shadow-[0_50px_110px_-40px_rgba(0,0,0,0.7)] max-[1080px]:max-w-full"
+          >
+          <div className="flex h-11 shrink-0 items-center gap-2 border-b border-ink-muted-light/16 bg-white/5 px-4">
             <span className="size-[11px] rounded-full bg-[#FF5F57]" />
             <span className="size-[11px] rounded-full bg-[#FEBC2E]" />
             <span className="size-[11px] rounded-full bg-[#28C840]" />
@@ -131,7 +149,7 @@ export function ActionTabsSection() {
             </span>
             <span className="w-[33px]" />
           </div>
-          <div className="relative aspect-[1896/938] bg-white">
+          <div className="relative aspect-[1896/938] w-full bg-white">
             {!shot && <div className="absolute inset-0 bg-secondary" />}
             <AnimatePresence>
               {shot && (
@@ -153,12 +171,13 @@ export function ActionTabsSection() {
                 />
               )}
             </AnimatePresence>
-          </div>
-        </motion.div>
-        <Reveal className="mt-6 text-center font-mono text-xs tracking-[0.12em] text-[#5C7295]">
+            </div>
+          </motion.div>
+        </div>
+        <Reveal className="mt-5 text-center font-mono text-xs tracking-[0.12em] text-[#5C7295] max-[1080px]:mt-6">
           {CAPTIONS[tab]}
         </Reveal>
-        <Reveal className="mt-[34px] flex justify-center">
+        <Reveal className="mt-6 flex justify-center max-[1080px]:mt-[34px]">
           <NavLink
             to="/producto"
             className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:justify-center"

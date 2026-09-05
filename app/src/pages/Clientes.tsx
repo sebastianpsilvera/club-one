@@ -12,7 +12,7 @@ const TESTIMONIALS = [
   {
     quote: 'Pasamos de cinco sistemas distintos a uno solo. Hoy el club funciona con la mitad de trabajo administrativo.',
     name: 'Mariana Quiroga',
-    role: 'Gerente · Club de golf, Buenos Aires',
+    role: 'Gerente de Golf · Club de golf, Buenos Aires',
   },
   {
     quote: 'Armar el torneo del sábado tomaba dos días. Ahora el draw, los scores y el leaderboard salen solos.',
