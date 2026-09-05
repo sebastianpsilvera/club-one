@@ -1,5 +1,7 @@
 import type { ReactNode } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useInView, useReducedMotion } from 'motion/react'
 import { Landmark, CircleDot, Diamond, Wine, Users, PartyPopper, CalendarClock, ScanFace, Building2 } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { cn } from '@/lib/utils'
@@ -15,6 +17,13 @@ type Module = {
    * middle band by object-cover.
    */
   fit?: 'cover' | 'contain'
+}
+
+type FlipCardProps = Module & {
+  /** Driven by the shared auto-flip tick; hover flips independently of it. */
+  flipped: boolean
+  /** Per-column offset in seconds, so the row doesn't turn as one wall. */
+  stagger?: number
 }
 
 const MODULES: Module[] = [
@@ -60,10 +69,16 @@ const MODULES: Module[] = [
   },
 ]
 
-function FlipCard({ icon, title, desc, image, fit = 'cover' }: Module) {
+function FlipCard({ icon, title, desc, image, fit = 'cover', flipped, stagger = 0 }: FlipCardProps) {
   return (
     <div className="min-h-[212px] [perspective:1400px]">
-      <div className="group relative size-full min-h-[212px] [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.25,1)] hover:[transform:rotateY(180deg)] motion-reduce:transition-none">
+      {/* Flips on hover, and on the shared 3s auto-flip tick. Hover wins either
+          way, and zeroes the stagger so a pointer gets an immediate response. */}
+      <div
+        data-flipped={flipped ? 'true' : 'false'}
+        style={{ '--flip-delay': `${stagger}s` } as React.CSSProperties}
+        className="group relative size-full min-h-[212px] [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.25,1)] [transition-delay:var(--flip-delay)] data-[flipped=true]:[transform:rotateY(180deg)] hover:[transition-delay:0s] hover:[transform:rotateY(180deg)] motion-reduce:transition-none"
+      >
         {/* Front — frosted glass. The section behind it carries soft green/navy
             glows on purpose: backdrop-blur over a flat white section would be
             invisible, so the glass needs something to refract. */}
@@ -96,7 +111,9 @@ function FlipCard({ icon, title, desc, image, fit = 'cover' }: Module) {
                 : 'bg-[linear-gradient(to_top,rgba(6,15,30,0.86)_0%,rgba(6,15,30,0.28)_52%,rgba(6,15,30,0.08)_100%)]',
             )}
           />
-          <div className="absolute right-4 bottom-4 left-4 rounded-[10px] border border-white/25 bg-white/12 px-4 py-3 text-[16.5px] font-bold tracking-[-0.01em] text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.28)] backdrop-blur-md backdrop-saturate-150">
+          {/* Title only — no panel. The gradient above is what keeps it
+              readable, plus a soft shadow for bright spots in the photo. */}
+          <div className="absolute right-6 bottom-[22px] left-6 text-[16.5px] font-bold tracking-[-0.01em] text-white [text-shadow:0_1px_10px_rgba(6,15,30,0.65)]">
             {title}
           </div>
         </div>
@@ -106,6 +123,20 @@ function FlipCard({ icon, title, desc, image, fit = 'cover' }: Module) {
 }
 
 export function ModulesGrid() {
+  const shouldReduceMotion = useReducedMotion()
+  const gridRef = useRef<HTMLDivElement>(null)
+  const inView = useInView(gridRef, { amount: 0.2 })
+  const [autoFlipped, setAutoFlipped] = useState(false)
+
+  // One shared tick drives every card, so the grid turns together rather than
+  // nine independent timers drifting apart. Paused off-screen, and never
+  // started at all under reduced motion — there the cards only flip on hover.
+  useEffect(() => {
+    if (shouldReduceMotion || !inView) return
+    const id = setInterval(() => setAutoFlipped((f) => !f), 3000)
+    return () => clearInterval(id)
+  }, [shouldReduceMotion, inView])
+
   return (
     // Soft green/navy glows over white — the same radial-glow idiom the dark
     // sections and PageHero already use, here so the frosted cards above have
@@ -134,10 +165,10 @@ export function ModulesGrid() {
             Ver el producto ↗
           </NavLink>
         </Reveal>
-        <div className="grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
+        <div ref={gridRef} className="grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
           {MODULES.map((m, i) => (
             <Reveal key={m.title} fadeOnly delay={(i % 3) * 0.06}>
-              <FlipCard {...m} />
+              <FlipCard {...m} flipped={autoFlipped} stagger={(i % 3) * 0.09} />
             </Reveal>
           ))}
         </div>

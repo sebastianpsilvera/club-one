@@ -36,7 +36,11 @@ export function Hero() {
       <div className="absolute inset-0 z-1 bg-[linear-gradient(90deg,rgba(10,26,51,0.58)_0%,rgba(10,26,51,0.24)_42%,rgba(10,26,51,0.04)_66%,rgba(10,26,51,0)_100%)] max-[860px]:bg-[linear-gradient(180deg,rgba(10,26,51,0.66)_0%,rgba(10,26,51,0.40)_42%,rgba(10,26,51,0.78)_100%)]" />
       <div className="absolute inset-0 z-1 bg-[rgba(10,26,51,0.15)] max-[860px]:bg-[rgba(10,26,51,0.04)]" />
 
-      <div className="relative z-2 mx-auto grid max-w-(--container-max) grid-cols-[0.92fr_1.35fr] items-center gap-14 px-8 pt-[84px] pb-[108px] max-[1080px]:grid-cols-1 max-[1080px]:gap-[52px] max-[1080px]:pt-[60px] max-[1080px]:pb-[72px] max-[720px]:gap-14 max-[720px]:pt-14 max-[720px]:pb-[72px]">
+      {/* Wider than the 1180px content max-width, and a bigger share of it goes
+          to the copy — the H1 was wrapping into five short lines inside a
+          ~478px column while ~130px sat unused either side of the container.
+          Deliberate exception to the layout token; see CLAUDE.md. */}
+      <div className="relative z-2 mx-auto grid max-w-[1360px] grid-cols-[1.42fr_1fr] items-center gap-12 px-8 pt-[84px] pb-[108px] max-[1200px]:max-w-(--container-max) max-[1080px]:grid-cols-1 max-[1080px]:gap-[52px] max-[1080px]:pt-[60px] max-[1080px]:pb-[72px] max-[720px]:gap-14 max-[720px]:pt-14 max-[720px]:pb-[72px]">
         <div>
           <Reveal>
             <h1 className="mb-6 text-display leading-[1.02] font-bold tracking-[-0.035em] text-white">
@@ -46,7 +50,7 @@ export function Hero() {
             </h1>
           </Reveal>
           <Reveal>
-            <p className="mb-[34px] max-w-[460px] text-[clamp(16px,1.25vw,18px)] leading-[1.65] text-[#B8C7DA]">
+            <p className="mb-[34px] max-w-[560px] text-[clamp(16px,1.25vw,18px)] leading-[1.65] text-[#B8C7DA]">
               Todo tu Club en una sola plataforma. Conocé Club One.
             </p>
           </Reveal>
@@ -74,7 +78,7 @@ export function Hero() {
           </Reveal>
         </div>
 
-        <div className="relative mr-[-200px] min-w-0 max-[1080px]:mr-0">
+        <div className="relative mr-[-140px] min-w-0 max-[1080px]:mr-0">
           <motion.div
             ref={orbA.ref}
             style={{ y: orbA.y }}

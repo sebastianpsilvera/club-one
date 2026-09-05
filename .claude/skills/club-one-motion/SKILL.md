@@ -106,7 +106,15 @@ inertia, matching the original design's scrub feel). It collapses to
    already has its hero moment — if a section feels like it needs one,
    that's a sign to simplify the section instead.
 
-   The one sanctioned exception on Home is `ModulesHub`, whose radial
+   `ModulesGrid` is a sanctioned exception, added on explicit request: the
+   cards flip on hover **and** on a shared 3s tick. It's a looping effect on
+   a page that already has its hero, so it's kept as tame as the brief
+   allows — one interval drives all nine cards (not nine drifting timers),
+   it's paused via `useInView` whenever the grid is off-screen, and under
+   `useReducedMotion()` the interval never starts, leaving hover as the only
+   way to flip. Don't add a second looping effect to this page.
+
+   The other sanctioned exception on Home is `ModulesHub`, whose radial
    diagram is scroll-scrubbed (`scale` `0.9 → 1 → 0.9` across the same
    `['start end', 'end start']` offsets `useParallax` uses). It stays
    quiet by construction: it's a single scalar, it sits at exactly `1`

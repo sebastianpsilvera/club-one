@@ -76,7 +76,12 @@ Headings use `letter-spacing: -0.03em` to `-0.035em` and `line-height` around
 
 ## Layout
 
-- Content max-width: `1180px` (forms/hero copy use narrower `860–880px`)
+- Content max-width: `1180px` (forms/hero copy use narrower `860–880px`).
+  **One deliberate exception:** the Home hero runs to `1360px` and gives the
+  copy column the larger share (`1.42fr / 1fr`). At 1180 with the old
+  `0.92fr / 1.35fr` split the H1 had only ~478px and broke into six short
+  lines while ~130px sat unused either side of the container. Below 1200px it
+  falls back to the normal token.
 - **Mobile CTA buttons (≤720px):** a CTA row stacks into one column with
   every button the same width, so buttons never sit side by side at two
   different content widths. In a centered section (`ClosingCta`, `PageHero`,

@@ -42,7 +42,10 @@ export function AppSection() {
         <div>
           <Reveal>
             <h2 className="mb-[18px] text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-[#F2F7FC]">
-              El club, en el bolsillo <span className="text-green">del socio.</span>
+              {/* Explicit rows so "del socio." always lands together on the
+                  second line instead of wrapping after "en el". */}
+              <span className="block">El club, en el bolsillo</span>
+              <span className="block text-green">del socio.</span>
             </h2>
           </Reveal>
           <Reveal>
