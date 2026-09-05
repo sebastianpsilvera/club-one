@@ -49,7 +49,12 @@ const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' |
   reservas: { src: '/assets/shot-teesheet.webp', alt: 'Reservas y tee sheet en tiempo real', fit: 'contain' },
   facturacion: { src: '/assets/facturacion.png', alt: 'Facturación y cobros', fit: 'fill' },
   proshop: { src: '/assets/shot-proshop.webp', alt: 'Proshop: punto de venta e inventario', fit: 'contain' },
-  driving: { src: '/assets/driving-range.jpg', alt: 'Driving range', fit: 'cover' },
+  // These four are photographs rather than UI screenshots, so they fill the
+  // frame with object-cover; the screenshots stay 'contain' since the frame
+  // already matches their ratio and cropping one would cut off real UI.
+  driving: { src: '/assets/shot-driving.webp', alt: 'Driving range', fit: 'cover' },
+  mantenimiento: { src: '/assets/shot-mantenimiento.webp', alt: 'Mantenimiento de canchas y greens', fit: 'cover' },
+  casilla: { src: '/assets/shot-casilla.webp', alt: 'Casilla de palos', fit: 'cover' },
   academia: { src: '/assets/shot-academia.webp', alt: 'Academia de golf: alumnos y clases', fit: 'contain' },
 }
 
