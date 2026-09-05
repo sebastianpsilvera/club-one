@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import { useRef } from 'react'
-import { NavLink } from 'react-router-dom'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import {
   Landmark,
@@ -137,21 +136,21 @@ export function ModulesHub() {
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], shouldReduceMotion ? [1, 1, 1] : [0.9, 1, 0.9])
 
   return (
-    <section className="relative overflow-hidden bg-secondary px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+    <section className="relative overflow-hidden bg-white px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
       <div className="relative mx-auto max-w-(--container-max)">
-        <span
-          aria-hidden
-          className="pointer-events-none absolute -top-2 right-0 font-bold text-[64px] leading-none text-navy/6 select-none max-[720px]:hidden"
-        >
-          01
-        </span>
-
+        {/* The module grid earlier on the page lists what each module does;
+            this section is about the one thing that connects them, so the
+            copy here deliberately doesn't repeat that heading. */}
         <Reveal className="mb-16 max-w-[620px] max-[1080px]:mb-10">
+          <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
+            Una sola fuente de datos
+          </div>
           <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
-            Todos los módulos que tu club necesita, en un solo sistema.
+            Todo conectado a una administración central.
           </h2>
           <p className="text-[17px] leading-[1.65] text-ink-muted">
-            Cada módulo está integrado a un sistema central y vos definís los que tu club necesita.
+            Cada módulo escribe y lee del mismo sistema: un socio, una cuenta corriente y un historial, sin
+            planillas intermedias ni datos duplicados entre áreas.
           </p>
         </Reveal>
 
@@ -254,14 +253,6 @@ export function ModulesHub() {
           ))}
         </div>
 
-        <Reveal className="mt-12 max-[720px]:text-center">
-          <NavLink
-            to="/producto"
-            className="rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] whitespace-nowrap text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
-          >
-            Ver el producto ↗
-          </NavLink>
-        </Reveal>
       </div>
     </section>
   )

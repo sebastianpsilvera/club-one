@@ -22,7 +22,7 @@ check there first.
 |---|---|---|
 | `EASE.out` | `cubic-bezier(0.16, 0.84, 0.44, 1)` | Button/link hover, opacity crossfades, scroll reveals — quick, decisive settle. This is the site's default. |
 | `EASE.emphasized` | `cubic-bezier(0.2, 0.7, 0.3, 1)` | Hover lifts on cards/interactive surfaces — a touch softer, slightly springy. |
-| `EASE.inOut` | `cubic-bezier(0.45, 0, 0.25, 1)` | Symmetric in/out motion only — toggles and transforms that reverse themselves. |
+| `EASE.inOut` | `cubic-bezier(0.45, 0, 0.25, 1)` | Symmetric in/out motion only — 3D flips, toggles that reverse themselves. |
 
 These three came from the original shipped design (button hover, card hover,
 and the module flip-card timing respectively) — they are not arbitrary.
@@ -91,8 +91,9 @@ inertia, matching the original design's scrub feel). It collapses to
    before animating. A purely-decorative CSS `@keyframes` loop (the feature
    marquee) must be gated with the `motion-safe:` / `motion-reduce:`
    Tailwind variants instead — same rule, CSS mechanism. A hover-triggered
-   CSS transition uses `motion-reduce:transition-none` instead — same
-   intent, since there's no keyframe loop to gate. A Motion component that
+   CSS transition (the module flip-cards, which flip on hover rather than
+   looping automatically) uses `motion-reduce:transition-none` instead —
+   same intent, since there's no keyframe loop to gate. A Motion component that
    isn't using `<Reveal>`/`useParallax` (e.g. the SVG connectors in
    `ModulesHub`) must read `useReducedMotion()` itself and drop its
    `initial` so the finished state renders immediately.
