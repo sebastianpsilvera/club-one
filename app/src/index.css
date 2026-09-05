@@ -105,6 +105,22 @@
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ---------------------------------------------------------------------
+   react-mockframe patch.
+
+   The MacBook's lid hinge and deck are pinned at `top: 624px` — the
+   device's natural 600px screen height plus its 24px top padding.
+   DeviceFrame overrides the screen height so each screenshot fits its
+   frame exactly, which left the deck floating detached below the lid.
+   `100%` resolves against the frame's padding box, so it is the same
+   624px at the natural size and tracks any override. `!important`
+   because the library's stylesheet is imported after this one.
+--------------------------------------------------------------------- */
+.mockframe.macbook-pro .top-bar,
+.mockframe.macbook-pro .bottom-bar {
+  top: 100% !important;
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

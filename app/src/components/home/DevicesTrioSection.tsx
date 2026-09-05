@@ -2,8 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Reveal } from '@/components/Reveal'
 import { useParallax } from '@/hooks/useParallax'
-import { DeviceFrame, DeviceScreenshot } from '@/components/DeviceFrame'
-import { LaptopScreen, TabletTopBar } from '@/components/BrowserChrome'
+import { DeviceFrame, DeviceScreenshot, SHOT_RATIO } from '@/components/DeviceFrame'
 import { CyclingImage } from '@/components/CyclingImage'
 
 const LAPTOP_SHOTS = [
@@ -39,32 +38,23 @@ export function DevicesTrioSection() {
 
         <motion.div ref={par.ref} style={{ y: par.y }}>
           <div className="relative aspect-[3/2] w-full">
-            <div className="absolute bottom-[5%] left-0 z-[1] w-[82%]">
-              <DeviceFrame variant="laptop" screenClassName="aspect-[16/10]">
-                <LaptopScreen>
-                  <CyclingImage images={LAPTOP_SHOTS} fit="fill" />
-                </LaptopScreen>
+            {/* Overlap tuned to the react-mockframe proportions: the MacBook
+                is wider and shorter than the old hand-built frame, so the
+                tablet and phone step down and to the right of its deck rather
+                than sitting on top of the lid. */}
+            <div className="absolute top-[6%] left-0 z-[1] w-[76%]">
+              <DeviceFrame variant="laptop" ratio={SHOT_RATIO.browser}>
+                <CyclingImage images={LAPTOP_SHOTS} fit="cover" />
               </DeviceFrame>
             </div>
-            <div className="absolute right-0 bottom-[17%] z-[2] w-[48%]">
-              <DeviceFrame variant="tablet" screenClassName="aspect-[8/5]">
-                <div className="flex size-full flex-col overflow-hidden">
-                  <TabletTopBar />
-                  <DeviceScreenshot
-                    src="/assets/shot-golf.webp"
-                    alt="Reportes en la tablet de recepción"
-                    fit="cover"
-                    className="min-h-0 flex-1"
-                  />
-                  <div className="flex h-[4.5%] min-h-3 items-center justify-center bg-[#101C31]">
-                    <span className="h-[3px] w-[26%] rounded-sm bg-white/30" />
-                  </div>
-                </div>
+            <div className="absolute right-[13%] bottom-[4%] z-[2] w-[40%]">
+              <DeviceFrame variant="tablet" ratio={SHOT_RATIO.golf}>
+                <DeviceScreenshot src="/assets/shot-golf.webp" alt="Reportes en la tablet de recepción" />
               </DeviceFrame>
             </div>
-            <div className="absolute right-[3%] bottom-0 z-[3] w-[19%]">
-              <DeviceFrame variant="phone" screenClassName="aspect-[9/19]">
-                <DeviceScreenshot src="/assets/app-pagos.webp" alt="La app de socios en la cancha" fit="contain" />
+            <div className="absolute right-0 bottom-0 z-[3] w-[15%]">
+              <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
+                <DeviceScreenshot src="/assets/app-pagos.webp" alt="La app de socios en la cancha" />
               </DeviceFrame>
             </div>
           </div>

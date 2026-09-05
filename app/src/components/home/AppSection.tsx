@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
 import { useParallax } from '@/hooks/useParallax'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { DeviceFrame, DeviceScreenshot } from '@/components/DeviceFrame'
+import { DeviceFrame, DeviceScreenshot, SHOT_RATIO } from '@/components/DeviceFrame'
 import { CyclingImage } from '@/components/CyclingImage'
 import { motion } from 'motion/react'
 
@@ -80,22 +80,22 @@ export function AppSection() {
         <div className="flex flex-col items-center gap-8">
           <motion.div ref={par.ref} style={{ y: par.y }} className="flex min-w-0 items-end justify-center gap-[18px]">
             <div className="w-[110px] origin-bottom max-[640px]:hidden">
-              <DeviceFrame variant="phone" screenClassName="aspect-[9/19.5]">
-                <DeviceScreenshot src="/assets/app-torneo.webp" alt="Inscripción a un torneo desde la app" fit="cover" />
+              <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
+                <DeviceScreenshot src="/assets/app-torneo.webp" alt="Inscripción a un torneo desde la app" />
               </DeviceFrame>
             </div>
             <div className="w-[130px] origin-bottom">
-              <DeviceFrame variant="phone" screenClassName="aspect-[9/19.5]">
+              <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
                 {isMobile ? (
                   <CyclingImage images={PHONE_SHOTS} fit="cover" interval={4500} />
                 ) : (
-                  <DeviceScreenshot src="/assets/app-pagos.webp" alt="Pagos y estado de cuenta en la app" fit="cover" />
+                  <DeviceScreenshot src="/assets/app-pagos.webp" alt="Pagos y estado de cuenta en la app" />
                 )}
               </DeviceFrame>
             </div>
             <div className="w-[110px] origin-bottom max-[640px]:hidden">
-              <DeviceFrame variant="phone" screenClassName="aspect-[9/19.5]">
-                <DeviceScreenshot src="/assets/app-login.webp" alt="Ingreso a la app de socios" fit="cover" />
+              <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
+                <DeviceScreenshot src="/assets/app-login.webp" alt="Ingreso a la app de socios" />
               </DeviceFrame>
             </div>
           </motion.div>
