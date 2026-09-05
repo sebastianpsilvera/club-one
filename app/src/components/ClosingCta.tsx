@@ -19,13 +19,15 @@ export function ClosingCta({ heading, body, links }: ClosingCtaProps) {
           {heading}
         </h2>
         <p className="mx-auto mb-9 max-w-[560px] text-[17.5px] leading-[1.65] text-ink-muted-light">{body}</p>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-3 max-[720px]:flex-col max-[720px]:items-center">
           {links.map((l) => (
             <NavLink
               key={l.to}
               to={l.to}
               className={cn(
                 'rounded-[11px] px-8 py-[15px] text-[15px] no-underline transition-[background-color,border-color,transform] duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60',
+                // Mobile: one centered column of equal-width buttons.
+                'max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:text-center',
                 l.variant === 'solid'
                   ? 'bg-green font-bold text-navy hover:bg-green-hover'
                   : 'border border-white/24 font-bold text-white hover:border-white hover:bg-white/8',

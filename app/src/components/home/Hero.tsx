@@ -40,28 +40,30 @@ export function Hero() {
         <div>
           <Reveal>
             <h1 className="mb-6 text-display leading-[1.02] font-bold tracking-[-0.035em] text-white">
-              El Sistema de gestion para clubes de golf,
+              El Sistema de gestión para clubes de golf,
               <br />
-              <span className="text-green">#1&nbsp;en innovacion de Latinoamerica</span>
+              <span className="text-green">#1&nbsp;en innovación de Latinoamérica</span>
             </h1>
           </Reveal>
           <Reveal>
             <p className="mb-[34px] max-w-[460px] text-[clamp(16px,1.25vw,18px)] leading-[1.65] text-[#B8C7DA]">
-              Todo tu Club en una sola plataforma. Conoce Club One.
+              Todo tu Club en una sola plataforma. Conocé Club One.
             </p>
           </Reveal>
           <Reveal>
-            <div className="mb-9 flex flex-wrap gap-3 max-[720px]:mb-0 max-[720px]:gap-2.5">
+            {/* Mobile: stack into one column so both CTAs share the text column's
+                edges instead of hugging left at two different content widths. */}
+            <div className="mb-9 flex flex-wrap gap-3 max-[720px]:mb-0 max-[720px]:flex-col max-[720px]:items-stretch max-[720px]:gap-2.5">
               <Button
                 asChild
-                className="rounded-[11px] bg-white px-[30px] py-[15px] text-[15px] text-navy hover:bg-[#E9F0F8]"
+                className="rounded-[11px] bg-white px-[30px] py-[15px] text-[15px] text-navy hover:bg-[#E9F0F8] max-[720px]:w-full"
               >
                 <NavLink to="/contacto">Solicitar demo</NavLink>
               </Button>
               <Button
                 asChild
                 variant="outline"
-                className="rounded-[11px] border-white/28 bg-white/6 px-[30px] py-[15px] text-[15px] text-white hover:border-white hover:bg-white/12"
+                className="rounded-[11px] border-white/28 bg-white/6 px-[30px] py-[15px] text-[15px] text-white hover:border-white hover:bg-white/12 max-[720px]:w-full"
               >
                 <NavLink to="/producto">Ver el producto</NavLink>
               </Button>

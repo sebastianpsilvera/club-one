@@ -42,7 +42,7 @@ export function TeamSection() {
           <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">Nuestro equipo</h2>
           <p className="text-[17px] leading-[1.65] text-ink-muted">
             Un equipo que unió tecnología y un profundo conocimiento del mundo de los clubes de golf. Nos une la
-            pasion por innovar.
+            pasión por innovar.
           </p>
         </Reveal>
         <div className="mb-10 grid grid-cols-4 gap-[18px] max-[1080px]:grid-cols-2 max-[600px]:grid-cols-1">
@@ -52,7 +52,7 @@ export function TeamSection() {
             </Reveal>
           ))}
         </div>
-        <Reveal>
+        <Reveal className="max-[720px]:text-center">
           <NavLink
             to="/nosotros"
             className="rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"

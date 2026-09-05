@@ -57,7 +57,7 @@ const CAPABILITIES: Module[] = [
   {
     icon: <CreditCard />,
     title: 'Cobranzas y medios de pago',
-    desc: 'Integra los distintos medios de pago de forma facil y rapida.',
+    desc: 'Integra los distintos medios de pago de forma fácil y rápida.',
   },
   {
     icon: <Globe />,
@@ -254,7 +254,7 @@ export function ModulesHub() {
           ))}
         </div>
 
-        <Reveal className="mt-12">
+        <Reveal className="mt-12 max-[720px]:text-center">
           <NavLink
             to="/producto"
             className="rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] whitespace-nowrap text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"

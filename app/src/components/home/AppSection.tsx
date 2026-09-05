@@ -67,9 +67,9 @@ export function AppSection() {
           <Reveal>
             <NavLink
               to="/producto"
-              className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:flex max-[720px]:w-full max-[720px]:justify-center"
             >
-              Ver el producto <span className="text-green">→</span>
+              Ver el producto <span>→</span>
             </NavLink>
           </Reveal>
         </div>

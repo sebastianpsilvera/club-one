@@ -32,7 +32,7 @@ const AUTO_ORDER: TabKey[] = ['tee', 'torneos', 'reportes']
 const CAPTIONS: Record<TabKey, string> = {
   reportes: 'REPORTES Y BI · KPIs del club en tiempo real',
   torneos: 'TORNEOS · Configuración y gestión 360°',
-  tee: 'TEE TIMES· La operación del día, en vivo',
+  tee: 'TEE TIMES · La operación del día, en vivo',
   facturacion: 'FACTURACIÓN · Cobros, caja y medios de pago',
   proshop: 'PROSHOP · Inventario y venta rápida',
   driving: 'DRIVING RANGE · Práctica y entrenamiento',
@@ -94,6 +94,9 @@ export function ActionTabsSection() {
               onClick={() => pickTab(t.key)}
               className={cn(
                 'rounded-full border px-5 py-2.5 text-[13.5px] font-medium transition-[color,background-color,border-color,transform] duration-300 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
+                // Eight labels of very uneven length; tighten them on mobile so
+                // they pack into fewer, less ragged centered rows.
+                'max-[720px]:px-3.5 max-[720px]:py-2 max-[720px]:text-[12.5px]',
                 tab === t.key
                   ? 'border-green bg-green text-navy'
                   : 'border-ink-muted-light/25 bg-white/6 text-ink-muted-light hover:border-ink-muted-light/45 hover:text-white',
@@ -154,7 +157,7 @@ export function ActionTabsSection() {
         <Reveal className="mt-[34px] flex justify-center">
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:justify-center"
           >
             Ver el producto <span>→</span>
           </NavLink>

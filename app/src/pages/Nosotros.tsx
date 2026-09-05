@@ -81,7 +81,8 @@ function Counter({ value, prefix = '', suffix = '' }: { value: number; prefix?: 
   }, [inView, value, shouldReduceMotion])
 
   return (
-    <div ref={ref} className="text-[clamp(30px,3vw,40px)] font-bold tracking-[-0.03em] text-navy">
+    // The clamp floor has to clear "+250.000" in a half-width mobile column.
+    <div ref={ref} className="text-[clamp(24px,3vw,40px)] font-bold tracking-[-0.03em] text-navy">
       {prefix}
       {display.toLocaleString('es-AR')}
       {suffix}
@@ -192,7 +193,7 @@ export function Nosotros() {
       <section className="border-b border-border bg-secondary">
         <div className="mx-auto grid max-w-(--container-max) grid-cols-4 gap-8 px-8 py-13 max-[720px]:grid-cols-2 max-[720px]:px-5">
           {STATS.map((s, i) => (
-            <Reveal key={s.label} className="border-l border-border-ink-muted pl-6" delay={(i % 4) * 0.06}>
+            <Reveal key={s.label} className="border-l border-border-muted pl-6 max-[720px]:pl-4" delay={(i % 4) * 0.06}>
               <Counter value={s.value} prefix={s.prefix} suffix={s.suffix} />
               <div className="mt-2 font-mono text-[11px] tracking-[0.12em] text-label uppercase">{s.label}</div>
             </Reveal>

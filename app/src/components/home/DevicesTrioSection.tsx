@@ -23,7 +23,7 @@ export function DevicesTrioSection() {
             Un sistema · Todos los dispositivos
           </div>
           <h2 className="mb-[18px] text-h2-sm leading-[1.07] font-bold tracking-[-0.03em] text-navy text-balance">
-            Una solucion que se adapta a cada usuario
+            Una solución que se adapta a cada usuario
           </h2>
           <p className="mb-7 max-w-[460px] text-[17px] leading-[1.65] text-ink-muted text-pretty">
             Gerencia, staff y socios acceden desde diferentes dispositivos. El diseño responsivo se adapta a cada
@@ -31,7 +31,7 @@ export function DevicesTrioSection() {
           </p>
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50 max-[720px]:flex max-[720px]:w-full max-[720px]:justify-center"
           >
             Ver el producto <span className="text-green">→</span>
           </NavLink>

@@ -48,20 +48,24 @@ namespace — don't reintroduce that collision.
   browser-synthesized fallback weight since Satoshi has no 600 file.
 - Mono (eyebrows/labels/captions): **DM Mono** (Google Fonts, weights 400, 500)
 
-Fluid type scale (all `clamp()`). Headings/titles were bumped ~15% larger
-across the board per explicit request — don't re-scale again without a
-similar explicit ask; body/eyebrow sizes were untouched and stay as the
-baseline reference point:
+Fluid type scale (all `clamp()`). The **maximums** are the desktop sizes,
+bumped ~15% larger across the board per explicit request — don't re-scale
+those again without a similar explicit ask. The **minimums** only bind below
+~720px and are set so the longest single word in each role still fits a
+360px screen (the binding case is `Latinoamérica` in the home hero H1);
+lowering a floor further is a mobile-fit decision, not a re-scale of the
+design. Body/eyebrow sizes were untouched and stay as the baseline
+reference point:
 
 | Token | clamp() | Used for |
 |---|---|---|
-| `display` | `clamp(2.875rem, 5.25vw, 4.5rem)` (46–72px) | Home hero H1 |
-| `h1` | `clamp(2.75rem, 5vw, 4.125rem)` (44–66px) | Page hero H1 (Producto/Nosotros/Clientes/Contacto) |
-| `h2` | `clamp(2.125rem, 3.6vw, 3.125rem)` (34–50px) | Section H2 |
-| `h2-lg` | `clamp(2.25rem, 4.1vw, 3.5625rem)` (36–57px) | Larger editorial H2 (Nosotros history intro) |
-| `h2-sm` | `clamp(2rem, 3.3vw, 2.875rem)` (32–46px) | Slightly smaller section H2 (device/product feature sections) |
-| `h3` | `clamp(1.875rem, 3.3vw, 2.6875rem)` (30–43px) | Subsection H3 (alternating story rows) |
-| `cta` | `clamp(2.25rem, 4.1vw, 3.4375rem)` (36–55px) | Closing CTA heading (reused on every page) |
+| `display` | `clamp(2.375rem, 5.25vw, 4.5rem)` (38–72px) | Home hero H1 |
+| `h1` | `clamp(2.25rem, 5vw, 4.125rem)` (36–66px) | Page hero H1 (Producto/Nosotros/Clientes/Contacto) |
+| `h2` | `clamp(1.875rem, 3.6vw, 3.125rem)` (30–50px) | Section H2 |
+| `h2-lg` | `clamp(2rem, 4.1vw, 3.5625rem)` (32–57px) | Larger editorial H2 (Nosotros history intro) |
+| `h2-sm` | `clamp(1.8125rem, 3.3vw, 2.875rem)` (29–46px) | Slightly smaller section H2 (device/product feature sections) |
+| `h3` | `clamp(1.6875rem, 3.3vw, 2.6875rem)` (27–43px) | Subsection H3 (alternating story rows) |
+| `cta` | `clamp(1.9375rem, 4.1vw, 3.4375rem)` (31–55px) | Closing CTA heading (reused on every page) |
 | `body-lg` | `1.0625rem` (17px) | Section intro paragraphs |
 | `body` | `0.9375rem` (15px) | Standard body copy |
 | `eyebrow` | `0.71875rem` (11.5px) | DM Mono uppercase labels, `letter-spacing: 0.22em` |
@@ -73,6 +77,14 @@ Headings use `letter-spacing: -0.03em` to `-0.035em` and `line-height` around
 ## Layout
 
 - Content max-width: `1180px` (forms/hero copy use narrower `860–880px`)
+- **Mobile CTA buttons (≤720px):** a CTA row stacks into one column with
+  every button the same width, so buttons never sit side by side at two
+  different content widths. In a centered section (`ClosingCta`, `PageHero`,
+  `ActionTabsSection`) they're `w-full max-w-[300px]` and centered; in a
+  left-aligned section (the home hero, `DevicesTrioSection`, `AppSection`)
+  they're `w-full` so their edges line up with the copy above them. Applies
+  to real buttons only — the mono `↗` text links just get
+  `max-[720px]:text-center` on their wrapper.
 - Section vertical rhythm: `116px` desktop → `84px` ≤1080px → `64px` ≤720px
 - Border radius: buttons/cards `10–14px` (shadcn `--radius` is set to `0.625rem` / 10px)
 - Grid gaps: `18px` (dense card grids) to `72px` (two-column hero-style sections)

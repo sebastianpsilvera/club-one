@@ -74,7 +74,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center gap-10 border-b border-white/16 py-[30px]">
-          <div className="font-mono text-[10.5px] tracking-[0.18em] text-label uppercase">Donde estamos?</div>
+          <div className="font-mono text-[10.5px] tracking-[0.18em] text-label uppercase">¿Dónde estamos?</div>
           <div className="flex flex-wrap items-start gap-14">
             {OFFICES.map((o) => (
               <div key={o.city} className="flex flex-col gap-1">

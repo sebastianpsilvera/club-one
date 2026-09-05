@@ -128,7 +128,7 @@ export function Producto() {
           <Reveal className="flex justify-center">
             <NavLink
               to="/contacto"
-              className="rounded-[11px] bg-green px-8 py-[15px] text-[15px] font-bold text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+              className="rounded-[11px] bg-green px-8 py-[15px] text-[15px] font-bold text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:text-center"
             >
               Solicitar demo
             </NavLink>
@@ -136,7 +136,9 @@ export function Producto() {
         </div>
       </section>
 
-      <section className="bg-secondary px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      {/* overflow-hidden: the laptop deck flares 5% past the frame, which would
+          otherwise widen the page at tablet widths. */}
+      <section className="overflow-hidden bg-secondary px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto max-w-(--container-max)">
           <Reveal className="mb-12 max-w-[680px]">
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">

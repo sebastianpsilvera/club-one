@@ -21,14 +21,18 @@
   --color-border-muted: #d6dfe9;
 
   /* Fluid type scale — headings/titles bumped ~15% larger per explicit
-     request; body/eyebrow sizes untouched. See CLAUDE.md. */
-  --text-display: clamp(2.875rem, 5.25vw, 4.5rem);
-  --text-h1: clamp(2.75rem, 5vw, 4.125rem);
-  --text-h2: clamp(2.125rem, 3.6vw, 3.125rem);
-  --text-h2-lg: clamp(2.25rem, 4.1vw, 3.5625rem);
-  --text-h2-sm: clamp(2rem, 3.3vw, 2.875rem);
-  --text-h3: clamp(1.875rem, 3.3vw, 2.6875rem);
-  --text-cta: clamp(2.25rem, 4.1vw, 3.4375rem);
+     request; body/eyebrow sizes untouched. See CLAUDE.md.
+     The clamp *maximums* are the requested desktop sizes and must not move.
+     The *minimums* only bind below ~720px, and are set so the longest single
+     word in each role ("Latinoamérica" on the home hero) still fits a 360px
+     screen without clipping — see CLAUDE.md. */
+  --text-display: clamp(2.375rem, 5.25vw, 4.5rem);
+  --text-h1: clamp(2.25rem, 5vw, 4.125rem);
+  --text-h2: clamp(1.875rem, 3.6vw, 3.125rem);
+  --text-h2-lg: clamp(2rem, 4.1vw, 3.5625rem);
+  --text-h2-sm: clamp(1.8125rem, 3.3vw, 2.875rem);
+  --text-h3: clamp(1.6875rem, 3.3vw, 2.6875rem);
+  --text-cta: clamp(1.9375rem, 4.1vw, 3.4375rem);
   --text-body-lg: 1.0625rem;
   --text-body: 0.9375rem;
   --text-eyebrow: 0.71875rem;
