@@ -45,6 +45,7 @@ const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' |
   torneos: { src: '/assets/shot-torneos.webp', alt: 'Gestión de torneos', fit: 'contain' },
   tee: { src: '/assets/shot-teesheet.webp', alt: 'Tee sheet en tiempo real', fit: 'contain' },
   facturacion: { src: '/assets/facturacion.png', alt: 'Facturación y cobros', fit: 'fill' },
+  proshop: { src: '/assets/shot-proshop.webp', alt: 'Proshop: punto de venta e inventario', fit: 'contain' },
   driving: { src: '/assets/driving-range.jpg', alt: 'Driving range', fit: 'cover' },
   casilla: { src: '/assets/shot-academia.webp', alt: 'Casilla de palos y academia de golf', fit: 'contain' },
 }
