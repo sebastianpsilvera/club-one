@@ -144,14 +144,26 @@ type DeviceScreenshotProps = {
   alt: string
   className?: string
   loading?: 'lazy' | 'eager'
+  /**
+   * Letterbox instead of filling. Only for frames whose screen is a real
+   * device ratio rather than the image's — the laptops, which are kept at a
+   * true 16:10 lid so they don't read as half-shut.
+   */
+  contain?: boolean
 }
 
 /**
- * A screenshot filling a device screen. Always `object-cover` on a screen that
- * was already sized to the image's own ratio, so it fills edge to edge without
- * cropping anything — there is no `fit` option on purpose, since `contain`
- * would letterbox and `fill` would distort.
+ * A screenshot filling a device screen. `object-cover` is the default and is
+ * lossless wherever the screen was sized to the image's own ratio; `contain`
+ * is the opt-out for the 16:10 laptop lid. Never `fill`, which would distort.
  */
-export function DeviceScreenshot({ src, alt, className, loading = 'lazy' }: DeviceScreenshotProps) {
-  return <img src={src} alt={alt} loading={loading} className={cn('block size-full object-cover', className)} />
+export function DeviceScreenshot({ src, alt, className, loading = 'lazy', contain }: DeviceScreenshotProps) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      loading={loading}
+      className={cn('block size-full', contain ? 'object-contain' : 'object-cover', className)}
+    />
+  )
 }

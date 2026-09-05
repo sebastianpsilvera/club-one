@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Reveal } from '@/components/Reveal'
 import { ClosingCta } from '@/components/ClosingCta'
-import { DeviceFrame, DeviceScreenshot, SHOT_RATIO } from '@/components/DeviceFrame'
+import { DeviceFrame, DeviceScreenshot } from '@/components/DeviceFrame'
 import { useScrollFlip } from '@/hooks/useScrollFlip'
 import {
   CalendarClock,
@@ -152,8 +152,8 @@ export function Producto() {
             </p>
           </Reveal>
           <Reveal fadeOnly className="mx-auto mb-14 max-w-[1120px]">
-            <DeviceFrame variant="laptop" ratio={SHOT_RATIO.browser}>
-              <DeviceScreenshot src="/assets/shot-teesheet.webp" alt="Tee sheet de Club One" />
+            <DeviceFrame variant="laptop" ratio={16 / 10} screenClassName="bg-[#0B1526]">
+              <DeviceScreenshot src="/assets/shot-teesheet.webp" alt="Tee sheet de Club One" contain />
             </DeviceFrame>
           </Reveal>
           <div className="grid grid-cols-4 gap-8 max-[720px]:grid-cols-1">

@@ -88,13 +88,13 @@ export function ActionTabsSection() {
     // forcing a scroll. The mockup is driven off vh, so it grows on taller
     // screens rather than being pinned to one size. Reverts to normal flow
     // below 1080px, where a viewport-tall section would squash the mockup.
-    <section className="flex min-h-[100svh] flex-col justify-center bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 pt-[88px] pb-10 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+    <section className="flex min-h-[100svh] flex-col justify-center bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 pt-20 pb-8 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
       <div className="mx-auto w-full max-w-(--container-max)">
-        <Reveal className="mx-auto mb-7 max-w-[640px] text-center max-[1080px]:mb-11">
-          <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-white">
+        <Reveal className="mx-auto mb-6 max-w-[900px] text-center max-[1080px]:mb-11">
+          <h2 className="mb-3 text-h2 leading-[1.06] font-bold tracking-[-0.03em] whitespace-nowrap text-white max-[1080px]:whitespace-normal">
             Descubrí Club One <span className="text-green">en acción.</span>
           </h2>
-          <p className="text-[17px] leading-[1.65] text-ink-muted-light">
+          <p className="mx-auto max-w-[640px] text-[17px] leading-[1.65] text-ink-muted-light">
             Navegar entre módulos es ágil e intuitivo. Cada pantalla fue diseñada con la experiencia del usuario como
             prioridad.
           </p>
@@ -131,13 +131,13 @@ export function ActionTabsSection() {
           <motion.div
             ref={par.ref}
             style={{ y: shouldReduceMotion ? 0 : par.y }}
-            /* 595px is everything else in the section at its measured height —
+            /* 566px is everything else in the section at its measured height —
                heading, tabs, caption, CTA, padding (incl. clearance for the
                sticky header) and the 44px chrome bar.
                Capping the width at the leftover height × the shot's aspect
                makes the mockup exactly fill what's left of one viewport, so it
                grows on tall screens and never pushes the section past the fold. */
-            className="w-full max-w-[min(1180px,calc((100svh-643px)*2.021))] overflow-hidden rounded-[14px] border border-ink-muted-light/20 bg-[#0B1526] shadow-[0_50px_110px_-40px_rgba(0,0,0,0.7)] max-[1080px]:max-w-full"
+            className="w-full max-w-[min(1180px,calc((100svh-566px)*2.021))] overflow-hidden rounded-[14px] border border-ink-muted-light/20 bg-[#0B1526] shadow-[0_50px_110px_-40px_rgba(0,0,0,0.7)] max-[1080px]:max-w-full"
           >
           <div className="flex h-11 shrink-0 items-center gap-2 border-b border-ink-muted-light/16 bg-white/5 px-4">
             <span className="size-[11px] rounded-full bg-[#FF5F57]" />

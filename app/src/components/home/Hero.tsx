@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import { motion } from 'motion/react'
 import { Button } from '@/components/ui/button'
-import { DeviceFrame, SHOT_RATIO } from '@/components/DeviceFrame'
+import { DeviceFrame } from '@/components/DeviceFrame'
 import { CyclingImage } from '@/components/CyclingImage'
 import { useParallax } from '@/hooks/useParallax'
 import { Reveal } from '@/components/Reveal'
@@ -88,8 +88,8 @@ export function Hero() {
             style={{ y: orbB.y }}
             className="pointer-events-none absolute -bottom-[90px] -left-[60px] size-[300px] rounded-full bg-[radial-gradient(circle,rgba(10,26,51,0.08),rgba(10,26,51,0)_65%)] blur-[8px] max-[1080px]:hidden"
           />
-          <DeviceFrame variant="laptop" ratio={SHOT_RATIO.browser} className="mx-auto">
-            <CyclingImage images={HERO_SHOTS} fit="cover" />
+          <DeviceFrame variant="laptop" ratio={16 / 10} className="mx-auto" screenClassName="bg-[#0B1526]">
+            <CyclingImage images={HERO_SHOTS} fit="contain" />
           </DeviceFrame>
         </div>
       </div>

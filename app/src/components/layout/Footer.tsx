@@ -4,7 +4,10 @@ import { NavLink } from 'react-router-dom'
 const SITE_LINKS = [
   { to: '/', label: 'Inicio' },
   { to: '/producto', label: 'Producto' },
-  { to: '/nosotros#turismo', label: 'Turismo' },
+  { to: '/turismo', label: 'Turismo' },
+  // Not in the header menu (which the client fixed at four items), but the
+  // company page still needs a way in.
+  { to: '/quienes-somos', label: 'Quiénes somos' },
   { to: '/contacto', label: 'Contacto' },
 ]
 

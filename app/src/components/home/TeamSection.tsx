@@ -69,7 +69,7 @@ export function TeamSection() {
         </div>
         <Reveal className="max-[720px]:text-center">
           <NavLink
-            to="/nosotros"
+            to="/quienes-somos"
             className="rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Conocé más sobre nosotros ↗

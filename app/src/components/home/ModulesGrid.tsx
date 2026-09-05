@@ -69,15 +69,23 @@ const MODULES: Module[] = [
   },
 ]
 
+/**
+ * Row height on desktop: a third of whatever the viewport has left after the
+ * heading block, the grid gaps and the section padding, so three rows of cards
+ * plus the heading come to exactly one screen. Floored so it can't collapse on
+ * very short windows, and ignored below 1080px where the grid re-stacks.
+ */
+const CARD_H = 'min-h-[max(160px,calc((100svh-326px)/3))] max-[1080px]:min-h-[212px]'
+
 function FlipCard({ icon, title, desc, image, fit = 'cover', flipped, stagger = 0 }: FlipCardProps) {
   return (
-    <div className="min-h-[212px] [perspective:1400px]">
+    <div className={cn('[perspective:1400px]', CARD_H)}>
       {/* Flips on hover, and on the shared 3s auto-flip tick. Hover wins either
           way, and zeroes the stagger so a pointer gets an immediate response. */}
       <div
         data-flipped={flipped ? 'true' : 'false'}
         style={{ '--flip-delay': `${stagger}s` } as React.CSSProperties}
-        className="group relative size-full min-h-[212px] [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.25,1)] [transition-delay:var(--flip-delay)] data-[flipped=true]:[transform:rotateY(180deg)] hover:[transition-delay:0s] hover:[transform:rotateY(180deg)] motion-reduce:transition-none"
+        className={cn(CARD_H, "group relative size-full [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.25,1)] [transition-delay:var(--flip-delay)] data-[flipped=true]:[transform:rotateY(180deg)] hover:[transition-delay:0s] hover:[transform:rotateY(180deg)] motion-reduce:transition-none")}
       >
         {/* Front — frosted glass. The section behind it carries soft green/navy
             glows on purpose: backdrop-blur over a flat white section would be
@@ -91,7 +99,7 @@ function FlipCard({ icon, title, desc, image, fit = 'cover', flipped, stagger = 
         </div>
         {/* Back — the photo. Here the glass sits over real imagery, so the
             title panel is genuinely frosted rather than just tinted. */}
-        <div className="absolute inset-0 overflow-hidden rounded-[14px] border border-white/22 bg-navy shadow-[0_26px_54px_-24px_rgba(10,26,51,0.45)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 overflow-hidden rounded-[14px] bg-navy shadow-[0_26px_54px_-24px_rgba(10,26,51,0.45)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <img
             src={image}
             alt={title}
@@ -141,7 +149,7 @@ export function ModulesGrid() {
     // Soft green/navy glows over white — the same radial-glow idiom the dark
     // sections and PageHero already use, here so the frosted cards above have
     // something to blur. Flat white would make the glass effect invisible.
-    <section className="relative overflow-hidden bg-white px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+    <section className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-white px-8 pt-[72px] pb-6 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <span className="absolute top-[26%] -left-[6%] size-[560px] rounded-full bg-[radial-gradient(circle,rgba(53,196,106,0.30),rgba(53,196,106,0)_66%)] blur-[26px]" />
         <span className="absolute top-[44%] left-[38%] size-[520px] rounded-full bg-[radial-gradient(circle,rgba(10,26,51,0.16),rgba(10,26,51,0)_66%)] blur-[26px]" />
@@ -149,8 +157,8 @@ export function ModulesGrid() {
         <span className="absolute bottom-[-8%] left-[18%] size-[460px] rounded-full bg-[radial-gradient(circle,rgba(10,26,51,0.13),rgba(10,26,51,0)_66%)] blur-[26px]" />
       </div>
       <div className="relative mx-auto max-w-(--container-max)">
-        <Reveal className="mb-14 flex flex-wrap items-end justify-between gap-6">
-          <div className="max-w-[620px]">
+        <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-6 max-[1080px]:mb-14">
+          <div className="max-w-[860px]">
             <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
               Todos los módulos que tu club necesita, en un solo sistema.
             </h2>

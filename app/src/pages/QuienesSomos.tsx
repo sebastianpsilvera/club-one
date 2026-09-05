@@ -96,11 +96,11 @@ function Counter({ value, prefix = '', suffix = '' }: { value: number; prefix?: 
   )
 }
 
-export function Nosotros() {
+export function QuienesSomos() {
   return (
     <div>
       <PageHero
-        eyebrow="Sobre nosotros"
+        eyebrow="Quiénes somos"
         heading={
           <>
             Tecnología al servicio
@@ -138,7 +138,7 @@ export function Nosotros() {
                   <p className="max-w-[460px] text-[17px] leading-[1.65] text-ink-muted text-pretty">{s.body}</p>
                   {s.link && (
                     <NavLink
-                      to="#turismo"
+                      to="/turismo"
                       className="story-link mt-[22px] inline-flex items-center gap-[9px] rounded-sm border-b border-[#B9E4CB] pb-1 font-mono text-[13px] font-medium tracking-[0.08em] text-green-dark no-underline transition-colors duration-150 hover:border-green-dark hover:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
                     >
                       Ver la operación de turismo <ArrowRight className="size-[13px]" />
@@ -148,51 +148,6 @@ export function Nosotros() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="turismo" className="scroll-mt-[90px] bg-navy px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
-        <div className="mx-auto max-w-(--container-max) grid grid-cols-2 items-center gap-16 max-[1080px]:grid-cols-1">
-          <div>
-            <Reveal>
-              <div className="mb-[22px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
-                Turismo · Agente IATA
-              </div>
-              <h2 className="mb-[22px] text-[clamp(30px,3.4vw,46px)] leading-[1.05] font-bold tracking-[-0.035em] text-white text-balance">
-                Consolidadora de tickets y turismo.
-              </h2>
-              <p className="mb-5 max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
-                Operamos como consolidadora mayorista de tickets aéreos y como agencia de turismo con acreditación
-                IATA. Emitimos directamente, negociamos tarifas de volumen y armamos los itinerarios completos.
-              </p>
-              <p className="mb-[34px] max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
-                Esa estructura es la que hoy nos permite ofrecer viajes de golf a los clubes que trabajan con Club
-                One: torneos en el exterior, giras y salidas grupales, con la emisión y la administración resueltas
-                por nosotros.
-              </p>
-              <div className="grid max-w-[480px] grid-cols-2 gap-px rounded-xl border border-white/14 bg-white/14 overflow-hidden">
-                {[
-                  ['Acreditación', 'Agente IATA'],
-                  ['Modelo', 'Mayorista'],
-                  ['Emisión', 'Directa'],
-                  ['Especialidad', 'Viajes de golf'],
-                ].map(([label, value]) => (
-                  <div key={label} className="bg-navy p-[22px]">
-                    <div className="mb-[9px] font-mono text-[10.5px] tracking-[0.16em] text-label uppercase">{label}</div>
-                    <div className="text-base font-medium text-white">{value}</div>
-                  </div>
-                ))}
-              </div>
-            </Reveal>
-          </div>
-          <Reveal fadeOnly className="flex flex-col gap-[18px]">
-            <div className="aspect-video overflow-hidden rounded-[14px] bg-[#16294A]">
-              <img src="/assets/turismo-bangkok.webp" alt="Golf y viajes internacionales" loading="lazy" className="block size-full object-cover" />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-[14px] bg-[#16294A]">
-              <img src="/assets/golf-coast.webp" alt="Cancha de golf costera" loading="lazy" className="block size-full object-cover" />
-            </div>
-          </Reveal>
         </div>
       </section>
 
@@ -289,7 +244,7 @@ export function Nosotros() {
           </Reveal>
           <div className="grid grid-cols-3 gap-x-8 gap-y-10 max-[720px]:grid-cols-1">
             {HOW.map((h, i) => (
-              <Reveal key={h.n} className="border-t border-border-ink-muted pt-6" delay={(i % 3) * 0.06}>
+              <Reveal key={h.n} className="border-t border-border-muted pt-6" delay={(i % 3) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{h.n}</div>
                 <h3 className="mb-[9px] text-lg font-bold text-navy">{h.title}</h3>
                 <p className="text-[15px] leading-[1.6] text-ink-muted">{h.desc}</p>

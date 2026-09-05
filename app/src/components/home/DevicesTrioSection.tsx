@@ -43,8 +43,8 @@ export function DevicesTrioSection() {
                 tablet and phone step down and to the right of its deck rather
                 than sitting on top of the lid. */}
             <div className="absolute top-[6%] left-0 z-[1] w-[76%]">
-              <DeviceFrame variant="laptop" ratio={SHOT_RATIO.browser}>
-                <CyclingImage images={LAPTOP_SHOTS} fit="cover" />
+              <DeviceFrame variant="laptop" ratio={16 / 10} screenClassName="bg-[#0B1526]">
+                <CyclingImage images={LAPTOP_SHOTS} fit="contain" />
               </DeviceFrame>
             </div>
             <div className="absolute right-[13%] bottom-[4%] z-[2] w-[40%]">
