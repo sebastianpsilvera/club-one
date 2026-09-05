@@ -2,8 +2,22 @@ import type { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
 import { Landmark, CircleDot, Diamond, Wine, Users, PartyPopper, CalendarClock, ScanFace, Building2 } from 'lucide-react'
 import { Reveal } from '@/components/Reveal'
+import { cn } from '@/lib/utils'
 
-const MODULES: { icon: ReactNode; title: string; desc: string; image: string }[] = [
+type Module = {
+  icon: ReactNode
+  title: string
+  desc: string
+  image: string
+  /**
+   * Card backs are full-bleed photos by default. 'contain' is for artwork that
+   * isn't a photo — a square icon would otherwise be cropped to a meaningless
+   * middle band by object-cover.
+   */
+  fit?: 'cover' | 'contain'
+}
+
+const MODULES: Module[] = [
   { icon: <Landmark />, title: 'Golf', desc: 'Canchas, torneos, handicaps y jugadores.', image: '/assets/mod-golf.webp' },
   { icon: <CircleDot />, title: 'Tenis', desc: 'Canchas, clases y torneos.', image: '/assets/mod-tenis.jpg' },
   {
@@ -16,7 +30,7 @@ const MODULES: { icon: ReactNode; title: string; desc: string; image: string }[]
     icon: <Wine />,
     title: 'Restaurant',
     desc: 'Mesas, comandas, consumos y facturación.',
-    image: '/assets/mod-restaurant.jpg',
+    image: '/assets/mod-restaurant.webp',
   },
   {
     icon: <Users />,
@@ -29,13 +43,14 @@ const MODULES: { icon: ReactNode; title: string; desc: string; image: string }[]
     icon: <CalendarClock />,
     title: 'Reservas y calendario',
     desc: 'Recursos, recurrencias y disponibilidad.',
-    image: '/assets/mod-reservas.png',
+    image: '/assets/mod-reservas.webp',
+    fit: 'contain',
   },
   {
     icon: <ScanFace />,
     title: 'Control de accesos y estacionamiento',
     desc: 'Ingresos de socios e invitados.',
-    image: '/assets/mod-accesos.jpg',
+    image: '/assets/mod-accesos.webp',
   },
   {
     icon: <Building2 />,
@@ -45,7 +60,7 @@ const MODULES: { icon: ReactNode; title: string; desc: string; image: string }[]
   },
 ]
 
-function FlipCard({ icon, title, desc, image }: { icon: ReactNode; title: string; desc: string; image: string }) {
+function FlipCard({ icon, title, desc, image, fit = 'cover' }: Module) {
   return (
     <div className="min-h-[212px] [perspective:1400px]">
       <div className="group relative size-full min-h-[212px] [transform-style:preserve-3d] transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.25,1)] hover:[transform:rotateY(180deg)] motion-reduce:transition-none">
@@ -62,8 +77,25 @@ function FlipCard({ icon, title, desc, image }: { icon: ReactNode; title: string
         {/* Back — the photo. Here the glass sits over real imagery, so the
             title panel is genuinely frosted rather than just tinted. */}
         <div className="absolute inset-0 overflow-hidden rounded-[14px] border border-white/22 bg-navy shadow-[0_26px_54px_-24px_rgba(10,26,51,0.45)] [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <img src={image} alt={title} loading="lazy" className="absolute inset-0 size-full object-cover" />
-          <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(6,15,30,0.86)_0%,rgba(6,15,30,0.28)_52%,rgba(6,15,30,0.08)_100%)]" />
+          <img
+            src={image}
+            alt={title}
+            loading="lazy"
+            className={cn(
+              'absolute inset-0 size-full',
+              fit === 'contain' ? 'p-8 pb-16 object-contain' : 'object-cover',
+            )}
+          />
+          <div
+            className={cn(
+              'absolute inset-0',
+              // Contained artwork sits on the navy back with nothing to darken,
+              // so it only needs a footer scrim to keep the title legible.
+              fit === 'contain'
+                ? 'bg-[linear-gradient(to_top,rgba(6,15,30,0.86)_0%,rgba(6,15,30,0.30)_28%,rgba(6,15,30,0)_46%)]'
+                : 'bg-[linear-gradient(to_top,rgba(6,15,30,0.86)_0%,rgba(6,15,30,0.28)_52%,rgba(6,15,30,0.08)_100%)]',
+            )}
+          />
           <div className="absolute right-4 bottom-4 left-4 rounded-[10px] border border-white/25 bg-white/12 px-4 py-3 text-[16.5px] font-bold tracking-[-0.01em] text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.28)] backdrop-blur-md backdrop-saturate-150">
             {title}
           </div>
