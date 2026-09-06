@@ -307,16 +307,19 @@ export function Producto() {
         </div>
       </section>
 
-      <section className="flex min-h-[100svh] flex-col justify-center bg-secondary px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      {/* Dark, so it alternates against the white CRM section above and the
+          white Puesta en marcha section below. The glow is anchored bottom-left
+          so it doesn't read as a repeat of the Finanzas section's top-right. */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-[radial-gradient(120%_90%_at_12%_100%,rgba(53,196,106,0.10),rgba(53,196,106,0)_58%),linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto max-w-(--container-max)">
           <Reveal className="mb-14 max-w-[680px]">
-            <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
+            <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
               Tecnología
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-white">
               Compromiso con la innovación y seguridad
             </h2>
-            <p className="font-display text-[17px] leading-[1.65] text-ink-muted">
+            <p className="font-display text-[17px] leading-[1.65] text-ink-muted-light">
               Club One funciona 100% en la nube, se accede desde cualquier navegador y crece con el club: de una sede
               a varias, de un deporte a todos.
             </p>
@@ -324,12 +327,12 @@ export function Producto() {
           <div className="grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {TECH_CARDS.map((c, i) => (
               <Reveal key={c.title} fadeOnly delay={(i % 3) * 0.06}>
-                <div className="rounded-[14px] border border-border bg-white p-6">
-                  <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/12">
-                    <c.icon className="size-[18px] stroke-green-dark stroke-[1.8]" />
+                <div className="rounded-[14px] border border-ink-muted-light/18 bg-white/5 p-6">
+                  <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/14">
+                    <c.icon className="size-[18px] stroke-green stroke-[1.8]" />
                   </div>
-                  <h3 className="mb-2 text-base text-navy">{c.title}</h3>
-                  <p className="text-[14.5px] leading-[1.6] text-ink-muted">{c.desc}</p>
+                  <h3 className="mb-2 text-base text-white">{c.title}</h3>
+                  <p className="text-[14.5px] leading-[1.6] text-ink-muted-light">{c.desc}</p>
                 </div>
               </Reveal>
             ))}
