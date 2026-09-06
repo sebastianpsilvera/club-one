@@ -38,7 +38,7 @@ export function Footer() {
           <div className="max-[720px]:col-span-2">
             <div className="mb-[18px] flex items-center gap-[11px]">
               <img src="/assets/logo-clubone.webp" alt="Club One" className="block size-[34px] brightness-0 invert" />
-              <span className="text-base font-bold tracking-[0.08em] text-white">
+              <span className="text-base font-display font-semibold tracking-[0.08em] text-white">
                 CLUB <span className="text-green">ONE</span>
               </span>
             </div>

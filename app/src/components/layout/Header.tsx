@@ -25,7 +25,7 @@ export function Header() {
             alt="Club One"
             className="block size-9 max-[1080px]:brightness-0 max-[1080px]:invert"
           />
-          <span className="text-[16.5px] font-bold tracking-[0.08em] text-navy max-[1080px]:text-white">
+          <span className="text-[16.5px] font-display font-semibold tracking-[0.08em] text-navy max-[1080px]:text-white">
             CLUB <span className="text-green-dark">ONE</span>
           </span>
         </NavLink>
@@ -39,7 +39,7 @@ export function Header() {
               className={({ isActive }) =>
                 cn(
                   'rounded-lg px-[13px] py-2 text-[14.5px] font-medium text-ink-muted no-underline transition-colors duration-150 hover:bg-secondary/60 hover:text-navy focus-visible:bg-secondary/60 focus-visible:text-navy focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
-                  isActive && 'bg-secondary font-bold text-navy',
+                  isActive && 'bg-secondary font-display font-semibold text-navy',
                 )
               }
             >
@@ -98,7 +98,7 @@ export function Header() {
               <NavLink
                 to="/contacto"
                 onClick={() => setOpen(false)}
-                className="mt-3 rounded-[11px] bg-green py-3.5 text-center text-[15.5px] font-bold text-navy no-underline transition-transform duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                className="mt-3 rounded-[11px] bg-green py-3.5 text-center text-[15.5px] font-display font-semibold text-navy no-underline transition-transform duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
               >
                 Solicitar demo
               </NavLink>

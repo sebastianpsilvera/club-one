@@ -88,7 +88,7 @@ function Counter({ value, prefix = '', suffix = '' }: { value: number; prefix?: 
 
   return (
     // The clamp floor has to clear "+250.000" in a half-width mobile column.
-    <div ref={ref} className="text-[clamp(24px,3vw,40px)] font-bold tracking-[-0.03em] text-navy">
+    <div ref={ref} className="text-[clamp(24px,3vw,40px)] font-display font-semibold tracking-[-0.03em] text-navy">
       {prefix}
       {display.toLocaleString('es-AR')}
       {suffix}
@@ -117,7 +117,7 @@ export function QuienesSomos() {
             <div className="mb-[22px] font-mono text-eyebrow font-medium tracking-[0.22em] text-label uppercase">
               Nuestra historia
             </div>
-            <h2 className="text-h2-lg leading-[1.05] font-bold tracking-[-0.035em] text-navy text-balance">
+            <h2 className="text-h2-lg leading-[1.05] tracking-[-0.035em] text-navy text-balance">
               Somos una consolidadora de tickets mayorista.
             </h2>
           </Reveal>
@@ -132,10 +132,10 @@ export function QuienesSomos() {
                 </Reveal>
                 <Reveal className={s.reverse ? 'order-1' : ''}>
                   <div className="mb-[18px] font-mono text-eyebrow tracking-[0.2em] text-green-dark uppercase">{s.n}</div>
-                  <h3 className="mb-4 text-h3 leading-[1.08] font-bold tracking-[-0.03em] text-navy text-balance">
+                  <h3 className="mb-4 text-h3 leading-[1.08] tracking-[-0.03em] text-navy text-balance">
                     {s.title}
                   </h3>
-                  <p className="max-w-[460px] text-[17px] leading-[1.65] text-ink-muted text-pretty">{s.body}</p>
+                  <p className="max-w-[460px] font-display text-[17px] leading-[1.65] text-ink-muted text-pretty">{s.body}</p>
                   {s.link && (
                     <NavLink
                       to="/turismo"
@@ -168,17 +168,17 @@ export function QuienesSomos() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Nuestra historia
             </div>
-            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               Nacimos adentro del club, <span className="text-green-dark">no en una oficina.</span>
             </h2>
           </Reveal>
           <div>
             <Reveal>
-              <p className="mb-5 text-[17px] leading-[1.7] text-ink-muted text-pretty">
+              <p className="mb-5 font-display text-[17px] leading-[1.7] text-ink-muted text-pretty">
                 Club One nace de la unión de dos mundos: décadas desarrollando software de gestión para clubes de
                 campo y de golf, y años de experiencia real dirigiendo torneos y operando clubes desde adentro.
               </p>
-              <p className="mb-9 text-[17px] leading-[1.7] text-ink-muted text-pretty">
+              <p className="mb-9 font-display text-[17px] leading-[1.7] text-ink-muted text-pretty">
                 Por eso la plataforma habla el idioma del club: entiende de handicaps y green fees, de cuotas y
                 categorías, de la asamblea y del día a día de la administración.
               </p>
@@ -201,7 +201,7 @@ export function QuienesSomos() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Equipo
             </div>
-            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               El equipo detrás de Club One.
             </h2>
           </Reveal>
@@ -217,7 +217,7 @@ export function QuienesSomos() {
                     <div className={`h-[250px] ${m.placeholder === 'empty' ? 'bg-[#F0F4F9]' : 'bg-[linear-gradient(155deg,#0A1A33,#16294A)]'}`} />
                   )}
                   <div className="p-[26px]">
-                    <div className="h-[19px] text-[19px] leading-[19px] font-bold tracking-[-0.01em] text-navy">
+                    <div className="h-[19px] text-[19px] leading-[19px] font-display font-semibold tracking-[-0.01em] text-navy">
                       {m.name}
                     </div>
                     <div className="mt-1.5 mb-3.5 font-mono text-[11px] tracking-[0.14em] text-green-dark uppercase">
@@ -238,7 +238,7 @@ export function QuienesSomos() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Cómo trabajamos
             </div>
-            <h2 className="text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               Un socio tecnológico, no un proveedor más.
             </h2>
           </Reveal>
@@ -246,7 +246,7 @@ export function QuienesSomos() {
             {HOW.map((h, i) => (
               <Reveal key={h.n} className="border-t border-border-muted pt-6" delay={(i % 3) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{h.n}</div>
-                <h3 className="mb-[9px] text-lg font-bold text-navy">{h.title}</h3>
+                <h3 className="mb-[9px] text-lg text-navy">{h.title}</h3>
                 <p className="text-[15px] leading-[1.6] text-ink-muted">{h.desc}</p>
               </Reveal>
             ))}

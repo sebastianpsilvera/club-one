@@ -112,14 +112,14 @@ export function Producto() {
             </div>
           </Reveal>
           <Reveal>
-            <h1 className="mb-[22px] text-h1 leading-[1.04] font-bold tracking-[-0.035em] text-white">
+            <h1 className="mb-[22px] text-h1 leading-[1.04] tracking-[-0.035em] text-white">
               Una plataforma.
               <br />
               <span className="text-green">Todos los módulos.</span>
             </h1>
           </Reveal>
           <Reveal>
-            <p className="mx-auto mb-[34px] max-w-[540px] text-[clamp(16px,1.3vw,18px)] leading-[1.65] text-[#C7D6E8]">
+            <p className="mx-auto mb-[34px] max-w-[540px] font-display text-[clamp(16px,1.3vw,18px)] leading-[1.65] text-[#C7D6E8]">
               Cada área de tu club conectada en un mismo sistema: golf, deportes, socios, finanzas, comunicación y
               operaciones.
             </p>
@@ -127,7 +127,7 @@ export function Producto() {
           <Reveal className="flex justify-center">
             <NavLink
               to="/contacto"
-              className="rounded-[11px] bg-green px-8 py-[15px] text-[15px] font-bold text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:text-center"
+              className="rounded-[11px] bg-green px-8 py-[15px] text-[15px] font-display font-semibold text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:text-center"
             >
               Solicitar demo
             </NavLink>
@@ -137,21 +137,21 @@ export function Producto() {
 
       {/* overflow-hidden: the laptop deck flares 5% past the frame, which would
           otherwise widen the page at tablet widths. */}
-      <section className="overflow-hidden bg-secondary px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      <section className="flex min-h-[100svh] flex-col justify-center overflow-hidden bg-secondary px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto max-w-(--container-max)">
-          <Reveal className="mb-12 max-w-[680px]">
+          <Reveal className="mb-8 max-w-[680px] max-[1080px]:mb-12">
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Módulo golf · Tee time
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               Reservas en <span className="text-green-dark">tiempo real.</span>
             </h2>
-            <p className="text-[17px] leading-[1.65] text-ink-muted text-pretty">
+            <p className="font-display text-[17px] leading-[1.65] text-ink-muted text-pretty">
               La sección Tee Time es el centro operativo del día: reservas, jugadores, estado de cancha, cobros y
               Proshop conviven en una sola pantalla que se actualiza en tiempo real.
             </p>
           </Reveal>
-          <Reveal fadeOnly className="mx-auto mb-14 max-w-[1120px]">
+          <Reveal fadeOnly className="mx-auto mb-10 w-full max-w-[min(1120px,calc((100svh-575px)*1.518))] max-[1080px]:max-w-[1120px]">
             <DeviceFrame variant="laptop" ratio={16 / 10} screenClassName="bg-[#0B1526]">
               <DeviceScreenshot src="/assets/shot-teesheet.webp" alt="Tee sheet de Club One" contain />
             </DeviceFrame>
@@ -162,7 +162,7 @@ export function Producto() {
                 <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/12">
                   <f.icon className="size-[18px] stroke-green-dark stroke-[1.8]" />
                 </div>
-                <h3 className="mb-2 text-[16.5px] font-bold text-navy">{f.title}</h3>
+                <h3 className="mb-2 text-[16.5px] text-navy">{f.title}</h3>
                 <p className="text-[14.5px] leading-[1.6] text-ink-muted">{f.desc}</p>
               </Reveal>
             ))}
@@ -170,7 +170,7 @@ export function Producto() {
         </div>
       </section>
 
-      <section className="overflow-hidden bg-white px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      <section className="flex min-h-[100svh] flex-col justify-center overflow-hidden bg-white px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto grid max-w-(--container-max) grid-cols-[1.55fr_1fr] items-center gap-14 max-[1080px]:grid-cols-1">
           <Reveal fadeOnly className="min-[1360px]:-ml-[88px]">
             <motion.div
@@ -196,10 +196,10 @@ export function Producto() {
               <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
                 Módulo golf · Torneos
               </div>
-              <h2 className="mb-4 text-h2-sm leading-[1.08] font-bold tracking-[-0.03em] text-navy">
+              <h2 className="mb-4 text-h2-sm leading-[1.08] tracking-[-0.03em] text-navy">
                 Gestión de torneos 360°
               </h2>
-              <p className="mb-[26px] text-[17px] leading-[1.65] text-ink-muted">
+              <p className="mb-[26px] font-display text-[17px] leading-[1.65] text-ink-muted">
                 Creá y gestioná torneos de forma intuitiva y rápida. Determiná horarios, inscripciones, modalidad,
                 formato, categorías, costo y más configuraciones.
               </p>
@@ -216,17 +216,17 @@ export function Producto() {
         </div>
       </section>
 
-      <section className="bg-[radial-gradient(120%_90%_at_88%_8%,rgba(53,196,106,0.10),rgba(53,196,106,0)_58%),linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      <section className="flex min-h-[100svh] flex-col justify-center bg-[radial-gradient(120%_90%_at_88%_8%,rgba(53,196,106,0.10),rgba(53,196,106,0)_58%),linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto grid max-w-(--container-max) grid-cols-[1fr_1.15fr] items-center gap-18 max-[1080px]:grid-cols-1">
           <div>
             <Reveal>
               <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
                 Módulo administración
               </div>
-              <h2 className="mb-4 text-h2-sm leading-[1.08] font-bold tracking-[-0.03em] text-white">
+              <h2 className="mb-4 text-h2-sm leading-[1.08] tracking-[-0.03em] text-white">
                 Finanzas <span className="text-green">bajo control.</span>
               </h2>
-              <p className="mb-[26px] text-[17px] leading-[1.65] text-ink-muted-light">
+              <p className="mb-[26px] font-display text-[17px] leading-[1.65] text-ink-muted-light">
                 Cuotas, consumos y facturación en un mismo tablero, con la cobranza del mes a un solo click y la
                 gestión de estado de cuenta socio por socio.
               </p>
@@ -258,16 +258,16 @@ export function Producto() {
         </div>
       </section>
 
-      <section className="bg-white px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      <section className="flex min-h-[100svh] flex-col justify-center bg-white px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto max-w-(--container-max)">
           <Reveal className="mb-14 max-w-[680px]">
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Operativa del club
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               CRM, reservas y comunicación
             </h2>
-            <p className="text-[17px] leading-[1.65] text-ink-muted">
+            <p className="font-display text-[17px] leading-[1.65] text-ink-muted">
               Club One permite administrar el vínculo con el socio: quién es, qué reserva, qué consume y cómo se
               comunica con el club.
             </p>
@@ -275,7 +275,7 @@ export function Producto() {
           <div className="grid grid-cols-4 gap-x-8 gap-y-10 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {OPERATIVA_COLS.map((col, i) => (
               <Reveal key={col.title} className="border-t border-border-ink-muted pt-6" delay={(i % 4) * 0.06}>
-                <h3 className="mb-4 text-[17px] font-bold text-navy">{col.title}</h3>
+                <h3 className="mb-4 font-display text-[17px] text-navy">{col.title}</h3>
                 <div className="flex flex-col gap-3">
                   {col.items.map(([b, rest]) => (
                     <div key={b} className="text-[14.5px] leading-[1.55] text-ink-muted">
@@ -289,38 +289,43 @@ export function Producto() {
         </div>
       </section>
 
-      <section className="bg-secondary px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+      <section className="flex min-h-[100svh] flex-col justify-center bg-secondary px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
         <div className="mx-auto max-w-(--container-max)">
           <Reveal className="mb-14 max-w-[680px]">
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Tecnología
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               Compromiso con la innovación y seguridad
             </h2>
-            <p className="text-[17px] leading-[1.65] text-ink-muted">
+            <p className="font-display text-[17px] leading-[1.65] text-ink-muted">
               Club One funciona 100% en la nube, se accede desde cualquier navegador y crece con el club: de una sede
               a varias, de un deporte a todos.
             </p>
           </Reveal>
-          <div className="mb-18 grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
+          <div className="grid grid-cols-3 gap-[18px] max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {TECH_CARDS.map((c, i) => (
               <Reveal key={c.title} fadeOnly delay={(i % 3) * 0.06}>
                 <div className="rounded-[14px] border border-border bg-white p-6">
-                  <h3 className="mb-2 text-base font-bold text-navy">{c.title}</h3>
+                  <h3 className="mb-2 text-base text-navy">{c.title}</h3>
                   <p className="text-[14.5px] leading-[1.6] text-ink-muted">{c.desc}</p>
                 </div>
               </Reveal>
             ))}
           </div>
-          <Reveal className="mb-8 font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
+        </div>
+      </section>
+
+      <section className="flex min-h-[100svh] flex-col justify-center bg-white px-8 py-16 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+        <div className="mx-auto max-w-(--container-max)">
+          <Reveal className="mb-10 font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
             Puesta en marcha
           </Reveal>
           <div className="grid grid-cols-4 gap-8 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {STEPS.map((s, i) => (
               <Reveal key={s.n} className="border-t border-border-ink-muted pt-[22px]" delay={(i % 4) * 0.06}>
                 <div className="mb-3.5 font-mono text-xs text-green-dark">{s.n}</div>
-                <h3 className="mb-2 text-[17px] font-bold text-navy">{s.title}</h3>
+                <h3 className="mb-2 font-display text-[17px] text-navy">{s.title}</h3>
                 <p className="text-[14.5px] leading-[1.6] text-ink-muted">{s.desc}</p>
               </Reveal>
             ))}

@@ -94,7 +94,7 @@ function FlipCard({ icon, title, desc, image, fit = 'cover', flipped, stagger = 
           <div className="mb-[18px] flex size-[42px] items-center justify-center rounded-xl bg-navy shadow-[0_6px_16px_-8px_rgba(10,26,51,0.6)] [&>svg]:size-5 [&>svg]:stroke-green [&>svg]:stroke-[1.8]">
             {icon}
           </div>
-          <h3 className="mb-[7px] text-[17.5px] font-bold tracking-[-0.01em] text-navy">{title}</h3>
+          <h3 className="mb-[7px] font-display text-[17.5px] tracking-[-0.01em] text-navy">{title}</h3>
           <p className="text-[14.5px] leading-[1.55] text-ink-muted">{desc}</p>
         </div>
         {/* Back — the photo. Here the glass sits over real imagery, so the
@@ -121,7 +121,7 @@ function FlipCard({ icon, title, desc, image, fit = 'cover', flipped, stagger = 
           />
           {/* Title only — no panel. The gradient above is what keeps it
               readable, plus a soft shadow for bright spots in the photo. */}
-          <div className="absolute right-6 bottom-[22px] left-6 text-[16.5px] font-bold tracking-[-0.01em] text-white [text-shadow:0_1px_10px_rgba(6,15,30,0.65)]">
+          <div className="absolute right-6 bottom-[22px] left-6 text-[16.5px] font-display font-semibold tracking-[-0.01em] text-white [text-shadow:0_1px_10px_rgba(6,15,30,0.65)]">
             {title}
           </div>
         </div>
@@ -159,10 +159,10 @@ export function ModulesGrid() {
       <div className="relative mx-auto max-w-(--container-max)">
         <Reveal className="mb-8 flex flex-wrap items-end justify-between gap-6 max-[1080px]:mb-14">
           <div className="max-w-[860px]">
-            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               Todos los módulos que tu club necesita, en un solo sistema.
             </h2>
-            <p className="text-[17px] leading-[1.65] text-ink-muted">
+            <p className="font-display text-[17px] leading-[1.65] text-ink-muted">
               Cada módulo está integrado a un sistema central y vos definís los que tu club necesita.
             </p>
           </div>

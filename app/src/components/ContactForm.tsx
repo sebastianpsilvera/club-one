@@ -77,7 +77,7 @@ export function ContactForm({
           <div className="mx-auto mb-[22px] flex size-16 items-center justify-center rounded-full bg-green/14">
             <CheckCircle2 className="size-7 stroke-green-dark stroke-[2]" />
           </div>
-          <h3 className="mb-2.5 text-[22px] font-bold tracking-[-0.02em] text-navy">¡Recibimos tu consulta!</h3>
+          <h3 className="mb-2.5 text-[22px] tracking-[-0.02em] text-navy">¡Recibimos tu consulta!</h3>
           <p className="mb-[26px] text-[15.5px] leading-[1.6] text-ink-muted">
             Gracias por escribirnos. Te contactamos dentro de las próximas 24 horas hábiles.
           </p>

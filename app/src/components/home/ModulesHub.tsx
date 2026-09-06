@@ -130,7 +130,7 @@ function ModuleBlock({ icon, title, desc, align }: Module & { align: 'left' | 'r
     <div className={`flex items-start gap-3.5 ${align === 'right' ? 'flex-row-reverse text-right' : ''}`}>
       <ModuleIcon>{icon}</ModuleIcon>
       <div>
-        <h3 className="text-[16.5px] leading-[1.25] font-bold tracking-[-0.01em] text-navy">{title}</h3>
+        <h3 className="text-[16.5px] leading-[1.25] tracking-[-0.01em] text-navy">{title}</h3>
         <p className="mt-1 text-[13.5px] leading-[1.5] text-ink-muted">{desc}</p>
       </div>
     </div>
@@ -220,7 +220,7 @@ function Hub() {
   return (
     <div className="flex aspect-square flex-col items-center justify-center rounded-full bg-navy px-6 text-center shadow-[0_36px_80px_-34px_rgba(10,26,51,0.55)]">
       <img src="/assets/logo-clubone.webp" alt="" className="mb-3 block size-8 brightness-0 invert" />
-      <div className="text-[15px] leading-[1.2] font-bold tracking-[-0.01em] text-white">Administración central</div>
+      <div className="text-[15px] leading-[1.2] font-display font-semibold tracking-[-0.01em] text-white">Administración central</div>
       <div className="mt-1.5 font-mono text-[9.5px] tracking-[0.16em] text-green uppercase">
         Fuente única de datos
       </div>
@@ -248,10 +248,10 @@ export function ModulesHub() {
           <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
             Una sola fuente de datos
           </div>
-          <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+          <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
             Todo conectado a una administración central.
           </h2>
-          <p className="text-[17px] leading-[1.65] text-ink-muted">
+          <p className="font-display text-[17px] leading-[1.65] text-ink-muted">
             Cada módulo escribe y lee del mismo sistema: un socio, una cuenta corriente y un historial, sin
             planillas intermedias ni datos duplicados entre áreas.
           </p>
@@ -309,7 +309,7 @@ export function ModulesHub() {
           {CAPABILITIES.map((c, i) => (
             <Reveal key={c.title} delay={(i % 3) * 0.06}>
               <ModuleIcon>{c.icon}</ModuleIcon>
-              <h3 className="mt-3.5 mb-2 text-[16.5px] font-bold tracking-[-0.01em] text-navy">{c.title}</h3>
+              <h3 className="mt-3.5 mb-2 text-[16.5px] tracking-[-0.01em] text-navy">{c.title}</h3>
               <p className="text-[13.5px] leading-[1.55] text-ink-muted">{c.desc}</p>
             </Reveal>
           ))}

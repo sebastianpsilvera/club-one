@@ -42,14 +42,14 @@ export function Hero() {
       <div className="relative z-2 mx-auto grid max-w-[1360px] grid-cols-[1.42fr_1fr] items-center gap-12 px-8 pt-[84px] pb-[108px] max-[1200px]:max-w-(--container-max) max-[1080px]:grid-cols-1 max-[1080px]:gap-[52px] max-[1080px]:pt-[60px] max-[1080px]:pb-[72px] max-[720px]:gap-14 max-[720px]:pt-14 max-[720px]:pb-[72px]">
         <div>
           <Reveal>
-            <h1 className="mb-6 text-display leading-[1.02] font-bold tracking-[-0.035em] text-white">
+            <h1 className="mb-6 text-display leading-[1.02] tracking-[-0.035em] text-white">
               El Sistema de gestión para clubes de golf,
               <br />
               <span className="text-green">#1&nbsp;en innovación de Latinoamérica</span>
             </h1>
           </Reveal>
           <Reveal>
-            <p className="mb-[34px] max-w-[560px] text-[clamp(16px,1.25vw,18px)] leading-[1.65] text-[#B8C7DA]">
+            <p className="mb-[34px] max-w-[560px] font-display text-[clamp(16px,1.25vw,18px)] leading-[1.65] text-[#B8C7DA]">
               Todo tu Club en una sola plataforma. Conocé Club One.
             </p>
           </Reveal>

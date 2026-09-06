@@ -41,7 +41,7 @@ export function AppSection() {
       <div className="mx-auto grid max-w-(--container-max) grid-cols-[1fr_0.9fr] items-center gap-16 max-[1080px]:grid-cols-1 max-[1080px]:gap-12">
         <div>
           <Reveal>
-            <h2 className="mb-[18px] text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-[#F2F7FC]">
+            <h2 className="mb-[18px] text-h2 leading-[1.06] tracking-[-0.03em] text-[#F2F7FC]">
               {/* Explicit rows so "del socio." always lands together on the
                   second line instead of wrapping after "en el". */}
               <span className="block">El club, en el bolsillo</span>
@@ -49,7 +49,7 @@ export function AppSection() {
             </h2>
           </Reveal>
           <Reveal>
-            <p className="mb-[30px] max-w-[440px] text-[17px] leading-[1.65] text-ink-muted-light">
+            <p className="mb-[30px] max-w-[440px] font-display text-[17px] leading-[1.65] text-ink-muted-light">
               Club One incluye una app para socios, en iOS y Android.
             </p>
           </Reveal>
@@ -70,7 +70,7 @@ export function AppSection() {
           <Reveal>
             <NavLink
               to="/producto"
-              className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:flex max-[720px]:w-full max-[720px]:justify-center"
+              className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3.5 text-[15px] font-display font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:flex max-[720px]:w-full max-[720px]:justify-center"
             >
               Ver el producto <span>→</span>
             </NavLink>
@@ -81,21 +81,21 @@ export function AppSection() {
           <motion.div ref={par.ref} style={{ y: par.y }} className="flex min-w-0 items-end justify-center gap-[18px]">
             <div className="w-[110px] origin-bottom max-[640px]:hidden">
               <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
-                <DeviceScreenshot src="/assets/app-torneo.webp" alt="Inscripción a un torneo desde la app" />
+                <DeviceScreenshot src="/assets/app-torneo.webp" alt="Inscripción a un torneo desde la app" contain />
               </DeviceFrame>
             </div>
             <div className="w-[130px] origin-bottom">
               <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
                 {isMobile ? (
-                  <CyclingImage images={PHONE_SHOTS} fit="cover" interval={4500} />
+                  <CyclingImage images={PHONE_SHOTS} fit="contain" interval={4500} />
                 ) : (
-                  <DeviceScreenshot src="/assets/app-pagos.webp" alt="Pagos y estado de cuenta en la app" />
+                  <DeviceScreenshot src="/assets/app-pagos.webp" alt="Pagos y estado de cuenta en la app" contain />
                 )}
               </DeviceFrame>
             </div>
             <div className="w-[110px] origin-bottom max-[640px]:hidden">
               <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
-                <DeviceScreenshot src="/assets/app-login.webp" alt="Ingreso a la app de socios" />
+                <DeviceScreenshot src="/assets/app-login.webp" alt="Ingreso a la app de socios" contain />
               </DeviceFrame>
             </div>
           </motion.div>

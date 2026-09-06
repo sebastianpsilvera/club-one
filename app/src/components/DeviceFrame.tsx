@@ -163,7 +163,7 @@ export function DeviceScreenshot({ src, alt, className, loading = 'lazy', contai
       src={src}
       alt={alt}
       loading={loading}
-      className={cn('block size-full', contain ? 'object-contain' : 'object-cover', className)}
+      className={cn('block size-full object-center', contain ? 'object-contain' : 'object-cover', className)}
     />
   )
 }

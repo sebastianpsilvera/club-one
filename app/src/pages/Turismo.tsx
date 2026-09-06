@@ -56,14 +56,14 @@ export function Turismo() {
               <div className="mb-[22px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
                 Turismo · Agente IATA
               </div>
-              <h2 className="mb-[22px] text-[clamp(30px,3.4vw,46px)] leading-[1.05] font-bold tracking-[-0.035em] text-white text-balance">
+              <h2 className="mb-[22px] text-[clamp(30px,3.4vw,46px)] leading-[1.05] tracking-[-0.035em] text-white text-balance">
                 Consolidadora de tickets y turismo.
               </h2>
-              <p className="mb-5 max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
+              <p className="font-display mb-5 max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
                 Operamos como consolidadora mayorista de tickets aéreos y como agencia de turismo con acreditación
                 IATA. Emitimos directamente, negociamos tarifas de volumen y armamos los itinerarios completos.
               </p>
-              <p className="mb-[34px] max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
+              <p className="mb-[34px] max-w-[480px] font-display text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
                 Esa estructura es la que hoy nos permite ofrecer viajes de golf a los clubes que trabajan con Club
                 One: torneos en el exterior, giras y salidas grupales, con la emisión y la administración resueltas
                 por nosotros.
@@ -107,10 +107,10 @@ export function Turismo() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Paquetes
             </div>
-            <h2 className="mb-4 text-h2 leading-[1.06] font-bold tracking-[-0.03em] text-navy">
+            <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">
               Armamos paquetes a medida.
             </h2>
-            <p className="text-[17px] leading-[1.65] text-ink-muted text-pretty">
+            <p className="font-display text-[17px] leading-[1.65] text-ink-muted text-pretty">
               Cada club tiene su calendario, su presupuesto y su grupo. Armamos el viaje sobre eso: destino, fechas,
               canchas y presupuesto, con una sola contraparte de principio a fin.
             </p>
@@ -121,7 +121,7 @@ export function Turismo() {
                 <div className="mb-[18px] flex size-[42px] items-center justify-center rounded-xl bg-navy">
                   <p.icon className="size-5 stroke-green stroke-[1.8]" />
                 </div>
-                <h3 className="mb-[7px] text-[17.5px] font-bold tracking-[-0.01em] text-navy">{p.title}</h3>
+                <h3 className="mb-[7px] font-display text-[17.5px] tracking-[-0.01em] text-navy">{p.title}</h3>
                 <p className="text-[14.5px] leading-[1.55] text-ink-muted">{p.desc}</p>
               </Reveal>
             ))}
@@ -135,7 +135,7 @@ export function Turismo() {
             <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
               Contacto
             </div>
-            <h2 className="mb-[18px] text-[clamp(26px,2.6vw,34px)] leading-[1.12] font-bold tracking-[-0.025em] text-navy">
+            <h2 className="mb-[18px] text-[clamp(26px,2.6vw,34px)] leading-[1.12] tracking-[-0.025em] text-navy">
               Contanos qué viaje tenés en mente.
             </h2>
             <p className="max-w-[380px] text-[16px] leading-[1.65] text-ink-muted text-pretty">

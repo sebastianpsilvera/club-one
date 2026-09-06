@@ -21,16 +21,16 @@ export function DevicesTrioSection() {
           <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
             Un sistema · Todos los dispositivos
           </div>
-          <h2 className="mb-[18px] text-h2-sm leading-[1.07] font-bold tracking-[-0.03em] text-navy text-balance">
+          <h2 className="mb-[18px] text-h2-sm leading-[1.07] tracking-[-0.03em] text-navy text-balance">
             Una solución que se adapta a cada usuario
           </h2>
-          <p className="mb-7 max-w-[460px] text-[17px] leading-[1.65] text-ink-muted text-pretty">
+          <p className="mb-7 max-w-[460px] font-display text-[17px] leading-[1.65] text-ink-muted text-pretty">
             Gerencia, staff y socios acceden desde diferentes dispositivos. El diseño responsivo se adapta a cada
             pantalla acorde a los permisos de cada usuario.
           </p>
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-bold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50 max-[720px]:flex max-[720px]:w-full max-[720px]:justify-center"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-navy px-[26px] py-3.5 text-[15px] font-display font-semibold whitespace-nowrap text-white no-underline transition-[background-color,transform] duration-150 hover:bg-[#16294A] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50 max-[720px]:flex max-[720px]:w-full max-[720px]:justify-center"
           >
             Ver el producto <span className="text-green">→</span>
           </NavLink>
@@ -54,7 +54,7 @@ export function DevicesTrioSection() {
             </div>
             <div className="absolute right-0 bottom-0 z-[3] w-[15%]">
               <DeviceFrame variant="phone" ratio={SHOT_RATIO.app}>
-                <DeviceScreenshot src="/assets/app-pagos.webp" alt="La app de socios en la cancha" />
+                <DeviceScreenshot src="/assets/app-pagos.webp" alt="La app de socios en la cancha" contain />
               </DeviceFrame>
             </div>
           </div>

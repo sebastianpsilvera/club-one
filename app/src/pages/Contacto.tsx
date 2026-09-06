@@ -26,7 +26,7 @@ export function Contacto() {
         <div className="mx-auto grid max-w-(--container-max) grid-cols-[1fr_1.25fr] items-start gap-18 max-[1080px]:grid-cols-1 max-[1080px]:gap-12">
           <div>
             <Reveal>
-              <h2 className="mb-[34px] text-[clamp(26px,2.6vw,34px)] leading-[1.12] font-bold tracking-[-0.025em] text-navy">
+              <h2 className="mb-[34px] text-[clamp(26px,2.6vw,34px)] leading-[1.12] tracking-[-0.025em] text-navy">
                 Qué podés esperar al escribirnos
               </h2>
             </Reveal>

@@ -37,7 +37,10 @@
   --text-body: 0.9375rem;
   --text-eyebrow: 0.71875rem;
 
-  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  /* Inter carries body copy and UI; Poppins is the display face for headings
+     and highlighted text. See CLAUDE.md for which role gets which. */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Poppins', 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'DM Mono', ui-monospace, monospace;
 
   --container-max: 1180px;
@@ -140,6 +143,16 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     overflow-x: clip;
+  }
+  /* Headings are Poppins SemiBold by default, so individual headings don't
+     each have to carry the font class. Weight can still be overridden per
+     element where a lighter or heavier cut is wanted. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
   }
   img,
   svg,

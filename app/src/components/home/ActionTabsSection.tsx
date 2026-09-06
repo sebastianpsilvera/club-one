@@ -91,10 +91,10 @@ export function ActionTabsSection() {
     <section className="flex min-h-[100svh] flex-col justify-center bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 pt-20 pb-8 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
       <div className="mx-auto w-full max-w-(--container-max)">
         <Reveal className="mx-auto mb-6 max-w-[900px] text-center max-[1080px]:mb-11">
-          <h2 className="mb-3 text-h2 leading-[1.06] font-bold tracking-[-0.03em] whitespace-nowrap text-white max-[1080px]:whitespace-normal">
+          <h2 className="mb-3 text-h2 leading-[1.06] tracking-[-0.03em] whitespace-nowrap text-white max-[1080px]:whitespace-normal">
             Descubrí Club One <span className="text-green">en acción.</span>
           </h2>
-          <p className="mx-auto max-w-[640px] text-[17px] leading-[1.65] text-ink-muted-light">
+          <p className="mx-auto max-w-[640px] font-display text-[17px] leading-[1.65] text-ink-muted-light">
             Navegar entre módulos es ágil e intuitivo. Cada pantalla fue diseñada con la experiencia del usuario como
             prioridad.
           </p>
@@ -185,7 +185,7 @@ export function ActionTabsSection() {
         <Reveal className="mt-6 flex justify-center max-[1080px]:mt-[34px]">
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-bold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:justify-center"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-display font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:justify-center"
           >
             Ver el producto <span>→</span>
           </NavLink>

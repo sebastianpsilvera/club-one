@@ -35,17 +35,21 @@ namespace — don't reintroduce that collision.
 
 ## Type
 
-- Sans (body/headings): **Satoshi** (Fontshare, loaded via
-  `https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap`
-  in `index.html` — Fontshare's free-for-commercial license, no local font
-  files in the repo). Satoshi ships exactly five static weights — 300, 400,
-  500, 700, 900 — **there is no 600/semibold cut**. Because of that, every
-  `font-semibold` in the codebase was deliberately remapped to a real weight
-  Satoshi actually has: `font-bold` (700) for headings (`h1`/`h2`/`h3`),
-  primary CTA buttons, and card/display titles; `font-medium` (500) for
-  secondary UI text — nav links, form labels, tab pills, names/values, inline
-  emphasis. Don't reintroduce `font-semibold` — it renders as a
-  browser-synthesized fallback weight since Satoshi has no 600 file.
+- Display (headings, highlighted text): **Poppins** (Google Fonts, weights
+  400, 500, 600, 700), exposed as the `font-display` utility via the
+  `--font-display` token. Headings are Poppins **SemiBold (600)** by default —
+  a base rule in `src/index.css` sets `h1`–`h4` to that, so individual
+  headings don't carry a font class. Poppins **Regular (400)** is for
+  subtitles, section intro paragraphs and other highlighted copy; add
+  `font-display` explicitly there.
+- Body (body copy, large text, UI): **Inter** (Google Fonts, weights 400, 500,
+  600). This is `--font-sans`, i.e. the default on `body`, so ordinary copy,
+  form fields, nav links, table/label text and anything not called out above
+  is Inter without needing a class.
+- Unlike Satoshi (the previous face) Poppins **does** ship a real 600 cut, so
+  `font-semibold` is correct again and is what headings, buttons and other
+  highlighted text use. The old "never use font-semibold" rule existed only
+  because Satoshi had no 600 file; it no longer applies.
 - Mono (eyebrows/labels/captions): **DM Mono** (Google Fonts, weights 400, 500)
 
 Fluid type scale (all `clamp()`). The **maximums** are the desktop sizes,
