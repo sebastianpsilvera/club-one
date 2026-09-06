@@ -1,7 +1,7 @@
 import { Plane, Trophy, Users, Wallet } from 'lucide-react'
-import { PageHero } from '@/components/PageHero'
 import { Reveal } from '@/components/Reveal'
 import { ContactForm } from '@/components/ContactForm'
+import { FlyingPlane } from '@/components/FlyingPlane'
 
 const SPECS = [
   ['Acreditación', 'Agente IATA'],
@@ -36,28 +36,17 @@ const PAQUETES = [
 export function Turismo() {
   return (
     <div>
-      <PageHero
-        eyebrow="Turismo · Agente IATA"
-        heading={
-          <>
-            Viajes de golf,
-            <br />
-            <span className="text-green-dark">resueltos de punta a punta.</span>
-          </>
-        }
-        body="Operamos como consolidadora mayorista de tickets aéreos y agencia de turismo con acreditación IATA, al servicio de los clubes que trabajan con Club One."
-        maxBody="max-w-[560px]"
-      />
-
-      <section id="turismo" className="scroll-mt-[90px] bg-navy px-8 py-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
-        <div className="mx-auto grid max-w-(--container-max) grid-cols-2 items-center gap-16 max-[1080px]:grid-cols-1">
+      <section id="turismo" className="relative scroll-mt-[90px] overflow-hidden bg-navy px-8 pt-[132px] pb-[116px] max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+        {/* Flies across the empty band above the heading. */}
+        <FlyingPlane className="top-0 h-[150px] max-[1080px]:hidden" />
+        <div className="relative mx-auto grid max-w-(--container-max) grid-cols-2 items-center gap-16 max-[1080px]:grid-cols-1">
           <div>
             <Reveal>
               <div className="mb-[22px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green uppercase">
                 Turismo · Agente IATA
               </div>
               <h2 className="mb-[22px] text-[clamp(30px,3.4vw,46px)] leading-[1.05] tracking-[-0.035em] text-white text-balance">
-                Consolidadora de tickets y turismo.
+                Mayorista de tickets aéreos.
               </h2>
               <p className="font-display mb-5 max-w-[480px] text-[17.5px] leading-[1.65] text-[#B8C7DA] text-pretty">
                 Operamos como consolidadora mayorista de tickets aéreos y como agencia de turismo con acreditación
@@ -80,19 +69,11 @@ export function Turismo() {
               </div>
             </Reveal>
           </div>
-          <Reveal fadeOnly className="flex flex-col gap-[18px]">
-            <div className="aspect-video overflow-hidden rounded-[14px] bg-[#16294A]">
+          <Reveal fadeOnly>
+            <div className="aspect-[3/2] overflow-hidden rounded-[14px] bg-[#16294A]">
               <img
-                src="/assets/turismo-bangkok.webp"
-                alt="Golf y viajes internacionales"
-                loading="lazy"
-                className="block size-full object-cover"
-              />
-            </div>
-            <div className="aspect-video overflow-hidden rounded-[14px] bg-[#16294A]">
-              <img
-                src="/assets/golf-coast.webp"
-                alt="Cancha de golf costera"
+                src="/assets/turismo-destino.webp"
+                alt="Cancha de golf costera en el Caribe"
                 loading="lazy"
                 className="block size-full object-cover"
               />

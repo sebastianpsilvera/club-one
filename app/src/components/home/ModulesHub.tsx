@@ -83,10 +83,10 @@ const CY = VB.h / 2
 const HUB_R = 110
 /** Row centres per side, each set symmetric about the hub. Five tentacles on
     the left, four on the right — nine modules don't split evenly. */
-const ROW_Y_LEFT = [70, 165, 280, 395, 490]
-const ROW_Y_RIGHT = [118, 233, 348, 463]
+const ROW_Y_LEFT = [44, 152, 280, 408, 516]
+const ROW_Y_RIGHT = [88, 216, 344, 472]
 /** Where each tentacle ends — just inside the module text blocks. */
-const DOT_X = { left: 440, right: 760 }
+const DOT_X = { left: 372, right: 828 }
 
 type Tip = { cx: number; cy: number; side: 'left' | 'right' }
 
@@ -206,7 +206,7 @@ function ModuleNode({
 
   return (
     <motion.div
-      className={`absolute w-[35%] -translate-y-1/2 ${tip.side === 'left' ? 'left-0' : 'right-0'}`}
+      className={`absolute w-[29%] -translate-y-1/2 ${tip.side === 'left' ? 'left-0' : 'right-0'}`}
       style={{ top: pct(tip.cy, VB.h), x: xPct }}
     >
       <Reveal fadeOnly delay={delay}>

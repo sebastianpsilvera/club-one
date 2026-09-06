@@ -15,6 +15,13 @@ import {
   Smartphone,
   Building,
   BrainCircuit,
+  CalendarRange,
+  MessageSquare,
+  ShoppingBag,
+  Search,
+  DatabaseZap,
+  SlidersHorizontal,
+  Rocket,
 } from 'lucide-react'
 
 const TEE_FEATURES = [
@@ -40,6 +47,7 @@ const FINANZAS_FEATURES = [
 
 const OPERATIVA_COLS = [
   {
+    icon: Users,
     title: 'Socios',
     items: [
       ['Padrón unificado', 'con categorías que define el club.'],
@@ -49,6 +57,7 @@ const OPERATIVA_COLS = [
     ],
   },
   {
+    icon: CalendarRange,
     title: 'Reservas y actividades',
     items: [
       ['Canchas y salones', '— tenis, pádel, eventos y quinchos.'],
@@ -58,6 +67,7 @@ const OPERATIVA_COLS = [
     ],
   },
   {
+    icon: MessageSquare,
     title: 'Comunicación',
     items: [
       ['Avisos segmentados', 'por categoría, actividad o deporte.'],
@@ -67,6 +77,7 @@ const OPERATIVA_COLS = [
     ],
   },
   {
+    icon: ShoppingBag,
     title: 'Proshop y consumos',
     items: [
       ['Venta rápida', 'con buscador de producto y precio a la vista.'],
@@ -87,10 +98,10 @@ const TECH_CARDS = [
 ]
 
 const STEPS = [
-  { n: 'PASO 1', title: 'Relevamiento', desc: 'Conocemos cómo opera hoy el club, qué necesita y qué sistemas usa.' },
-  { n: 'PASO 2', title: 'Migración', desc: 'Importamos padrón, saldos, cuotas y reservas vigentes, con validación previa.' },
-  { n: 'PASO 3', title: 'Configuración', desc: 'Definimos módulos, roles y personalizaciones adaptadas a tu club.' },
-  { n: 'PASO 4', title: 'Implementación', desc: 'Capacitamos al equipo y acompañamos el proceso con soporte 24/7.' },
+  { icon: Search, n: 'PASO 1', title: 'Relevamiento', desc: 'Conocemos cómo opera hoy el club, qué necesita y qué sistemas usa.' },
+  { icon: DatabaseZap, n: 'PASO 2', title: 'Migración', desc: 'Importamos padrón, saldos, cuotas y reservas vigentes, con validación previa.' },
+  { icon: SlidersHorizontal, n: 'PASO 3', title: 'Configuración', desc: 'Definimos módulos, roles y personalizaciones adaptadas a tu club.' },
+  { icon: Rocket, n: 'PASO 4', title: 'Implementación', desc: 'Capacitamos al equipo y acompañamos el proceso con soporte 24/7.' },
 ]
 
 export function Producto() {
@@ -207,8 +218,8 @@ export function Producto() {
             <div className="flex flex-col gap-[18px]">
               {TORNEOS_FEATURES.map((f, i) => (
                 <Reveal key={f.title} className="border-t border-border pt-4" delay={i * 0.05}>
-                  <span className="text-[15.5px] font-medium text-navy">{f.title}</span>{' '}
-                  <span className="text-[15px] text-ink-muted">— {f.desc}</span>
+                  <h3 className="mb-1.5 font-display text-[15.5px] text-navy">{f.title}</h3>
+                  <p className="text-[15px] leading-[1.55] text-ink-muted">{f.desc}</p>
                 </Reveal>
               ))}
             </div>
@@ -234,8 +245,8 @@ export function Producto() {
             <div className="flex flex-col gap-[18px]">
               {FINANZAS_FEATURES.map((f, i) => (
                 <Reveal key={f.title} className="border-t border-ink-muted-light/22 pt-4" delay={i * 0.05}>
-                  <span className="text-[15.5px] font-medium text-white">{f.title}</span>{' '}
-                  <span className="text-[15px] text-ink-muted-light">— {f.desc}</span>
+                  <h3 className="mb-1.5 font-display text-[15.5px] text-white">{f.title}</h3>
+                  <p className="text-[15px] leading-[1.55] text-ink-muted-light">{f.desc}</p>
                 </Reveal>
               ))}
             </div>
@@ -274,7 +285,10 @@ export function Producto() {
           </Reveal>
           <div className="grid grid-cols-4 gap-x-8 gap-y-10 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {OPERATIVA_COLS.map((col, i) => (
-              <Reveal key={col.title} className="border-t border-border-ink-muted pt-6" delay={(i % 4) * 0.06}>
+              <Reveal key={col.title} className="border-t border-border-muted pt-6" delay={(i % 4) * 0.06}>
+                <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/12">
+                  <col.icon className="size-[18px] stroke-green-dark stroke-[1.8]" />
+                </div>
                 <h3 className="mb-4 font-display text-[17px] text-navy">{col.title}</h3>
                 <div className="flex flex-col gap-3">
                   {col.items.map(([b, rest]) => (
@@ -307,6 +321,9 @@ export function Producto() {
             {TECH_CARDS.map((c, i) => (
               <Reveal key={c.title} fadeOnly delay={(i % 3) * 0.06}>
                 <div className="rounded-[14px] border border-border bg-white p-6">
+                  <div className="mb-3.5 flex size-[38px] items-center justify-center rounded-[10px] bg-green/12">
+                    <c.icon className="size-[18px] stroke-green-dark stroke-[1.8]" />
+                  </div>
                   <h3 className="mb-2 text-base text-navy">{c.title}</h3>
                   <p className="text-[14.5px] leading-[1.6] text-ink-muted">{c.desc}</p>
                 </div>
@@ -323,8 +340,13 @@ export function Producto() {
           </Reveal>
           <div className="grid grid-cols-4 gap-8 max-[1080px]:grid-cols-2 max-[720px]:grid-cols-1">
             {STEPS.map((s, i) => (
-              <Reveal key={s.n} className="border-t border-border-ink-muted pt-[22px]" delay={(i % 4) * 0.06}>
-                <div className="mb-3.5 font-mono text-xs text-green-dark">{s.n}</div>
+              <Reveal key={s.n} className="border-t border-border-muted pt-[22px]" delay={(i % 4) * 0.06}>
+                <div className="mb-3.5 flex items-center gap-2.5">
+                  <span className="flex size-[34px] items-center justify-center rounded-[10px] bg-green/12">
+                    <s.icon className="size-[17px] stroke-green-dark stroke-[1.8]" />
+                  </span>
+                  <span className="font-mono text-xs text-green-dark">{s.n}</span>
+                </div>
                 <h3 className="mb-2 font-display text-[17px] text-navy">{s.title}</h3>
                 <p className="text-[14.5px] leading-[1.6] text-ink-muted">{s.desc}</p>
               </Reveal>

@@ -52,7 +52,7 @@ export function TeamSection() {
       <div className="mx-auto max-w-(--container-max)">
         <Reveal className="mb-14 max-w-[640px]">
           <div className="mb-[18px] font-mono text-eyebrow font-medium tracking-[0.22em] text-green-dark uppercase">
-            05 · Equipo
+            Equipo
           </div>
           <h2 className="mb-4 text-h2 leading-[1.06] tracking-[-0.03em] text-navy">Nuestro equipo</h2>
           <p className="font-display text-[17px] leading-[1.65] text-ink-muted">

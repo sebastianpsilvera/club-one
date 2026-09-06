@@ -9,7 +9,7 @@ import { useRef } from 'react'
 
 const STORY = [
   {
-    n: '01 · El origen',
+    n: 'El origen',
     title: 'Todo empieza en el primer tee.',
     body: 'Nacimos operando volumen: consolidando y distribuyendo tickets de forma mayorista. Ese trabajo nos enseñó a construir sistemas que no fallan cuando la demanda aprieta.',
     image: '/assets/golf-tee.webp',
@@ -17,7 +17,7 @@ const STORY = [
     link: true,
   },
   {
-    n: '02 · La fusión',
+    n: 'La fusión',
     title: 'Club One Technologies Inc. se fusiona y adquiere Vista Golf.',
     body: 'La operación suma a nuestra plataforma una década de experiencia en gestión de clubes y una base instalada que ya opera todos los días sobre el software.',
     image: '/assets/golf-bag.webp',
@@ -25,7 +25,7 @@ const STORY = [
     reverse: true,
   },
   {
-    n: '03 · La expansión',
+    n: 'La expansión',
     title: 'El puntapié inicial de nuestra expansión en América Latina.',
     body: 'Argentina y Uruguay son los primeros mercados. Desde ahí seguimos hacia el resto de la región, club por club, con el mismo sistema y el mismo estándar de servicio.',
     image: '/assets/golf-course.webp',

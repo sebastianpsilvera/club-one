@@ -88,26 +88,26 @@ export function ActionTabsSection() {
     // forcing a scroll. The mockup is driven off vh, so it grows on taller
     // screens rather than being pinned to one size. Reverts to normal flow
     // below 1080px, where a viewport-tall section would squash the mockup.
-    <section className="flex min-h-[100svh] flex-col justify-center bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 pt-20 pb-8 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
+    <section className="flex min-h-[100svh] flex-col justify-center bg-[linear-gradient(155deg,#0A1A33_0%,#060F1E_100%)] px-8 pt-[76px] pb-6 max-[1080px]:block max-[1080px]:min-h-0 max-[1080px]:py-[84px] max-[720px]:px-5 max-[720px]:py-16">
       <div className="mx-auto w-full max-w-(--container-max)">
-        <Reveal className="mx-auto mb-6 max-w-[900px] text-center max-[1080px]:mb-11">
+        <Reveal className="mx-auto mb-4 max-w-[900px] text-center max-[1080px]:mb-11">
           <h2 className="mb-3 text-h2 leading-[1.06] tracking-[-0.03em] whitespace-nowrap text-white max-[1080px]:whitespace-normal">
             Descubrí Club One <span className="text-green">en acción.</span>
           </h2>
-          <p className="mx-auto max-w-[640px] font-display text-[17px] leading-[1.65] text-ink-muted-light">
+          <p className="mx-auto max-w-[720px] font-display text-[15.5px] leading-[1.55] text-ink-muted-light max-[1080px]:text-[17px]">
             Navegar entre módulos es ágil e intuitivo. Cada pantalla fue diseñada con la experiencia del usuario como
             prioridad.
           </p>
         </Reveal>
 
-        <Reveal className="mb-6 flex flex-wrap justify-center gap-2.5 max-[1080px]:mb-9">
+        <Reveal className="mb-4 flex flex-wrap justify-center gap-2 max-[1080px]:mb-9">
           {TABS.map((t) => (
             <button
               key={t.key}
               type="button"
               onClick={() => pickTab(t.key)}
               className={cn(
-                'rounded-full border px-5 py-2.5 text-[13.5px] font-medium transition-[color,background-color,border-color,transform] duration-300 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
+                'rounded-full border px-4 py-2 text-[12.5px] font-medium transition-[color,background-color,border-color,transform] duration-300 active:scale-[0.96] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50',
                 // Eight labels of very uneven length; tighten them on mobile so
                 // they pack into fewer, less ragged centered rows.
                 'max-[720px]:px-3.5 max-[720px]:py-2 max-[720px]:text-[12.5px]',
@@ -131,13 +131,13 @@ export function ActionTabsSection() {
           <motion.div
             ref={par.ref}
             style={{ y: shouldReduceMotion ? 0 : par.y }}
-            /* 566px is everything else in the section at its measured height —
+            /* 452px is everything else in the section at its measured height —
                heading, tabs, caption, CTA, padding (incl. clearance for the
                sticky header) and the 44px chrome bar.
                Capping the width at the leftover height × the shot's aspect
                makes the mockup exactly fill what's left of one viewport, so it
                grows on tall screens and never pushes the section past the fold. */
-            className="w-full max-w-[min(1180px,calc((100svh-566px)*2.021))] overflow-hidden rounded-[14px] border border-ink-muted-light/20 bg-[#0B1526] shadow-[0_50px_110px_-40px_rgba(0,0,0,0.7)] max-[1080px]:max-w-full"
+            className="w-full max-w-[min(1180px,calc((100svh-452px)*2.021))] overflow-hidden rounded-[14px] border border-ink-muted-light/20 bg-[#0B1526] shadow-[0_50px_110px_-40px_rgba(0,0,0,0.7)] max-[1080px]:max-w-full"
           >
           <div className="flex h-11 shrink-0 items-center gap-2 border-b border-ink-muted-light/16 bg-white/5 px-4">
             <span className="size-[11px] rounded-full bg-[#FF5F57]" />
@@ -179,13 +179,13 @@ export function ActionTabsSection() {
             </div>
           </motion.div>
         </div>
-        <Reveal className="mt-5 text-center font-mono text-xs tracking-[0.12em] text-[#5C7295] max-[1080px]:mt-6">
+        <Reveal className="mt-4 text-center font-mono text-[11px] tracking-[0.12em] text-[#5C7295] max-[1080px]:mt-6 max-[1080px]:text-xs">
           {CAPTIONS[tab]}
         </Reveal>
-        <Reveal className="mt-6 flex justify-center max-[1080px]:mt-[34px]">
+        <Reveal className="mt-5 flex justify-center max-[1080px]:mt-[34px]">
           <NavLink
             to="/producto"
-            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[30px] py-[15px] text-[15px] font-display font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:justify-center"
+            className="inline-flex items-center gap-[9px] rounded-[11px] bg-green px-[26px] py-3 text-[14.5px] font-display font-semibold whitespace-nowrap text-navy no-underline transition-[background-color,transform] duration-150 hover:bg-green-hover active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 max-[720px]:w-full max-[720px]:max-w-[300px] max-[720px]:justify-center"
           >
             Ver el producto <span>→</span>
           </NavLink>
