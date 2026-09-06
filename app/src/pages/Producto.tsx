@@ -258,11 +258,15 @@ export function Producto() {
                 <span className="size-2.5 rounded-full bg-[#FEBC2E]" />
                 <span className="size-2.5 rounded-full bg-[#28C840]" />
               </div>
+              {/* shot-golf.webp was cropped at capture — its left sidebar and
+                  top bar simply aren't in the file. This is the billing screen
+                  itself, captured whole, so both are visible. The box matches
+                  its 1910x940 ratio exactly, so nothing is cropped here either. */}
               <img
-                src="/assets/shot-golf.webp"
-                alt="Reportes de green fees e ingresos"
+                src="/assets/shot-facturacion.webp"
+                alt="Cobro de cuotas, consumos y facturación"
                 loading="lazy"
-                className="block aspect-[1513/777] w-full object-contain"
+                className="block aspect-[1910/940] w-full object-contain"
               />
             </div>
           </Reveal>

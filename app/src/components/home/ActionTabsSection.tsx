@@ -47,7 +47,7 @@ const SHOTS: Partial<Record<TabKey, { src: string; alt: string; fit: 'contain' |
   reportes: { src: '/assets/shot-reportes.webp', alt: 'Reportes e inteligencia', fit: 'contain' },
   torneos: { src: '/assets/shot-torneos.webp', alt: 'Gestión de torneos', fit: 'contain' },
   reservas: { src: '/assets/shot-teesheet.webp', alt: 'Reservas y tee sheet en tiempo real', fit: 'contain' },
-  facturacion: { src: '/assets/facturacion.png', alt: 'Facturación y cobros', fit: 'fill' },
+  facturacion: { src: '/assets/shot-facturacion.webp', alt: 'Facturación y cobros', fit: 'contain' },
   proshop: { src: '/assets/shot-proshop.webp', alt: 'Proshop: punto de venta e inventario', fit: 'contain' },
   // These four are photographs rather than UI screenshots, so they fill the
   // frame with object-cover; the screenshots stay 'contain' since the frame
