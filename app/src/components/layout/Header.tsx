@@ -49,12 +49,16 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-5 max-[1080px]:hidden">
-          <NavLink
-            to="/contacto"
+          {/* External app login — leaves the marketing site, so a plain anchor
+              rather than a router NavLink. */}
+          <a
+            href="https://exact-hack-90077304.figma.site"
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-md text-[14.5px] font-medium text-navy no-underline transition-colors duration-150 hover:text-green-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
           >
             Acceder
-          </NavLink>
+          </a>
           <Button asChild className="rounded-[10px] bg-navy px-[22px] py-[11px] text-[14.5px] hover:bg-[#16294A]">
             <NavLink to="/contacto">Solicitar demo</NavLink>
           </Button>
@@ -102,6 +106,17 @@ export function Header() {
               >
                 Solicitar demo
               </NavLink>
+              {/* Mirrors the desktop "Acceder" link, which is hidden ≤1080px —
+                  without this the app login is unreachable on a phone. */}
+              <a
+                href="https://exact-hack-90077304.figma.site"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="mt-2.5 rounded-[11px] border border-white/24 py-3.5 text-center text-[15.5px] font-medium text-[#E7EFF9] no-underline transition-transform duration-150 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green/50"
+              >
+                Acceder
+              </a>
             </div>
           </motion.div>
         )}
